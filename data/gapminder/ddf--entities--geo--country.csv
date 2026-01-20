@@ -1,0 +1,274 @@
+country,g77_and_oecd_countries,income_3groups,income_groups,is--country,iso3166_1_alpha2,iso3166_1_alpha3,iso3166_1_numeric,iso3166_2,landlocked,latitude,longitude,main_religion_2008,name,un_sdg_ldc,un_sdg_region,un_state,unhcr_region,unicef_region,unicode_region_subtag,west_and_rest,world_4region,world_6region
+abkh,others,,,True,,,,,,,,,Abkhazia,,,False,,,,,europe,europe_central_asia
+abw,others,high_income,high_income,True,AW,ABW,533.0,,coastline,12.5,-69.96667,christian,Aruba,un_not_least_developed,un_latin_america_and_the_caribbean,False,unhcr_americas,,AW,,americas,america
+afg,g77,low_income,low_income,True,AF,AFG,4.0,,landlocked,33.0,66.0,muslim,Afghanistan,un_least_developed,un_central_and_southern_asia,True,unhcr_asia_pacific,sa,AF,rest,asia,south_asia
+ago,g77,middle_income,lower_middle_income,True,AO,AGO,24.0,,coastline,-12.5,18.5,christian,Angola,un_least_developed,un_sub_saharan_africa,True,unhcr_southern_africa,ssa,AO,rest,africa,sub_saharan_africa
+aia,others,,,True,AI,AIA,660.0,,coastline,18.21667,-63.05,christian,Anguilla,un_not_least_developed,un_latin_america_and_the_caribbean,False,unhcr_americas,,AI,,americas,america
+akr_a_dhe,others,,,True,,,,,coastline,,,,Akrotiri and Dhekelia,,,False,,,,,europe,europe_central_asia
+ala,others,,,True,AX,ALA,248.0,,coastline,60.25,20.0,,Åland,un_not_least_developed,un_europe_and_northern_america,False,,,AX,,europe,europe_central_asia
+alb,others,middle_income,upper_middle_income,True,AL,ALB,8.0,,coastline,41.0,20.0,muslim,Albania,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,AL,rest,europe,europe_central_asia
+and,others,high_income,high_income,True,AD,AND,20.0,,landlocked,42.50779,1.52109,christian,Andorra,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,AD,west,europe,europe_central_asia
+ant,others,,,True,,,,,coastline,,,,Netherlands Antilles,,,False,,,,,americas,america
+are,g77,high_income,high_income,True,AE,ARE,784.0,,coastline,23.75,54.5,muslim,UAE,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_middle_east_north_africa,mena,AE,rest,asia,middle_east_north_africa
+arg,g77,middle_income,upper_middle_income,True,AR,ARG,32.0,,coastline,-34.0,-64.0,christian,Argentina,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,AR,rest,americas,america
+arm,others,middle_income,upper_middle_income,True,AM,ARM,51.0,,landlocked,40.25,45.0,christian,Armenia,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_europe,eca,AM,rest,europe,europe_central_asia
+asm,others,middle_income,upper_middle_income,True,AS,ASM,16.0,,coastline,-11.056,-171.082,christian,American Samoa,un_not_least_developed,un_oceania_exc_australia_and_new_zealand,False,,,AS,,asia,east_asia_pacific
+ata,,,,True,AQ,ATA,10.0,,,-90.0,0.0,,Antarctica,un_not_least_developed,,False,,,AQ,,europe,
+atg,g77,high_income,high_income,True,AG,ATG,28.0,,coastline,17.05,-61.8,christian,Antigua and Barbuda,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,AG,rest,americas,america
+aus,oecd,high_income,high_income,True,AU,AUS,36.0,,coastline,-25.0,135.0,christian,Australia,un_not_least_developed,un_australia_and_new_zealand,True,unhcr_asia_pacific,eap,AU,west,asia,east_asia_pacific
+aut,oecd,high_income,high_income,True,AT,AUT,40.0,,landlocked,47.33333,13.33333,christian,Austria,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,AT,west,europe,europe_central_asia
+aze,others,middle_income,upper_middle_income,True,AZ,AZE,31.0,,landlocked,40.5,47.5,muslim,Azerbaijan,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_europe,eca,AZ,rest,europe,europe_central_asia
+bdi,g77,low_income,low_income,True,BI,BDI,108.0,,landlocked,-3.5,30.0,christian,Burundi,un_least_developed,un_sub_saharan_africa,True,unhcr_east_horn_africa_great_lates,ssa,BI,rest,africa,sub_saharan_africa
+bel,oecd,high_income,high_income,True,BE,BEL,56.0,,coastline,50.75,4.5,christian,Belgium,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,BE,west,europe,europe_central_asia
+ben,g77,low_income,low_income,True,BJ,BEN,204.0,,coastline,9.5,2.25,,Benin,un_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,BJ,rest,africa,sub_saharan_africa
+bfa,g77,low_income,low_income,True,BF,BFA,854.0,,landlocked,12.5,-1.66667,muslim,Burkina Faso,un_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,BF,rest,africa,sub_saharan_africa
+bgd,g77,middle_income,lower_middle_income,True,BD,BGD,50.0,,coastline,24.0,90.0,muslim,Bangladesh,un_least_developed,un_central_and_southern_asia,True,unhcr_asia_pacific,sa,BD,rest,asia,south_asia
+bgr,others,middle_income,upper_middle_income,True,BG,BGR,100.0,,coastline,42.66667,25.25,christian,Bulgaria,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,BG,rest,europe,europe_central_asia
+bhr,g77,high_income,high_income,True,BH,BHR,48.0,,coastline,26.03333,50.55,muslim,Bahrain,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_middle_east_north_africa,mena,BH,rest,asia,middle_east_north_africa
+bhs,g77,high_income,high_income,True,BS,BHS,44.0,,coastline,25.04082,-77.37122,christian,Bahamas,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,BS,rest,americas,america
+bih,g77,middle_income,upper_middle_income,True,BA,BIH,70.0,,coastline,44.25,17.83333,,Bosnia and Herzegovina,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,BA,rest,europe,europe_central_asia
+blr,others,middle_income,upper_middle_income,True,BY,BLR,112.0,,landlocked,53.0,28.0,christian,Belarus,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,BY,rest,europe,europe_central_asia
+blz,g77,middle_income,upper_middle_income,True,BZ,BLZ,84.0,,coastline,17.49952,-88.19756,christian,Belize,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,BZ,rest,americas,america
+bmu,others,high_income,high_income,True,BM,BMU,60.0,,coastline,32.2949,-64.78303,christian,Bermuda,un_not_least_developed,un_europe_and_northern_america,False,unhcr_americas,,BM,,americas,america
+bol,g77,middle_income,lower_middle_income,True,BO,BOL,68.0,,landlocked,-17.0,-65.0,christian,Bolivia,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,BO,rest,americas,america
+bouisl,,,,True,BV,BVT,74.0,,,,,,Bouvet Island,un_not_least_developed,un_latin_america_and_the_caribbean,False,,,BV,,africa,
+bra,g77,middle_income,upper_middle_income,True,BR,BRA,76.0,,coastline,-10.0,-55.0,christian,Brazil,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,BR,rest,americas,america
+brb,g77,high_income,high_income,True,BB,BRB,52.0,,coastline,13.16667,-59.53333,christian,Barbados,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,BB,rest,americas,america
+brn,g77,high_income,high_income,True,BN,BRN,96.0,,coastline,4.5,114.66667,muslim,Brunei,un_not_least_developed,un_eastern_and_south_eastern_asia,True,unhcr_asia_pacific,eap,BN,rest,asia,east_asia_pacific
+btn,g77,middle_income,lower_middle_income,True,BT,BTN,64.0,,landlocked,27.5,90.5,eastern_religions,Bhutan,un_least_developed,un_central_and_southern_asia,True,unhcr_asia_pacific,sa,BT,rest,asia,south_asia
+bwa,g77,middle_income,upper_middle_income,True,BW,BWA,72.0,,landlocked,-22.0,24.0,christian,Botswana,un_not_least_developed,un_sub_saharan_africa,True,unhcr_southern_africa,ssa,BW,rest,africa,sub_saharan_africa
+caf,g77,low_income,low_income,True,CF,CAF,140.0,,landlocked,7.0,21.0,,Central African Republic,un_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,CF,rest,africa,sub_saharan_africa
+can,oecd,high_income,high_income,True,CA,CAN,124.0,,coastline,60.10867,-113.64258,christian,Canada,un_not_least_developed,un_europe_and_northern_america,True,unhcr_americas,na,CA,west,americas,america
+cck,others,,,True,CC,CCK,166.0,,coastline,-12.1642,96.87332,,Cocos Island,un_not_least_developed,un_australia_and_new_zealand,False,,,CC,,asia,east_asia_pacific
+chanisl,others,high_income,high_income,True,,,,,coastline,,,christian,Channel Islands,,,False,,,,,europe,europe_central_asia
+che,oecd,high_income,high_income,True,CH,CHE,756.0,,landlocked,47.00016,8.01427,christian,Switzerland,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,CH,west,europe,europe_central_asia
+cheslo,others,,,True,,,,,landlocked,,,,Czechoslovakia,,,False,,,,,europe,europe_central_asia
+chl,g77,high_income,high_income,True,CL,CHL,152.0,,coastline,-33.45694,-70.64827,christian,Chile,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,CL,rest,americas,america
+chn,g77,middle_income,upper_middle_income,True,CN,CHN,156.0,,coastline,35.0,105.0,eastern_religions,China,un_not_least_developed,un_eastern_and_south_eastern_asia,True,unhcr_asia_pacific,eap,CN,rest,asia,east_asia_pacific
+civ,g77,middle_income,lower_middle_income,True,CI,CIV,384.0,,coastline,8.0,-5.5,,Cote d'Ivoire,un_not_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,CI,rest,africa,sub_saharan_africa
+cmr,g77,middle_income,lower_middle_income,True,CM,CMR,120.0,,coastline,6.0,12.5,christian,Cameroon,un_not_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,CM,rest,africa,sub_saharan_africa
+cod,g77,low_income,low_income,True,CD,COD,180.0,,landlocked,-2.5,23.5,christian,"Congo, Dem. Rep.",un_least_developed,un_sub_saharan_africa,True,unhcr_southern_africa,ssa,CD,rest,africa,sub_saharan_africa
+cog,g77,middle_income,lower_middle_income,True,CG,COG,178.0,,coastline,-1.0,15.5,christian,"Congo, Rep.",un_not_least_developed,un_sub_saharan_africa,True,unhcr_southern_africa,ssa,CG,rest,africa,sub_saharan_africa
+cok,others,,,True,CK,COK,184.0,,coastline,-21.24842,-159.78516,christian,Cook Is,un_not_least_developed,un_oceania_exc_australia_and_new_zealand,False,unhcr_asia_pacific,,CK,,asia,east_asia_pacific
+col,g77,middle_income,upper_middle_income,True,CO,COL,170.0,,coastline,4.0,-73.25,christian,Colombia,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,CO,rest,americas,america
+com,g77,middle_income,lower_middle_income,True,KM,COM,174.0,,coastline,-12.23333,44.44553,muslim,Comoros,un_least_developed,un_sub_saharan_africa,True,unhcr_southern_africa,ssa,KM,rest,africa,sub_saharan_africa
+cpv,g77,middle_income,lower_middle_income,True,CV,CPV,132.0,,coastline,16.0,-24.0,christian,Cape Verde,un_not_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,CV,rest,africa,sub_saharan_africa
+cri,g77,middle_income,upper_middle_income,True,CR,CRI,188.0,,coastline,10.0,-84.0,christian,Costa Rica,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,CR,rest,americas,america
+cub,g77,middle_income,upper_middle_income,True,CU,CUB,192.0,,coastline,22.0,-79.5,christian,Cuba,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,CU,rest,americas,america
+cxr,others,,,True,CX,CXR,162.0,,coastline,-10.5,105.66667,,Christmas Island,un_not_least_developed,un_australia_and_new_zealand,False,,,CX,,asia,east_asia_pacific
+cym,others,high_income,high_income,True,KY,CYM,136.0,,coastline,19.5,-80.66667,christian,Cayman Islands,un_not_least_developed,un_latin_america_and_the_caribbean,False,unhcr_americas,,KY,,americas,america
+cyp,others,high_income,high_income,True,CY,CYP,196.0,,coastline,35.0,33.0,christian,Cyprus,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_europe,eca,CY,rest,europe,europe_central_asia
+cyp_nor,others,,,True,,,,,coastline,,,,Northern Cyprus,,,False,,,,,europe,europe_central_asia
+cze,oecd,high_income,high_income,True,CZ,CZE,203.0,,landlocked,49.75,15.0,christian,Czech Republic,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,CZ,rest,europe,europe_central_asia
+deu,oecd,high_income,high_income,True,DE,DEU,276.0,,coastline,51.5,10.5,christian,Germany,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,DE,west,europe,europe_central_asia
+deu_east,others,,,True,,,,,coastline,,,,East Germany,,,False,,,,,europe,europe_central_asia
+deu_west,others,,,True,,,,,coastline,,,,West Germany,,,False,,,,,europe,europe_central_asia
+dji,g77,middle_income,lower_middle_income,True,DJ,DJI,262.0,,coastline,11.58901,43.14503,muslim,Djibouti,un_least_developed,un_sub_saharan_africa,True,unhcr_east_horn_africa_great_lates,ssa,DJ,rest,africa,middle_east_north_africa
+dma,g77,middle_income,upper_middle_income,True,DM,DMA,212.0,,coastline,15.5,-61.33333,christian,Dominica,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,DM,rest,americas,america
+dnk,oecd,high_income,high_income,True,DK,DNK,208.0,,coastline,56.0,10.0,christian,Denmark,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,DK,west,europe,europe_central_asia
+dom,g77,middle_income,upper_middle_income,True,DO,DOM,214.0,,coastline,19.0,-70.66667,christian,Dominican Republic,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,DO,rest,americas,america
+dza,g77,middle_income,upper_middle_income,True,DZ,DZA,12.0,,coastline,28.0,3.0,muslim,Algeria,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_middle_east_north_africa,mena,DZ,rest,africa,middle_east_north_africa
+ecu,g77,middle_income,upper_middle_income,True,EC,ECU,218.0,,coastline,-1.25,-78.25,christian,Ecuador,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,EC,rest,americas,america
+egy,g77,middle_income,lower_middle_income,True,EG,EGY,818.0,,coastline,27.0,30.0,muslim,Egypt,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_middle_east_north_africa,mena,EG,rest,africa,middle_east_north_africa
+eri,g77,low_income,low_income,True,ER,ERI,232.0,,coastline,15.0,39.0,muslim,Eritrea,un_least_developed,un_sub_saharan_africa,True,unhcr_east_horn_africa_great_lates,ssa,ER,rest,africa,sub_saharan_africa
+eri_a_eth,others,,,True,,,,,coastline,,,,Eritrea and Ethiopia,,,False,,,,,africa,sub_saharan_africa
+esh,others,,,True,EH,ESH,732.0,,coastline,24.49215,-12.65625,muslim,Western Sahara,un_not_least_developed,un_northern_africa_and_western_asia,False,unhcr_middle_east_north_africa,,EH,,africa,middle_east_north_africa
+esp,oecd,high_income,high_income,True,ES,ESP,724.0,,coastline,40.0,-4.0,christian,Spain,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,ES,west,europe,europe_central_asia
+est,others,high_income,high_income,True,EE,EST,233.0,,coastline,59.0,26.0,christian,Estonia,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,EE,rest,europe,europe_central_asia
+eth,g77,low_income,low_income,True,ET,ETH,231.0,,coastline,9.0,39.5,christian,Ethiopia,un_least_developed,un_sub_saharan_africa,True,unhcr_east_horn_africa_great_lates,ssa,ET,rest,africa,sub_saharan_africa
+fin,oecd,high_income,high_income,True,FI,FIN,246.0,,coastline,64.0,26.0,christian,Finland,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,FI,west,europe,europe_central_asia
+fji,g77,middle_income,upper_middle_income,True,FJ,FJI,242.0,,coastline,-18.0,178.0,christian,Fiji,un_not_least_developed,un_oceania_exc_australia_and_new_zealand,True,unhcr_asia_pacific,eap,FJ,rest,asia,east_asia_pacific
+flk,others,,,True,FK,FLK,238.0,,coastline,-51.75,-59.16667,christian,Falkland Is (Malvinas),un_not_least_developed,un_latin_america_and_the_caribbean,False,,,FK,,americas,america
+fra,oecd,high_income,high_income,True,FR,FRA,250.0,,coastline,46.0,2.0,christian,France,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,FR,west,europe,europe_central_asia
+fra_antarc,,,,True,,,,,,,,,French Southern and Antarctic Lands,,,False,,,,,,
+fra_clipperton,,,,True,CP,,,,,,,,Clipperton,,,False,,,CP,,,
+fro,others,high_income,high_income,True,FO,FRO,234.0,,coastline,62.0,-7.0,christian,Faeroe Islands,un_not_least_developed,un_europe_and_northern_america,False,,,FO,,europe,europe_central_asia
+fsm,g77,middle_income,lower_middle_income,True,FM,FSM,583.0,,coastline,6.924,158.162,christian,"Micronesia, Fed. Sts.",un_not_least_developed,un_oceania_exc_australia_and_new_zealand,True,unhcr_asia_pacific,eap,FM,rest,asia,east_asia_pacific
+gab,g77,middle_income,upper_middle_income,True,GA,GAB,266.0,,coastline,-1.0,11.75,christian,Gabon,un_not_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,GA,rest,africa,sub_saharan_africa
+gbg,others,,,True,GG,GGY,831.0,,coastline,49.45474,-2.57629,,Guernsey,un_not_least_developed,un_europe_and_northern_america,False,,,GG,,europe,europe_central_asia
+gbm,others,high_income,high_income,True,IM,IMN,833.0,,coastline,54.15,-4.48333,christian,Isle of Man,un_not_least_developed,un_europe_and_northern_america,False,,,IM,,europe,europe_central_asia
+gbr,oecd,high_income,high_income,True,GB,GBR,826.0,,coastline,54.75844,-2.69531,christian,UK,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,GB,west,europe,europe_central_asia
+geo,others,middle_income,upper_middle_income,True,GE,GEO,268.0,,coastline,41.99998,43.4999,christian,Georgia,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_europe,eca,GE,rest,europe,europe_central_asia
+gha,g77,middle_income,lower_middle_income,True,GH,GHA,288.0,,coastline,8.1,-1.2,christian,Ghana,un_not_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,GH,rest,africa,sub_saharan_africa
+gib,others,high_income,high_income,True,GI,GIB,292.0,,coastline,36.14474,-5.35257,christian,Gibraltar,un_not_least_developed,un_europe_and_northern_america,False,unhcr_europe,,GI,,europe,europe_central_asia
+gin,g77,low_income,low_income,True,GN,GIN,324.0,,coastline,10.83333,-10.66667,muslim,Guinea,un_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,GN,rest,africa,sub_saharan_africa
+glp,others,,,True,GP,GLP,312.0,,coastline,16.25,-61.58333,christian,Guadeloupe,un_not_least_developed,un_latin_america_and_the_caribbean,False,unhcr_americas,,GP,,americas,america
+gmb,g77,low_income,low_income,True,GM,GMB,270.0,,coastline,13.5,-15.5,muslim,Gambia,un_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,GM,rest,africa,sub_saharan_africa
+gnb,g77,low_income,low_income,True,GW,GNB,624.0,,coastline,12.0,-15.0,,Guinea-Bissau,un_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,GW,rest,africa,sub_saharan_africa
+gnq,g77,middle_income,upper_middle_income,True,GQ,GNQ,226.0,,coastline,1.7,10.5,christian,Equatorial Guinea,un_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,GQ,rest,africa,sub_saharan_africa
+grc,oecd,high_income,high_income,True,GR,GRC,300.0,,coastline,39.0,22.0,christian,Greece,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,GR,west,europe,europe_central_asia
+grd,g77,middle_income,upper_middle_income,True,GD,GRD,308.0,,coastline,12.11667,-61.66667,christian,Grenada,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,GD,rest,americas,america
+grl,others,high_income,high_income,True,GL,GRL,304.0,,coastline,72.0,-40.0,christian,Greenland,un_not_least_developed,un_europe_and_northern_america,False,,,GL,,europe,europe_central_asia
+gtm,g77,middle_income,upper_middle_income,True,GT,GTM,320.0,,coastline,14.64072,-90.51327,christian,Guatemala,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,GT,rest,americas,america
+guf,others,,,True,GF,GUF,254.0,,coastline,4.0,-53.0,christian,French Guiana,un_not_least_developed,un_latin_america_and_the_caribbean,False,unhcr_americas,,GF,,americas,america
+gum,others,high_income,high_income,True,GU,GUM,316.0,,coastline,13.47861,144.81834,christian,Guam,un_not_least_developed,un_oceania_exc_australia_and_new_zealand,False,unhcr_asia_pacific,,GU,,asia,east_asia_pacific
+guy,g77,middle_income,upper_middle_income,True,GY,GUY,328.0,,coastline,5.0,-59.0,christian,Guyana,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,GY,rest,americas,america
+heard_a_mcd,,,,True,HM,HMD,334.0,,,,,,Heard and McDonald Islands,un_not_least_developed,un_australia_and_new_zealand,False,,,HM,,asia,
+hkg,others,high_income,high_income,True,HK,HKG,344.0,,coastline,22.28552,114.15769,eastern_religions,"Hong Kong, China",un_not_least_developed,un_eastern_and_south_eastern_asia,False,unhcr_asia_pacific,,HK,,asia,east_asia_pacific
+hnd,g77,middle_income,lower_middle_income,True,HN,HND,340.0,,coastline,15.0,-86.5,christian,Honduras,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,HN,rest,americas,america
+hos,others,,,True,VA,VAT,336.0,,landlocked,41.90236,12.45332,christian,Holy See,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,VA,west,europe,europe_central_asia
+hrv,others,high_income,high_income,True,HR,HRV,191.0,,coastline,45.16667,15.5,christian,Croatia,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,HR,rest,europe,europe_central_asia
+hti,g77,low_income,low_income,True,HT,HTI,332.0,,coastline,19.0,-72.41667,christian,Haiti,un_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,HT,rest,americas,america
+hun,oecd,high_income,high_income,True,HU,HUN,348.0,,landlocked,47.0,20.0,christian,Hungary,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,HU,rest,europe,europe_central_asia
+idn,g77,middle_income,lower_middle_income,True,ID,IDN,360.0,,coastline,-5.0,120.0,muslim,Indonesia,un_not_least_developed,un_eastern_and_south_eastern_asia,True,unhcr_asia_pacific,eap,ID,rest,asia,east_asia_pacific
+ind,g77,middle_income,lower_middle_income,True,IN,IND,356.0,,coastline,22.0,79.0,eastern_religions,India,un_not_least_developed,un_central_and_southern_asia,True,unhcr_asia_pacific,sa,IN,rest,asia,south_asia
+iot,,,,True,IO,IOT,86.0,,,-6.0,72.0,,British Indian Ocean Territory,un_not_least_developed,un_sub_saharan_africa,False,,,IO,,asia,
+irl,oecd,high_income,high_income,True,IE,IRL,372.0,,coastline,53.0,-8.0,christian,Ireland,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,IE,west,europe,europe_central_asia
+irn,g77,middle_income,upper_middle_income,True,IR,IRN,364.0,,coastline,32.0,53.0,muslim,Iran,un_not_least_developed,un_central_and_southern_asia,True,unhcr_asia_pacific,mena,IR,rest,asia,middle_east_north_africa
+irq,g77,middle_income,upper_middle_income,True,IQ,IRQ,368.0,,coastline,33.0,44.0,muslim,Iraq,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_middle_east_north_africa,mena,IQ,rest,asia,middle_east_north_africa
+isl,oecd,high_income,high_income,True,IS,ISL,352.0,,coastline,65.0,-18.0,christian,Iceland,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,IS,west,europe,europe_central_asia
+isr,oecd,high_income,high_income,True,IL,ISR,376.0,,coastline,31.5,34.75,,Israel,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_middle_east_north_africa,mena,IL,rest,asia,middle_east_north_africa
+ita,oecd,high_income,high_income,True,IT,ITA,380.0,,coastline,42.83333,12.83333,christian,Italy,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,IT,west,europe,europe_central_asia
+jam,g77,middle_income,upper_middle_income,True,JM,JAM,388.0,,coastline,18.16667,-77.25,christian,Jamaica,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,JM,rest,americas,america
+jey,others,,,True,JE,JEY,832.0,,coastline,49.21667,-2.11667,,Jersey,un_not_least_developed,un_europe_and_northern_america,False,,,JE,,europe,europe_central_asia
+jor,g77,middle_income,upper_middle_income,True,JO,JOR,400.0,,coastline,31.0,36.0,muslim,Jordan,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_middle_east_north_africa,mena,JO,rest,asia,middle_east_north_africa
+jpn,oecd,high_income,high_income,True,JP,JPN,392.0,,coastline,35.68536,139.75309,eastern_religions,Japan,un_not_least_developed,un_eastern_and_south_eastern_asia,True,unhcr_asia_pacific,eap,JP,rest,asia,east_asia_pacific
+kaz,others,middle_income,upper_middle_income,True,KZ,KAZ,398.0,,landlocked,48.0,68.0,muslim,Kazakhstan,un_not_least_developed,un_central_and_southern_asia,True,unhcr_asia_pacific,eca,KZ,rest,asia,europe_central_asia
+ken,g77,middle_income,lower_middle_income,True,KE,KEN,404.0,,coastline,1.0,38.0,christian,Kenya,un_not_least_developed,un_sub_saharan_africa,True,unhcr_east_horn_africa_great_lates,ssa,KE,rest,africa,sub_saharan_africa
+kgz,others,middle_income,lower_middle_income,True,KG,KGZ,417.0,,landlocked,41.5,75.0,muslim,Kyrgyz Republic,un_not_least_developed,un_central_and_southern_asia,True,unhcr_asia_pacific,eca,KG,rest,asia,europe_central_asia
+khm,g77,middle_income,lower_middle_income,True,KH,KHM,116.0,,coastline,13.0,105.0,eastern_religions,Cambodia,un_least_developed,un_eastern_and_south_eastern_asia,True,unhcr_asia_pacific,eap,KH,rest,asia,east_asia_pacific
+kir,others,middle_income,lower_middle_income,True,KI,KIR,296.0,,coastline,1.421,172.984,christian,Kiribati,un_least_developed,un_oceania_exc_australia_and_new_zealand,True,unhcr_asia_pacific,eap,KI,rest,asia,east_asia_pacific
+kna,g77,high_income,high_income,True,KN,KNA,659.0,,coastline,17.33333,-62.75,christian,St. Kitts and Nevis,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,KN,rest,americas,america
+kor,oecd,high_income,high_income,True,KR,KOR,410.0,,coastline,36.5,127.75,,South Korea,un_not_least_developed,un_eastern_and_south_eastern_asia,True,unhcr_asia_pacific,eap,KR,rest,asia,east_asia_pacific
+korea_union,,,,True,,,,,,,,,United Korea (former),,,False,,,,,asia,
+kos,others,middle_income,upper_middle_income,True,XK,,,,landlocked,,,muslim,Kosovo,un_not_least_developed,un_europe_and_northern_america,False,,,XK,,europe,europe_central_asia
+kwt,g77,high_income,high_income,True,KW,KWT,414.0,,coastline,29.36972,47.97833,muslim,Kuwait,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_middle_east_north_africa,mena,KW,rest,asia,middle_east_north_africa
+lao,g77,middle_income,lower_middle_income,True,LA,LAO,418.0,,landlocked,18.0,105.0,eastern_religions,Lao,un_least_developed,un_eastern_and_south_eastern_asia,True,unhcr_asia_pacific,eap,LA,rest,asia,east_asia_pacific
+lbn,g77,middle_income,upper_middle_income,True,LB,LBN,422.0,,coastline,33.83333,35.83333,,Lebanon,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_middle_east_north_africa,mena,LB,rest,asia,middle_east_north_africa
+lbr,g77,low_income,low_income,True,LR,LBR,430.0,,coastline,6.5,-9.5,,Liberia,un_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,LR,rest,africa,sub_saharan_africa
+lby,g77,middle_income,upper_middle_income,True,LY,LBY,434.0,,coastline,28.0,17.0,muslim,Libya,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_middle_east_north_africa,mena,LY,rest,africa,middle_east_north_africa
+lca,g77,middle_income,upper_middle_income,True,LC,LCA,662.0,,coastline,13.88333,-60.96667,christian,St. Lucia,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,LC,rest,americas,america
+lie,others,high_income,high_income,True,LI,LIE,438.0,,landlocked,47.16667,9.53333,christian,Liechtenstein,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,LI,west,europe,europe_central_asia
+lka,g77,middle_income,upper_middle_income,True,LK,LKA,144.0,,coastline,7.75,80.75,eastern_religions,Sri Lanka,un_not_least_developed,un_central_and_southern_asia,True,unhcr_asia_pacific,sa,LK,rest,asia,south_asia
+lso,g77,middle_income,lower_middle_income,True,LS,LSO,426.0,,landlocked,-29.5,28.25,christian,Lesotho,un_least_developed,un_sub_saharan_africa,True,unhcr_southern_africa,ssa,LS,rest,africa,sub_saharan_africa
+ltu,others,high_income,high_income,True,LT,LTU,440.0,,coastline,55.41667,24.0,christian,Lithuania,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,LT,rest,europe,europe_central_asia
+lux,oecd,high_income,high_income,True,LU,LUX,442.0,,landlocked,49.61167,6.13,christian,Luxembourg,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,LU,west,europe,europe_central_asia
+lva,others,high_income,high_income,True,LV,LVA,428.0,,coastline,57.0,25.0,christian,Latvia,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,LV,rest,europe,europe_central_asia
+mac,others,high_income,high_income,True,MO,MAC,446.0,,coastline,22.20056,113.54611,eastern_religions,"Macao, China",un_not_least_developed,un_eastern_and_south_eastern_asia,False,unhcr_asia_pacific,,MO,,asia,east_asia_pacific
+maf,,high_income,high_income,True,MF,MAF,663.0,,,,,,St. Martin (French part),un_not_least_developed,un_latin_america_and_the_caribbean,False,unhcr_americas,,MF,,americas,
+mar,g77,middle_income,lower_middle_income,True,MA,MAR,504.0,,coastline,32.0,-6.0,muslim,Morocco,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_middle_east_north_africa,mena,MA,rest,africa,middle_east_north_africa
+mco,others,high_income,high_income,True,MC,MCO,492.0,,coastline,43.73333,7.41667,christian,Monaco,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,MC,west,europe,europe_central_asia
+mda,others,middle_income,lower_middle_income,True,MD,MDA,498.0,,landlocked,47.25,28.58333,christian,Moldova,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,MD,rest,europe,europe_central_asia
+mdg,g77,low_income,low_income,True,MG,MDG,450.0,,coastline,-20.0,47.0,,Madagascar,un_least_developed,un_sub_saharan_africa,True,unhcr_southern_africa,ssa,MG,rest,africa,sub_saharan_africa
+mdv,g77,middle_income,upper_middle_income,True,MV,MDV,462.0,,coastline,3.2,73.0,muslim,Maldives,un_not_least_developed,un_central_and_southern_asia,True,unhcr_asia_pacific,sa,MV,rest,asia,south_asia
+mex,oecd,middle_income,upper_middle_income,True,MX,MEX,484.0,,coastline,19.42847,-99.12766,christian,Mexico,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,MX,rest,americas,america
+mhl,g77,middle_income,upper_middle_income,True,MH,MHL,584.0,,coastline,7.113,171.236,christian,Marshall Islands,un_not_least_developed,un_oceania_exc_australia_and_new_zealand,True,unhcr_asia_pacific,eap,MH,rest,asia,east_asia_pacific
+mkd,others,middle_income,upper_middle_income,True,MK,MKD,807.0,,landlocked,41.66667,21.75,christian,North Macedonia,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,MK,rest,europe,europe_central_asia
+mli,g77,low_income,low_income,True,ML,MLI,466.0,,landlocked,18.0,-2.0,muslim,Mali,un_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,ML,rest,africa,sub_saharan_africa
+mlt,others,high_income,high_income,True,MT,MLT,470.0,,coastline,35.91667,14.43333,christian,Malta,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,MT,west,europe,europe_central_asia
+mmr,g77,middle_income,lower_middle_income,True,MM,MMR,104.0,,coastline,21.0,96.0,eastern_religions,Myanmar,un_least_developed,un_eastern_and_south_eastern_asia,True,unhcr_asia_pacific,eap,MM,rest,asia,east_asia_pacific
+mne,others,middle_income,upper_middle_income,True,ME,MNE,499.0,,coastline,42.75,19.25,christian,Montenegro,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,ME,rest,europe,europe_central_asia
+mng,g77,middle_income,lower_middle_income,True,MN,MNG,496.0,,landlocked,46.0,105.0,,Mongolia,un_not_least_developed,un_eastern_and_south_eastern_asia,True,unhcr_asia_pacific,eap,MN,rest,asia,east_asia_pacific
+mnp,others,high_income,high_income,True,MP,MNP,580.0,,coastline,15.214,145.756,christian,Northern Mariana Islands,un_not_least_developed,un_oceania_exc_australia_and_new_zealand,False,,,MP,,asia,east_asia_pacific
+moz,g77,low_income,low_income,True,MZ,MOZ,508.0,,coastline,-18.25,35.0,christian,Mozambique,un_least_developed,un_sub_saharan_africa,True,unhcr_southern_africa,ssa,MZ,rest,africa,sub_saharan_africa
+mrt,g77,middle_income,lower_middle_income,True,MR,MRT,478.0,,coastline,20.25,-10.5,muslim,Mauritania,un_least_developed,un_sub_saharan_africa,True,unhcr_middle_east_north_africa,ssa,MR,rest,africa,sub_saharan_africa
+msr,others,,,True,MS,MSR,500.0,,coastline,16.75,-62.2,christian,Montserrat,un_not_least_developed,un_latin_america_and_the_caribbean,False,unhcr_americas,,MS,,americas,america
+mtq,others,,,True,MQ,MTQ,474.0,,coastline,14.66667,-61.0,christian,Martinique,un_not_least_developed,un_latin_america_and_the_caribbean,False,unhcr_americas,,MQ,,americas,america
+mus,g77,middle_income,upper_middle_income,True,MU,MUS,480.0,,coastline,-20.3,57.58333,,Mauritius,un_not_least_developed,un_sub_saharan_africa,True,unhcr_southern_africa,ssa,MU,rest,africa,sub_saharan_africa
+mwi,g77,low_income,low_income,True,MW,MWI,454.0,,landlocked,-13.5,34.0,christian,Malawi,un_least_developed,un_sub_saharan_africa,True,unhcr_southern_africa,ssa,MW,rest,africa,sub_saharan_africa
+mys,g77,middle_income,upper_middle_income,True,MY,MYS,458.0,,coastline,2.5,112.5,muslim,Malaysia,un_not_least_developed,un_eastern_and_south_eastern_asia,True,unhcr_asia_pacific,eap,MY,rest,asia,east_asia_pacific
+myt,others,,,True,YT,MYT,175.0,,coastline,-12.83333,45.16667,muslim,Mayotte,un_not_least_developed,un_sub_saharan_africa,False,,,YT,,africa,sub_saharan_africa
+nam,g77,middle_income,upper_middle_income,True,,NAM,516.0,,coastline,-22.0,17.0,christian,Namibia,un_not_least_developed,un_sub_saharan_africa,True,unhcr_southern_africa,ssa,,rest,africa,sub_saharan_africa
+ncl,others,high_income,high_income,True,NC,NCL,540.0,,coastline,-21.5,165.5,christian,New Caledonia,un_not_least_developed,un_oceania_exc_australia_and_new_zealand,False,unhcr_asia_pacific,,NC,,asia,east_asia_pacific
+ner,g77,low_income,low_income,True,NE,NER,562.0,,landlocked,18.0,9.0,muslim,Niger,un_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,NE,rest,africa,sub_saharan_africa
+nfk,others,,,True,NF,NFK,574.0,,coastline,-29.03333,167.95,,Norfolk Island,un_not_least_developed,un_australia_and_new_zealand,False,,,NF,,asia,east_asia_pacific
+nga,g77,middle_income,lower_middle_income,True,NG,NGA,566.0,,coastline,10.0,8.0,,Nigeria,un_not_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,NG,rest,africa,sub_saharan_africa
+ngokar,others,,,True,,,,,,,,,Ngorno-Karabakh,,,False,,,,,europe,europe_central_asia
+nic,g77,middle_income,lower_middle_income,True,NI,NIC,558.0,,coastline,13.0,-85.0,christian,Nicaragua,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,NI,rest,americas,america
+niu,others,,,True,NU,NIU,570.0,,coastline,-19.03333,-169.86667,christian,Niue,un_not_least_developed,un_oceania_exc_australia_and_new_zealand,False,unhcr_asia_pacific,,NU,,asia,east_asia_pacific
+nld,oecd,high_income,high_income,True,NL,NLD,528.0,,coastline,52.25,5.75,christian,Netherlands,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,NL,west,europe,europe_central_asia
+nld_curacao,others,high_income,high_income,True,CW,CUW,531.0,,coastline,12.16667,-68.96667,christian,Curaçao,un_not_least_developed,un_latin_america_and_the_caribbean,False,unhcr_americas,,CW,,americas,america
+nor,oecd,high_income,high_income,True,NO,NOR,578.0,,coastline,62.0,10.0,christian,Norway,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,NO,west,europe,europe_central_asia
+npl,g77,low_income,low_income,True,NP,NPL,524.0,,landlocked,28.0,84.0,eastern_religions,Nepal,un_least_developed,un_central_and_southern_asia,True,unhcr_asia_pacific,sa,NP,rest,asia,south_asia
+nru,others,middle_income,upper_middle_income,True,NR,NRU,520.0,,coastline,-0.517,166.933,christian,Nauru,un_not_least_developed,un_oceania_exc_australia_and_new_zealand,True,unhcr_asia_pacific,eap,NR,rest,asia,east_asia_pacific
+nzl,oecd,high_income,high_income,True,NZ,NZL,554.0,,coastline,-42.0,174.0,christian,New Zealand,un_not_least_developed,un_australia_and_new_zealand,True,unhcr_asia_pacific,eap,NZ,west,asia,east_asia_pacific
+omn,g77,high_income,high_income,True,OM,OMN,512.0,,coastline,21.0,57.0,muslim,Oman,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_middle_east_north_africa,mena,OM,rest,asia,middle_east_north_africa
+pak,g77,middle_income,lower_middle_income,True,PK,PAK,586.0,,coastline,30.0,70.0,muslim,Pakistan,un_not_least_developed,un_central_and_southern_asia,True,unhcr_asia_pacific,sa,PK,rest,asia,south_asia
+pan,g77,high_income,high_income,True,PA,PAN,591.0,,coastline,8.9936,-79.51973,christian,Panama,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,PA,rest,americas,america
+pcn,others,,,True,PN,PCN,612.0,,coastline,-25.06667,-130.1,christian,Pitcairn,un_not_least_developed,un_oceania_exc_australia_and_new_zealand,False,,,PN,,asia,east_asia_pacific
+per,g77,middle_income,upper_middle_income,True,PE,PER,604.0,,coastline,-10.0,-75.25,christian,Peru,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,PE,rest,americas,america
+phl,g77,middle_income,lower_middle_income,True,PH,PHL,608.0,,coastline,13.0,122.0,christian,Philippines,un_not_least_developed,un_eastern_and_south_eastern_asia,True,unhcr_asia_pacific,eap,PH,rest,asia,east_asia_pacific
+plw,others,high_income,high_income,True,PW,PLW,585.0,,coastline,7.503,134.621,christian,Palau,un_not_least_developed,un_oceania_exc_australia_and_new_zealand,True,unhcr_asia_pacific,eap,PW,rest,asia,east_asia_pacific
+png,g77,middle_income,lower_middle_income,True,PG,PNG,598.0,,coastline,-6.0,147.0,christian,Papua New Guinea,un_not_least_developed,un_oceania_exc_australia_and_new_zealand,True,unhcr_asia_pacific,eap,PG,rest,asia,east_asia_pacific
+pol,oecd,high_income,high_income,True,PL,POL,616.0,,coastline,52.0,20.0,christian,Poland,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,PL,rest,europe,europe_central_asia
+pri,others,high_income,high_income,True,PR,PRI,630.0,,coastline,18.46633,-66.10572,christian,Puerto Rico,un_not_least_developed,un_latin_america_and_the_caribbean,False,unhcr_americas,,PR,,americas,america
+prk,g77,low_income,low_income,True,KP,PRK,408.0,,coastline,40.0,127.0,,North Korea,un_not_least_developed,un_eastern_and_south_eastern_asia,True,unhcr_asia_pacific,eap,KP,rest,asia,east_asia_pacific
+prt,oecd,high_income,high_income,True,PT,PRT,620.0,,coastline,39.6945,-8.13057,christian,Portugal,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,PT,west,europe,europe_central_asia
+pry,g77,middle_income,upper_middle_income,True,PY,PRY,600.0,,landlocked,-23.33333,-58.0,christian,Paraguay,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,PY,rest,americas,america
+pse,g77,middle_income,lower_middle_income,True,PS,PSE,275.0,,coastline,31.92157,35.20329,muslim,Palestine,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_middle_east_north_africa,mena,PS,rest,asia,middle_east_north_africa
+pse_gaza,,,,True,,,,,,,,,Gaza Strip,,,False,,,,,asia,
+pse_west_bank,,,,True,,,,,,,,,West Bank,,,False,,,,,asia,
+pyf,others,high_income,high_income,True,PF,PYF,258.0,,coastline,-15.0,-140.0,christian,French Polynesia,un_not_least_developed,un_oceania_exc_australia_and_new_zealand,False,unhcr_asia_pacific,,PF,,asia,east_asia_pacific
+qat,g77,high_income,high_income,True,QA,QAT,634.0,,coastline,25.27932,51.52245,muslim,Qatar,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_middle_east_north_africa,mena,QA,rest,asia,middle_east_north_africa
+reu,others,,,True,RE,REU,638.0,,coastline,-20.88231,55.4504,christian,Reunion,un_not_least_developed,un_sub_saharan_africa,False,,,RE,,africa,sub_saharan_africa
+rou,others,middle_income,upper_middle_income,True,RO,ROU,642.0,,coastline,46.0,25.0,christian,Romania,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,RO,rest,europe,europe_central_asia
+rus,others,middle_income,upper_middle_income,True,RU,RUS,643.0,,coastline,60.0,100.0,christian,Russia,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,RU,rest,europe,europe_central_asia
+rwa,g77,low_income,low_income,True,RW,RWA,646.0,,landlocked,-2.0,30.0,christian,Rwanda,un_least_developed,un_sub_saharan_africa,True,unhcr_east_horn_africa_great_lates,ssa,RW,rest,africa,sub_saharan_africa
+sau,g77,high_income,high_income,True,SA,SAU,682.0,,coastline,25.0,45.0,muslim,Saudi Arabia,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_middle_east_north_africa,mena,SA,rest,asia,middle_east_north_africa
+scg,others,,,True,,,,,coastline,,,,Serbia and Montenegro,un_not_least_developed,un_europe_and_northern_america,False,,,,,europe,europe_central_asia
+scg_ex_kos,others,,,True,,,,,landlocked,,,,Serbia excluding Kosovo,,,False,,,,,europe,europe_central_asia
+sdn,g77,middle_income,lower_middle_income,True,SD,SDN,729.0,,coastline,16.0,30.0,muslim,Sudan,un_least_developed,un_northern_africa_and_western_asia,True,unhcr_east_horn_africa_great_lates,ssa,SD,rest,africa,sub_saharan_africa
+sen,g77,middle_income,lower_middle_income,True,SN,SEN,686.0,,coastline,14.5,-14.25,muslim,Senegal,un_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,SN,rest,africa,sub_saharan_africa
+sgero_a_ssandw,,,,True,GS,SGS,239.0,,,,,,South Georgia and the South Sandwich Islands,un_not_least_developed,un_latin_america_and_the_caribbean,False,,,GS,,americas,
+sgp,g77,high_income,high_income,True,SG,SGP,702.0,,coastline,1.28967,103.85007,eastern_religions,Singapore,un_not_least_developed,un_eastern_and_south_eastern_asia,True,unhcr_asia_pacific,eap,SG,rest,asia,east_asia_pacific
+shn,others,,,True,SH,SHN,654.0,,coastline,-15.95,-5.7,christian,St. Helena,un_not_least_developed,un_sub_saharan_africa,False,,,SH,,africa,sub_saharan_africa
+sjm,others,,,True,SJ,SJM,744.0,,coastline,78.0,20.0,,Svalbard,un_not_least_developed,un_europe_and_northern_america,False,,,SJ,,europe,europe_central_asia
+slb,g77,middle_income,lower_middle_income,True,SB,SLB,90.0,,coastline,-8.0,159.0,christian,Solomon Islands,un_least_developed,un_oceania_exc_australia_and_new_zealand,True,unhcr_asia_pacific,eap,SB,rest,asia,east_asia_pacific
+sle,g77,low_income,low_income,True,SL,SLE,694.0,,coastline,8.5,-11.5,,Sierra Leone,un_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,SL,rest,africa,sub_saharan_africa
+slv,g77,middle_income,lower_middle_income,True,SV,SLV,222.0,,coastline,13.83333,-88.91667,christian,El Salvador,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,SV,rest,americas,america
+smr,others,high_income,high_income,True,SM,SMR,674.0,,landlocked,43.93667,12.44639,christian,San Marino,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,SM,rest,europe,europe_central_asia
+som,g77,low_income,low_income,True,SO,SOM,706.0,,coastline,6.0,48.0,muslim,Somalia,un_least_developed,un_sub_saharan_africa,True,unhcr_east_horn_africa_great_lates,ssa,SO,rest,africa,sub_saharan_africa
+som_somland,others,,,True,,,,,,,,,Somaliland,,,False,,,,,africa,sub_saharan_africa
+sosset,others,,,True,,,,,,,,,South Ossetia,,,False,,,,,europe,europe_central_asia
+spm,others,,,True,PM,SPM,666.0,,coastline,46.83333,-56.33333,christian,St.-Pierre-et-Miquelon,un_not_least_developed,un_europe_and_northern_america,False,unhcr_americas,,PM,,americas,america
+srb,others,middle_income,upper_middle_income,True,RS,SRB,688.0,,landlocked,44.81892,20.45998,christian,Serbia,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,RS,rest,europe,europe_central_asia
+ssd,,low_income,low_income,True,SS,SSD,728.0,,landlocked,7.5,30.0,,South Sudan,un_least_developed,un_sub_saharan_africa,True,unhcr_east_horn_africa_great_lates,ssa,SS,rest,africa,sub_saharan_africa
+stbar,others,,,True,BL,BLM,652.0,,coastline,,,,St. Barthélemy,un_not_least_developed,un_latin_america_and_the_caribbean,False,,,BL,,americas,america
+stmar,others,,,True,,,,,coastline,,,,St. Martin,,,False,,,,,americas,america
+stp,g77,middle_income,lower_middle_income,True,ST,STP,678.0,,coastline,1.0,7.0,christian,Sao Tome and Principe,un_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,ST,rest,africa,sub_saharan_africa
+sur,g77,middle_income,upper_middle_income,True,SR,SUR,740.0,,coastline,4.0,-56.0,christian,Suriname,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,SR,rest,americas,america
+svk,oecd,high_income,high_income,True,SK,SVK,703.0,,landlocked,48.66667,19.5,christian,Slovak Republic,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,SK,rest,europe,europe_central_asia
+svn,others,high_income,high_income,True,SI,SVN,705.0,,coastline,46.08333,15.0,christian,Slovenia,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,SI,rest,europe,europe_central_asia
+swe,oecd,high_income,high_income,True,SE,SWE,752.0,,coastline,62.0,15.0,christian,Sweden,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,SE,west,europe,europe_central_asia
+swz,g77,middle_income,lower_middle_income,True,SZ,SWZ,748.0,,landlocked,-26.5,31.5,christian,Eswatini,un_not_least_developed,un_sub_saharan_africa,True,unhcr_southern_africa,ssa,SZ,rest,africa,sub_saharan_africa
+sxm,,high_income,high_income,True,SX,SXM,534.0,,,18.04167,-63.06667,,Sint Maarten (Dutch part),un_not_least_developed,un_latin_america_and_the_caribbean,False,unhcr_americas,,SX,,americas,
+syc,g77,high_income,high_income,True,SC,SYC,690.0,,coastline,-4.58333,55.66667,christian,Seychelles,un_not_least_developed,un_sub_saharan_africa,True,unhcr_southern_africa,ssa,SC,rest,africa,sub_saharan_africa
+syr,g77,low_income,low_income,True,SY,SYR,760.0,,coastline,35.0,38.0,muslim,Syria,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_middle_east_north_africa,mena,SY,rest,asia,middle_east_north_africa
+tca,others,high_income,high_income,True,TC,TCA,796.0,,coastline,21.73333,-71.58333,christian,Turks and Caicos Islands,un_not_least_developed,un_latin_america_and_the_caribbean,False,unhcr_americas,,TC,,americas,america
+tcd,g77,low_income,low_income,True,TD,TCD,148.0,,landlocked,15.0,19.0,muslim,Chad,un_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,TD,rest,africa,sub_saharan_africa
+tgo,g77,low_income,low_income,True,TG,TGO,768.0,,coastline,8.66667,1.08333,,Togo,un_least_developed,un_sub_saharan_africa,True,unhcr_west_central_africa,ssa,TG,rest,africa,sub_saharan_africa
+tha,g77,middle_income,upper_middle_income,True,TH,THA,764.0,,coastline,15.5,101.0,eastern_religions,Thailand,un_not_least_developed,un_eastern_and_south_eastern_asia,True,unhcr_asia_pacific,eap,TH,rest,asia,east_asia_pacific
+tjk,others,low_income,low_income,True,TJ,TJK,762.0,,landlocked,39.0,71.0,muslim,Tajikistan,un_not_least_developed,un_central_and_southern_asia,True,unhcr_asia_pacific,eca,TJ,rest,asia,europe_central_asia
+tkl,others,,,True,TK,TKL,772.0,,coastline,-9.167,-171.83,christian,Tokelau,un_not_least_developed,un_oceania_exc_australia_and_new_zealand,False,,,TK,,asia,east_asia_pacific
+tkm,g77,middle_income,upper_middle_income,True,TM,TKM,795.0,,landlocked,39.75,59.66667,muslim,Turkmenistan,un_not_least_developed,un_central_and_southern_asia,True,unhcr_asia_pacific,eca,TM,rest,asia,europe_central_asia
+tls,g77,middle_income,lower_middle_income,True,TL,TLS,626.0,,coastline,-8.83333,125.75,christian,Timor-Leste,un_least_developed,un_eastern_and_south_eastern_asia,True,unhcr_asia_pacific,eap,TL,rest,asia,east_asia_pacific
+ton,g77,middle_income,upper_middle_income,True,TO,TON,776.0,,coastline,-20.0,-175.0,christian,Tonga,un_not_least_developed,un_oceania_exc_australia_and_new_zealand,True,unhcr_asia_pacific,eap,TO,rest,asia,east_asia_pacific
+transn,others,,,True,,,,,,,,,Transnistria,,,False,,,,,europe,europe_central_asia
+tto,g77,high_income,high_income,True,TT,TTO,780.0,,coastline,11.0,-61.0,christian,Trinidad and Tobago,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,TT,rest,americas,america
+tun,g77,middle_income,lower_middle_income,True,TN,TUN,788.0,,coastline,34.0,9.0,muslim,Tunisia,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_middle_east_north_africa,mena,TN,rest,africa,middle_east_north_africa
+tur,oecd,middle_income,upper_middle_income,True,TR,TUR,792.0,,coastline,39.0,35.0,muslim,Turkey,un_not_least_developed,un_northern_africa_and_western_asia,True,unhcr_europe,eca,TR,rest,europe,europe_central_asia
+tuv,others,middle_income,upper_middle_income,True,TV,TUV,798.0,,coastline,-8.51719,179.14478,christian,Tuvalu,un_least_developed,un_oceania_exc_australia_and_new_zealand,True,unhcr_asia_pacific,eap,TV,rest,asia,east_asia_pacific
+twn,others,high_income,high_income,True,TW,TWN,158.0,,coastline,24.0,121.0,eastern_religions,Taiwan,un_not_least_developed,un_eastern_and_south_eastern_asia,False,,,TW,,asia,east_asia_pacific
+tza,g77,low_income,low_income,True,TZ,TZA,834.0,,coastline,-6.0,35.0,christian,Tanzania,un_least_developed,un_sub_saharan_africa,True,unhcr_east_horn_africa_great_lates,ssa,TZ,rest,africa,sub_saharan_africa
+uga,g77,low_income,low_income,True,UG,UGA,800.0,,landlocked,1.25,32.5,christian,Uganda,un_least_developed,un_sub_saharan_africa,True,unhcr_east_horn_africa_great_lates,ssa,UG,rest,africa,sub_saharan_africa
+ukr,others,middle_income,lower_middle_income,True,UA,UKR,804.0,,coastline,49.0,32.0,christian,Ukraine,un_not_least_developed,un_europe_and_northern_america,True,unhcr_europe,eca,UA,rest,europe,europe_central_asia
+ury,g77,high_income,high_income,True,UY,URY,858.0,,coastline,-33.0,-56.0,christian,Uruguay,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,UY,rest,americas,america
+usa,oecd,high_income,high_income,True,US,USA,840.0,,coastline,39.76,-98.5,christian,USA,un_not_least_developed,un_europe_and_northern_america,True,unhcr_americas,na,US,west,americas,america
+usa_minor_out_isl,,,,True,UM,UMI,581.0,US-UM,,,,,US Minor Outlying Islands,un_not_least_developed,un_oceania_exc_australia_and_new_zealand,False,,,UM,,americas,
+ussr,others,,,True,,,,,coastline,,,,USSR,,,False,,,,,europe,europe_central_asia
+uzb,others,middle_income,lower_middle_income,True,UZ,UZB,860.0,,landlocked,41.66667,63.83333,muslim,Uzbekistan,un_not_least_developed,un_central_and_southern_asia,True,unhcr_asia_pacific,eca,UZ,rest,asia,europe_central_asia
+vct,g77,middle_income,upper_middle_income,True,VC,VCT,670.0,,coastline,13.08333,-61.2,christian,St. Vincent and the Grenadines,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,VC,rest,americas,america
+ven,g77,middle_income,upper_middle_income,True,VE,VEN,862.0,,coastline,8.0,-66.0,christian,Venezuela,un_not_least_developed,un_latin_america_and_the_caribbean,True,unhcr_americas,lac,VE,rest,americas,america
+vgb,others,high_income,high_income,True,VG,VGB,92.0,,coastline,18.5,-64.5,christian,British Virgin Islands,un_not_least_developed,un_latin_america_and_the_caribbean,False,unhcr_americas,,VG,,americas,america
+vir,others,high_income,high_income,True,VI,VIR,850.0,,coastline,18.34829,-64.98348,christian,Virgin Islands (U.S.),un_not_least_developed,un_latin_america_and_the_caribbean,False,,,VI,,americas,america
+vnm,g77,middle_income,lower_middle_income,True,VN,VNM,704.0,,coastline,16.16667,107.83333,eastern_religions,Vietnam,un_not_least_developed,un_eastern_and_south_eastern_asia,True,unhcr_asia_pacific,eap,VN,rest,asia,east_asia_pacific
+vut,g77,middle_income,lower_middle_income,True,VU,VUT,548.0,,coastline,-16.0,167.0,christian,Vanuatu,un_least_developed,un_oceania_exc_australia_and_new_zealand,True,unhcr_asia_pacific,eap,VU,rest,asia,east_asia_pacific
+wlf,others,,,True,WF,WLF,876.0,,coastline,-13.3,-176.2,christian,Wallis et Futuna,un_not_least_developed,un_oceania_exc_australia_and_new_zealand,False,,,WF,,asia,east_asia_pacific
+wsm,g77,middle_income,upper_middle_income,True,WS,WSM,882.0,,coastline,-13.8,-172.13333,christian,Samoa,un_not_least_developed,un_oceania_exc_australia_and_new_zealand,True,unhcr_asia_pacific,eap,WS,rest,asia,east_asia_pacific
+yem,g77,low_income,low_income,True,YE,YEM,887.0,,coastline,15.5,47.5,muslim,Yemen,un_least_developed,un_northern_africa_and_western_asia,True,unhcr_middle_east_north_africa,mena,YE,rest,asia,middle_east_north_africa
+yem_north,others,,,True,,,,,coastline,,,,North Yemen (former),,,False,,,,,asia,middle_east_north_africa
+yem_south,others,,,True,,,,,coastline,,,,South Yemen (former),,,False,,,,,asia,middle_east_north_africa
+yug,others,,,True,,,,,coastline,,,,Yugoslavia,,,False,,,,,europe,europe_central_asia
+zaf,g77,middle_income,upper_middle_income,True,ZA,ZAF,710.0,,coastline,-29.0,24.0,christian,South Africa,un_not_least_developed,un_sub_saharan_africa,True,unhcr_southern_africa,ssa,ZA,rest,africa,sub_saharan_africa
+zmb,g77,middle_income,lower_middle_income,True,ZM,ZMB,894.0,,landlocked,-14.33333,28.5,christian,Zambia,un_least_developed,un_sub_saharan_africa,True,unhcr_southern_africa,ssa,ZM,rest,africa,sub_saharan_africa
+zwe,g77,middle_income,lower_middle_income,True,ZW,ZWE,716.0,,landlocked,-19.0,29.75,christian,Zimbabwe,un_not_least_developed,un_sub_saharan_africa,True,unhcr_southern_africa,ssa,ZW,rest,africa,sub_saharan_africa
