@@ -2,7 +2,7 @@ export type InputType = "number" | "slider";
 
 export type ChartType = "bar" | "split";
 
-export type QuestionStepId = "dailyVolume" | "showerShare";
+export type QuestionStepId = "dailyVolume" | "showerShare" | "globalWaterAccess";
 
 export interface QuestionStepBase {
   id: QuestionStepId;
@@ -22,6 +22,9 @@ export interface RevealConfig {
 export interface QuestionStep extends QuestionStepBase {
   reveal: RevealConfig;
 }
+
+// Import water access data utility
+import { getWaterAccessStats } from "./data/waterAccess";
 
 // Simple constants for the story.
 const LITERS_PER_BATHTUB = 150;
@@ -124,6 +127,37 @@ export const questionSteps: QuestionStep[] = [
         )} percentage points from this reference share.`;
       },
     },
+  },
+  {
+    id: "globalWaterAccess",
+    prompt: "What percentage of the world's population do you think has access to at least basic water sources?",
+    inputType: "slider",
+    unitsLabel: "% of global population",
+    reveal: (() => {
+      const stats = getWaterAccessStats();
+      return {
+        chartType: "bar" as ChartType,
+        actualValue: stats.globalAverage,
+        maxValue: 100,
+        context: (userValue: number) => {
+          const actual = stats.globalAverage;
+          const factorText = differenceFactor(userValue, actual);
+          const year = stats.year;
+          const below50 = stats.countriesBelow50;
+          const above95 = stats.countriesAbove95;
+          
+          return [
+            `As of ${year}, the global average is ${actual.toFixed(1)}% – meaning about ${(100 - actual).toFixed(1)}% of the world's population still lacks basic water access.`,
+            `This data covers ${stats.totalCountries} countries. ${below50} countries have less than 50% access, while ${above95} countries have achieved 95% or more. Your guess was ${factorText}`,
+          ].join(" ");
+        },
+        subtitle: (userValue: number) => {
+          const actual = stats.globalAverage;
+          const diff = Math.abs(actual - userValue);
+          return `You were off by ${diff.toFixed(1)} percentage points from the ${stats.year} global average.`;
+        },
+      };
+    })(),
   },
 ];
 

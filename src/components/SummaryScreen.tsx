@@ -28,12 +28,17 @@ export function SummaryScreen({
               const answer = answers.find((a) => a.stepId === step.id);
               const actual = step.reveal.actualValue;
               const labelUnits =
-                step.id === "showerShare" ? "%" : "L / day";
+                step.id === "dailyVolume" ? "L / day" : "%";
               const userValue = answer?.value ?? 0;
 
-              const max = step.id === "showerShare" ? 100 : step.reveal.maxValue;
+              const max = step.reveal.maxValue;
               const actualRatio = Math.min(actual / max, 1);
               const guessRatio = Math.min(userValue / max, 1);
+              
+              const formatValue = (val: number) => 
+                step.id === "dailyVolume" 
+                  ? val.toLocaleString() 
+                  : val.toFixed(1);
 
               return (
                 <article key={step.id} className={styles.summaryCard}>
@@ -50,11 +55,13 @@ export function SummaryScreen({
                         />
                       </div>
                       <span className={styles.barValue}>
-                        {userValue.toLocaleString()} {labelUnits}
+                        {formatValue(userValue)} {labelUnits}
                       </span>
                     </div>
                     <div className={styles.barRow}>
-                      <span className={styles.barLabel}>Typical value</span>
+                      <span className={styles.barLabel}>
+                        {step.id === "globalWaterAccess" ? "Global average" : "Typical value"}
+                      </span>
                       <div className={styles.barTrack}>
                         <div
                           className={`${styles.barFill} ${styles.barActual} ${styles.barFillVisible}`}
@@ -64,7 +71,7 @@ export function SummaryScreen({
                         />
                       </div>
                       <span className={styles.barValue}>
-                        {actual.toLocaleString()} {labelUnits}
+                        {formatValue(actual)} {labelUnits}
                       </span>
                     </div>
                   </div>

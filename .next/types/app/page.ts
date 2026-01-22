@@ -1,4 +1,4 @@
-// File: /Users/estebansanchez/Desktop/DeeplyHumanHackathon/src/app/page.tsx
+// File: /Users/homecon/Downloads/2026/IE_Hackathon/DeeplyHumanHackathon/src/app/page.tsx
 import * as entry from '../../../src/app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

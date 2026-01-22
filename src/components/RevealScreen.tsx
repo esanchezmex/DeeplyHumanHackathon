@@ -30,14 +30,14 @@ export function RevealScreen({
   const guessRatio = Math.min(answerValue / maxBar, 1);
 
   const titleValue =
-    step.id === "showerShare"
-      ? `${reveal.actualValue.toFixed(0)}%`
-      : `${reveal.actualValue.toLocaleString()} L / day`;
+    step.id === "dailyVolume"
+      ? `${reveal.actualValue.toLocaleString()} L / day`
+      : `${reveal.actualValue.toFixed(1)}%`;
 
   const labelGuess =
-    step.id === "showerShare"
-      ? `${answerValue.toFixed(0)}%`
-      : `${answerValue.toLocaleString()} L`;
+    step.id === "dailyVolume"
+      ? `${answerValue.toLocaleString()} L`
+      : `${answerValue.toFixed(1)}%`;
 
   return (
     <div className={styles.screen}>
@@ -45,7 +45,7 @@ export function RevealScreen({
         <header className={styles.header}>
           <p className={styles.stepLabel}>Reveal</p>
           <p className={styles.stepCounter}>
-            Question {step.id === "dailyVolume" ? 1 : 2} of 2
+            Question {step.id === "dailyVolume" ? 1 : step.id === "showerShare" ? 2 : 3} of 3
           </p>
         </header>
         <main className={styles.main}>
@@ -66,7 +66,9 @@ export function RevealScreen({
                   <span className={styles.barValue}>{labelGuess}</span>
                 </div>
                 <div className={styles.barRow}>
-                  <span className={styles.barLabel}>Typical value</span>
+                  <span className={styles.barLabel}>
+                    {step.id === "globalWaterAccess" ? "Global average" : "Typical value"}
+                  </span>
                   <div className={styles.barTrack}>
                     <div
                       className={`${styles.barFill} ${styles.barActual} ${

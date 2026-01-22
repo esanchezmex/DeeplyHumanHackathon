@@ -13,6 +13,7 @@ interface PredictScreenProps {
 const DEFAULTS: Record<QuestionStep["id"], number> = {
   dailyVolume: 200,
   showerShare: 40,
+  globalWaterAccess: 80,
 };
 
 export function PredictScreen({
@@ -46,6 +47,7 @@ export function PredictScreen({
 
   const min = 0;
   const max = step.id === "dailyVolume" ? 600 : 100;
+  const stepValue = step.id === "showerShare" || step.id === "globalWaterAccess" ? 1 : 10;
   const isValid = value > min && value <= max;
 
   return (
@@ -54,7 +56,7 @@ export function PredictScreen({
         <header className={styles.header}>
           <p className={styles.stepLabel}>Predict</p>
           <p className={styles.stepCounter}>
-            Question {step.id === "dailyVolume" ? 1 : 2} of 2
+            Question {step.id === "dailyVolume" ? 1 : step.id === "showerShare" ? 2 : 3} of 3
           </p>
         </header>
         <main className={styles.main}>
@@ -65,7 +67,7 @@ export function PredictScreen({
                 type="range"
                 min={min}
                 max={max}
-                step={step.id === "showerShare" ? 1 : 10}
+                step={stepValue}
                 value={value}
                 onChange={handleChange}
                 className={styles.slider}
