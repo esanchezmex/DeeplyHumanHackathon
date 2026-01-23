@@ -1,12 +1,55 @@
+/* Earth Minimal (human + grounded)
+   Goal: calmness without boredom, intensity without aggression. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Core surfaces */
+  --color-bg: #f4efe6; /* sand */
+  --color-surface: #efe6d8; /* stone */
+  --color-surface-2: #e7dccb; /* deeper stone */
+
+  /* Typography */
+  --color-text: #2b2a26; /* charcoal-brown */
+  --color-text-muted: #5f5a52; /* warm muted */
+
+  /* Lines + shadows */
+  --color-border: rgba(43, 42, 38, 0.18);
+  --shadow-soft: 0 18px 45px rgba(43, 42, 38, 0.14);
+
+  /* Accents */
+  --color-accent: #6b7d4e; /* olive */
+  --color-accent-2: #5c6b73; /* slate */
+  --color-accent-contrast: #f7f2e9;
+
+  /* Signals */
+  --color-signal: #c4634a; /* terracotta */
+  --color-signal-contrast: #fff6f1;
+
+  /* Back-compat with existing app vars */
+  --background: var(--color-bg);
+  --foreground: var(--color-text);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Earth Minimal (dark) */
+    --color-bg: #141311; /* deep charcoal */
+    --color-surface: #1b1916;
+    --color-surface-2: #24201b;
+
+    --color-text: #f1ede6;
+    --color-text-muted: #b8b0a5;
+
+    --color-border: rgba(241, 237, 230, 0.16);
+    --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.45);
+
+    --color-accent: #8fa06b; /* lifted olive */
+    --color-accent-2: #93a2aa; /* lifted slate */
+    --color-accent-contrast: #151311;
+
+    --color-signal: #d07a61; /* lifted terracotta */
+    --color-signal-contrast: #151311;
+
+    --background: var(--color-bg);
+    --foreground: var(--color-text);
   }
 }
 
