@@ -814,6 +814,268 @@
   font-style: italic;
 }
 
+/* Poverty estimate screen styles */
+.screen[data-screen="povertyEstimate"] .main {
+  gap: 32px;
+  max-width: 800px;
+}
+
+.screen[data-screen="povertyEstimate"] .prompt {
+  font-size: clamp(2.8rem, 4.5vw, 3.8rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+
+/* Pattern visual screen styles */
+.screen[data-screen="patternVisual"] .main {
+  gap: 32px;
+  max-width: 900px;
+}
+
+.patternChartPlaceholder {
+  min-height: 400px;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--color-surface-2) 50%, transparent);
+  border: 2px dashed var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 400ms cubic-bezier(0.4, 0, 0.2, 1) 0.15s both;
+}
+
+.patternMicrocopy {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 0;
+  animation: fadeIn 400ms cubic-bezier(0.4, 0, 0.2, 1) 0.25s both;
+}
+
+.patternText {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Hypothesis check screen styles */
+.screen[data-screen="hypothesisCheck"] .main {
+  gap: 32px;
+  max-width: 720px;
+}
+
+.screen[data-screen="hypothesisCheck"] .prompt {
+  font-size: clamp(2.8rem, 4.5vw, 3.8rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+
+.hypothesisOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hypothesisButton {
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-surface) 60%, transparent);
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    transform 0.1s ease, box-shadow 0.15s ease;
+  text-align: left;
+  animation: fadeIn 300ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.hypothesisButton:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.hypothesisButton:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.hypothesisButton:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.hypothesisButton:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.hypothesisButton:hover {
+  background: color-mix(in srgb, var(--color-surface) 80%, transparent);
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(43, 42, 38, 0.1);
+}
+
+.hypothesisButtonSelected {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  border-color: var(--color-accent);
+  box-shadow: 0 2px 6px rgba(43, 42, 38, 0.15);
+}
+
+.hypothesisButtonSelected:hover {
+  background: color-mix(in srgb, var(--color-accent) 90%, black);
+}
+
+/* AI investment check screen styles */
+.screen[data-screen="aiInvestmentCheck"] .main {
+  gap: 32px;
+  max-width: 720px;
+}
+
+.multiSelectOptions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.multiSelectButton {
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-surface) 60%, transparent);
+  color: var(--color-text);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    transform 0.1s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  text-align: center;
+  animation: fadeIn 300ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.multiSelectButton:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--color-surface) 80%, transparent);
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(43, 42, 38, 0.1);
+}
+
+.multiSelectButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.multiSelectButtonSelected {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  border-color: var(--color-accent);
+  box-shadow: 0 2px 6px rgba(43, 42, 38, 0.15);
+}
+
+.multiSelectButtonSelected:hover {
+  background: color-mix(in srgb, var(--color-accent) 90%, black);
+}
+
+.selectionHint {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin: -8px 0 0;
+}
+
+/* Synthesis screen styles */
+.screen[data-screen="synthesis"] .main {
+  gap: 32px;
+  max-width: 800px;
+}
+
+.synthesisTitle {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+  animation: fadeIn 400ms cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
+}
+
+.synthesisText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 0;
+  animation: fadeIn 400ms cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+
+.synthesisLine {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.synthesisForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: fadeIn 400ms cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+}
+
+.reflectionPrompt {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  font-weight: 500;
+  margin: 0;
+}
+
+.reflectionInput {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-surface) 60%, transparent);
+  color: var(--color-text);
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: 1.6;
+  resize: vertical;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.reflectionInput:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-surface) 80%, transparent);
+}
+
+/* Final actions screen styles */
+.screen[data-screen="finalActions"] .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 1.5rem;
+}
+
+.finalActionsButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 400ms cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
+}
+
 @media (max-width: 768px) {
   .inner {
     padding: 20px 16px;
@@ -904,6 +1166,67 @@
 
   .insightText {
     font-size: 1rem;
+  }
+
+  /* Poverty estimate screen mobile */
+  .screen[data-screen="povertyEstimate"] .prompt {
+    font-size: clamp(2.2rem, 5vw, 2.6rem);
+  }
+
+  /* Pattern visual screen mobile */
+  .patternChartPlaceholder {
+    min-height: 250px;
+  }
+
+  .patternText {
+    font-size: 1rem;
+  }
+
+  /* Hypothesis check screen mobile */
+  .screen[data-screen="hypothesisCheck"] .prompt {
+    font-size: clamp(2.2rem, 5vw, 2.6rem);
+  }
+
+  .hypothesisOptions {
+    max-width: 100%;
+  }
+
+  .hypothesisButton {
+    padding: 0.9rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  /* AI investment check screen mobile */
+  .multiSelectOptions {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+  }
+
+  .multiSelectButton {
+    padding: 0.9rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Synthesis screen mobile */
+  .synthesisTitle {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+  }
+
+  .synthesisLine {
+    font-size: 1rem;
+  }
+
+  .reflectionPrompt {
+    font-size: 1rem;
+  }
+
+  .reflectionInput {
+    font-size: 0.95rem;
+  }
+
+  /* Final actions screen mobile */
+  .finalActionsButtons {
+    max-width: 100%;
   }
 }
 

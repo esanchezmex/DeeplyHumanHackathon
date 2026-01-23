@@ -28,6 +28,47 @@ export interface RealityCheckPage {
   insightLines: string[];
 }
 
+export interface PovertyEstimatePage {
+  prompt: string;
+  maxValue: number;
+  microcopy: string;
+}
+
+export interface PovertyRealityCheckPage {
+  actualValue: number;
+  insightLines: string[];
+}
+
+export interface PatternVisualPage {
+  microcopyLines: string[];
+}
+
+export interface HypothesisCheckPage {
+  prompt: string;
+  options: string[];
+}
+
+export interface AIInvestmentCheckPage {
+  statementCard: string;
+  prompt: string;
+  options: string[];
+  maxSelections: number;
+}
+
+export interface AIInvestmentVisualPage {
+  insightLines: string[];
+}
+
+export interface SynthesisPage {
+  title: string;
+  textLines: string[];
+  reflectionPrompt: string;
+}
+
+export interface FinalActionsPage {
+  buttonLabels: string[];
+}
+
 export interface QuestionStepBase {
   id: QuestionStepId;
   prompt: string;
@@ -37,6 +78,14 @@ export interface QuestionStepBase {
   moodCheck?: MoodCheckPage;
   aidEstimate?: AidEstimatePage;
   realityCheck?: RealityCheckPage;
+  povertyEstimate?: PovertyEstimatePage;
+  povertyRealityCheck?: PovertyRealityCheckPage;
+  patternVisual?: PatternVisualPage;
+  hypothesisCheck?: HypothesisCheckPage;
+  aiInvestmentCheck?: AIInvestmentCheckPage;
+  aiInvestmentVisual?: AIInvestmentVisualPage;
+  synthesis?: SynthesisPage;
+  finalActions?: FinalActionsPage;
 }
 
 export interface RevealConfig {
@@ -213,6 +262,61 @@ export const questionSteps: QuestionStep[] = [
       insightLines: [
         "Aid per person is easy to talk about—but hard to picture.",
         "Numbers feel different when they touch a single life.",
+      ],
+    },
+    povertyEstimate: {
+      prompt: "In the same year, what % of people do you think lived in extreme poverty?",
+      maxValue: 10,
+      microcopy: "A single digit can represent millions.",
+    },
+    povertyRealityCheck: {
+      actualValue: 8.5, // Placeholder - will be updated with real data
+      insightLines: [
+        "Poverty is a percentage, but it lands as a life.",
+        "When you picture it, what do you picture—scarcity, instability, or exclusion?",
+      ],
+    },
+    patternVisual: {
+      microcopyLines: [
+        "Two things can move together—or oppose each other—without one causing the other.",
+        "But patterns still ask questions.",
+      ],
+    },
+    hypothesisCheck: {
+      prompt: "If you had to explain this pattern, which feels closest?",
+      options: [
+        "Aid is helping reduce extreme poverty.",
+        "Aid rises when poverty rises.",
+        "Something else is driving both.",
+        "I'm not sure.",
+      ],
+    },
+    aiInvestmentCheck: {
+      statementCard: "In 2024, private AI investment was about $X billion.",
+      prompt: "What would you expect that kind of investment to change in the world?",
+      options: ["Health", "Jobs", "Poverty", "Education", "Environment", "I don't know"],
+      maxSelections: 2,
+    },
+    aiInvestmentVisual: {
+      insightLines: [
+        "AI investment accelerated fast.",
+        "Acceleration feels like progress—until you ask: progress for whom?",
+      ],
+    },
+    synthesis: {
+      title: "A question the chart can't answer for us",
+      textLines: [
+        "Investment can rise while hardship persists.",
+        "Aid can increase without translating into lived security.",
+        "Technology can amplify what a system already rewards.",
+        "The impact isn't only what we build, but who it reaches.",
+      ],
+      reflectionPrompt: "If you could direct one lever—aid, policy, or technology—what would you change first?",
+    },
+    finalActions: {
+      buttonLabels: [
+        "Continue to next dimension",
+        "Explore sources & methodology",
       ],
     },
     reveal: {
