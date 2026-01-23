@@ -40,7 +40,7 @@ export function RevealScreen({
       : `${answerValue.toFixed(1)}%`;
 
   return (
-    <div className={styles.screen}>
+    <div className={styles.screen} data-screen="reveal">
       <div className={styles.inner}>
         <header className={styles.header}>
           <p className={styles.stepLabel}>Reveal</p>

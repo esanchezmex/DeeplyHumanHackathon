@@ -45,6 +45,19 @@
   max-width: 720px;
 }
 
+/* Question screen: 80/20 text-to-visual */
+.screen[data-screen="question"] .main {
+  gap: 48px;
+  max-width: 800px;
+}
+
+.screen[data-screen="question"] .prompt {
+  font-size: clamp(2.8rem, 4.5vw, 3.8rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+
 .prompt {
   font-size: clamp(2.1rem, 3vw, 2.8rem);
   line-height: 1.1;
@@ -58,10 +71,20 @@
   gap: 20px;
 }
 
+/* Question screen: reduce visual prominence */
+.screen[data-screen="question"] .form {
+  gap: 24px;
+  max-width: 600px;
+}
+
 .sliderRow {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.screen[data-screen="question"] .sliderRow {
+  gap: 12px;
 }
 
 .slider {
@@ -71,6 +94,12 @@
   border-radius: 999px;
   background: linear-gradient(90deg, var(--color-accent-2), var(--color-accent));
   outline: none;
+}
+
+/* Question screen: more subtle slider */
+.screen[data-screen="question"] .slider {
+  height: 3px;
+  background: color-mix(in srgb, var(--color-accent) 60%, var(--color-surface));
 }
 
 .slider::-webkit-slider-thumb {
@@ -84,6 +113,13 @@
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 26%, transparent);
 }
 
+.screen[data-screen="question"] .slider::-webkit-slider-thumb {
+  width: 18px;
+  height: 18px;
+  border-width: 1.5px;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+
 .slider::-moz-range-thumb {
   width: 20px;
   height: 20px;
@@ -92,6 +128,13 @@
   border: 2px solid var(--color-accent);
   cursor: pointer;
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 26%, transparent);
+}
+
+.screen[data-screen="question"] .slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-width: 1.5px;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
 }
 
 .valueBubble {
@@ -105,15 +148,30 @@
   gap: 6px;
 }
 
+/* Question screen: smaller, less prominent value bubble */
+.screen[data-screen="question"] .valueBubble {
+  padding: 8px 14px;
+  background: color-mix(in srgb, var(--color-surface-2) 50%, transparent);
+  border-color: color-mix(in srgb, var(--color-border) 60%, transparent);
+}
+
 .valueNumber {
   font-size: 1.4rem;
   font-weight: 600;
   color: var(--color-text);
 }
 
+.screen[data-screen="question"] .valueNumber {
+  font-size: 1.2rem;
+}
+
 .valueUnits {
   font-size: 0.9rem;
   color: var(--color-text-muted);
+}
+
+.screen[data-screen="question"] .valueUnits {
+  font-size: 0.85rem;
 }
 
 .validation {
@@ -172,10 +230,49 @@
   box-shadow: var(--shadow-soft);
 }
 
+/* Reveal screen: 60/40 visual-to-text - make chart more prominent */
+.screen[data-screen="reveal"] .chartCard {
+  padding: 28px 24px 32px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft), 0 0 0 1px color-mix(in srgb, var(--color-accent) 8%, transparent);
+}
+
+/* Reveal screen: reduce prompt size to favor visuals */
+.screen[data-screen="reveal"] .prompt {
+  font-size: clamp(1.8rem, 2.5vw, 2.3rem);
+  margin-bottom: 0;
+}
+
+/* Reveal screen: adjust main layout to favor visuals */
+.screen[data-screen="reveal"] .main {
+  gap: 28px;
+  max-width: 900px;
+}
+
+.screen[data-screen="reveal"] .main > *:first-child {
+  flex: 0 0 auto;
+}
+
+.screen[data-screen="reveal"] .chartCard {
+  flex: 1 1 60%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.screen[data-screen="reveal"] .contextSection {
+  flex: 0 0 auto;
+}
+
 .barChart {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+/* Reveal screen: larger chart elements */
+.screen[data-screen="reveal"] .barChart {
+  gap: 20px;
 }
 
 .barRow {
@@ -196,6 +293,11 @@
   border-radius: 999px;
   background: color-mix(in srgb, var(--color-surface-2) 82%, transparent);
   overflow: hidden;
+}
+
+/* Reveal screen: taller bars for more visual impact */
+.screen[data-screen="reveal"] .barTrack {
+  height: 14px;
 }
 
 .barFill {
@@ -235,10 +337,20 @@
   max-width: 640px;
 }
 
+/* Reveal screen: reduce text prominence for 60/40 ratio */
+.screen[data-screen="reveal"] .contextSection {
+  max-width: 580px;
+  gap: 8px;
+}
+
 .contextHeadline {
   font-size: 1.4rem;
   font-weight: 600;
   color: var(--color-accent-2);
+}
+
+.screen[data-screen="reveal"] .contextHeadline {
+  font-size: 1.2rem;
 }
 
 .contextBody {
@@ -247,9 +359,18 @@
   color: var(--color-text);
 }
 
+.screen[data-screen="reveal"] .contextBody {
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
 .contextSubtitle {
   font-size: 0.9rem;
   color: var(--color-text-muted);
+}
+
+.screen[data-screen="reveal"] .contextSubtitle {
+  font-size: 0.85rem;
 }
 
 .footer {
@@ -312,6 +433,11 @@
   overflow: hidden;
 }
 
+/* Reveal screen: taller split bars */
+.screen[data-screen="reveal"] .splitTrack {
+  height: 14px;
+}
+
 .splitFill {
   --bar-scale: 0;
   position: absolute;
@@ -362,6 +488,28 @@
 
   .prompt {
     font-size: 1.8rem;
+  }
+
+  /* Question screen mobile: maintain text prominence */
+  .screen[data-screen="question"] .prompt {
+    font-size: clamp(2.2rem, 5vw, 2.6rem);
+  }
+
+  .screen[data-screen="question"] .main {
+    gap: 36px;
+  }
+
+  /* Reveal screen mobile: maintain visual prominence */
+  .screen[data-screen="reveal"] .prompt {
+    font-size: clamp(1.6rem, 4vw, 2rem);
+  }
+
+  .screen[data-screen="reveal"] .chartCard {
+    padding: 20px 18px 24px;
+  }
+
+  .screen[data-screen="reveal"] .barTrack {
+    height: 12px;
   }
 }
 

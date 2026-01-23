@@ -51,7 +51,7 @@ export function PredictScreen({
   const isValid = value > min && value <= max;
 
   return (
-    <div className={styles.screen}>
+    <div className={styles.screen} data-screen="question">
       <div className={styles.inner}>
         <header className={styles.header}>
           <p className={styles.stepLabel}>Predict</p>
