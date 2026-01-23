@@ -15,6 +15,7 @@ const DEFAULTS: Record<QuestionStep["id"], number> = {
   dailyVolume: 200,
   showerShare: 40,
   globalWaterAccess: 80,
+  economicAidPoverty: 30,
 };
 
 export function PredictScreen({
@@ -49,7 +50,7 @@ export function PredictScreen({
 
   const min = 0;
   const max = step.id === "dailyVolume" ? 600 : 100;
-  const stepValue = step.id === "showerShare" || step.id === "globalWaterAccess" ? 1 : 10;
+  const stepValue = step.id === "showerShare" || step.id === "globalWaterAccess" || step.id === "economicAidPoverty" ? 1 : 10;
   const isValid = value > min && value <= max;
 
   const screenClasses = [
@@ -64,7 +65,7 @@ export function PredictScreen({
         <header className={styles.header}>
           <p className={styles.stepLabel}>Predict</p>
           <p className={styles.stepCounter}>
-            Question {step.id === "dailyVolume" ? 1 : step.id === "showerShare" ? 2 : 3} of 3
+            Question {step.id === "dailyVolume" ? 1 : step.id === "showerShare" ? 2 : step.id === "globalWaterAccess" ? 3 : 4} of 4
           </p>
         </header>
         <main className={styles.main}>

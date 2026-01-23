@@ -5,8 +5,9 @@ import { QuestionStep, questionSteps } from "../questions";
 import { PredictScreen } from "./PredictScreen";
 import { RevealScreen } from "./RevealScreen";
 import { SummaryScreen } from "./SummaryScreen";
+import { IntroScreen } from "./IntroScreen";
 
-type Mode = "predict" | "reveal" | "summary";
+type Mode = "intro" | "predict" | "reveal" | "summary";
 type TransitionDirection = "forward" | "backward";
 
 export interface AnswerRecord {
@@ -15,7 +16,11 @@ export interface AnswerRecord {
 }
 
 export function QuestionFlow() {
-  const [mode, setMode] = useState<Mode>("predict");
+  const [mode, setMode] = useState<Mode>(() => {
+    // Check if first step has an intro
+    const firstStep = questionSteps[0];
+    return firstStep?.intro ? "intro" : "predict";
+  });
   const [stepIndex, setStepIndex] = useState(0);
   const [answers, setAnswers] = useState<AnswerRecord[]>([]);
   const [transitionDirection, setTransitionDirection] = useState<TransitionDirection>("forward");
@@ -68,7 +73,19 @@ export function QuestionFlow() {
     setIsTransitioning(true);
     setTransitionDirection("forward");
     setTimeout(() => {
-      setStepIndex((prev) => prev + 1);
+      const nextIndex = stepIndex + 1;
+      const nextStep = questionSteps[nextIndex];
+      setStepIndex(nextIndex);
+      // Check if next step has an intro
+      setMode(nextStep?.intro ? "intro" : "predict");
+      setIsTransitioning(false);
+    }, 50);
+  };
+
+  const handleBeginFromIntro = () => {
+    setIsTransitioning(true);
+    setTransitionDirection("forward");
+    setTimeout(() => {
       setMode("predict");
       setIsTransitioning(false);
     }, 50);
@@ -77,7 +94,8 @@ export function QuestionFlow() {
   const handleRestart = () => {
     setAnswers([]);
     setStepIndex(0);
-    setMode("predict");
+    const firstStep = questionSteps[0];
+    setMode(firstStep?.intro ? "intro" : "predict");
   };
 
   if (mode === "summary") {
@@ -101,6 +119,19 @@ export function QuestionFlow() {
     }
     return "slideFromLeft";
   };
+
+  if (mode === "intro" && currentStep.intro) {
+    return (
+      <IntroScreen
+        key={`intro-${stepIndex}`}
+        title={currentStep.intro.title}
+        subtitle={currentStep.intro.subtitle}
+        ctaText={currentStep.intro.ctaText}
+        onBegin={handleBeginFromIntro}
+        animationClass={getAnimationClass()}
+      />
+    );
+  }
 
   if (mode === "predict") {
     return (

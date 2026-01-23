@@ -53,7 +53,7 @@ export function RevealScreen({
         <header className={styles.header}>
           <p className={styles.stepLabel}>Reveal</p>
           <p className={styles.stepCounter}>
-            Question {step.id === "dailyVolume" ? 1 : step.id === "showerShare" ? 2 : 3} of 3
+            Question {step.id === "dailyVolume" ? 1 : step.id === "showerShare" ? 2 : step.id === "globalWaterAccess" ? 3 : 4} of 4
           </p>
         </header>
         <main className={styles.main}>

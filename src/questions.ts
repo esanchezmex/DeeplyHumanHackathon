@@ -2,13 +2,20 @@ export type InputType = "number" | "slider";
 
 export type ChartType = "bar" | "split";
 
-export type QuestionStepId = "dailyVolume" | "showerShare" | "globalWaterAccess";
+export type QuestionStepId = "dailyVolume" | "showerShare" | "globalWaterAccess" | "economicAidPoverty";
+
+export interface IntroPage {
+  title: string;
+  subtitle: string;
+  ctaText: string;
+}
 
 export interface QuestionStepBase {
   id: QuestionStepId;
   prompt: string;
   inputType: InputType;
   unitsLabel: string;
+  intro?: IntroPage;
 }
 
 export interface RevealConfig {
@@ -90,7 +97,7 @@ export const questionSteps: QuestionStep[] = [
           )} liters per day – about ${bathtubsPerDay.toFixed(
             1
           )} bathtubs every single day.`,
-          `Over a year, that’s roughly ${poolsPerYear.toFixed(
+          `Over a year, that's roughly ${poolsPerYear.toFixed(
             2
           )} Olympic pools of water. Your guess was ${factorText}`,
         ].join(" ");
@@ -158,6 +165,32 @@ export const questionSteps: QuestionStep[] = [
         },
       };
     })(),
+  },
+  {
+    id: "economicAidPoverty",
+    prompt: "What percentage of the world's population do you think lives in extreme poverty (below $3.00/day)?",
+    inputType: "slider",
+    unitsLabel: "% of global population",
+    intro: {
+      title: "The Hidden Cost of Progress",
+      subtitle: "Three curves. One question: what's improving—and what's not?",
+      ctaText: "Begin",
+    },
+    reveal: {
+      chartType: "bar",
+      actualValue: 20,
+      maxValue: 100,
+      context: (userValue: number) => {
+        const actual = 20;
+        const factorText = differenceFactor(userValue, actual);
+        return `As of recent data, approximately ${actual}% of the world's population lives in extreme poverty. Your guess was ${factorText}`;
+      },
+      subtitle: (userValue: number) => {
+        const actual = 20;
+        const diff = Math.abs(actual - userValue);
+        return `You were off by ${diff.toFixed(1)} percentage points from the current estimate.`;
+      },
+    },
   },
 ];
 
