@@ -10,12 +10,33 @@ export interface IntroPage {
   ctaText: string;
 }
 
+export interface MoodCheckPage {
+  statementCard: string;
+  prompt: string;
+  moodOptions: string[];
+}
+
+export interface AidEstimatePage {
+  prompt: string;
+  sliderTicks: number[];
+  maxValue: number;
+  microcopy: string;
+}
+
+export interface RealityCheckPage {
+  actualValue: number;
+  insightLines: string[];
+}
+
 export interface QuestionStepBase {
   id: QuestionStepId;
   prompt: string;
   inputType: InputType;
   unitsLabel: string;
   intro?: IntroPage;
+  moodCheck?: MoodCheckPage;
+  aidEstimate?: AidEstimatePage;
+  realityCheck?: RealityCheckPage;
 }
 
 export interface RevealConfig {
@@ -175,6 +196,24 @@ export const questionSteps: QuestionStep[] = [
       title: "The Hidden Cost of Progress",
       subtitle: "Three curves. One question: what's improving—and what's not?",
       ctaText: "Begin",
+    },
+    moodCheck: {
+      statementCard: "Last year (FY 2024), the U.S. government spent about $755 billion on contracts with outside companies and organizations.",
+      prompt: "When you see big numbers, what do you feel—hope, skepticism, numbness?",
+      moodOptions: ["Hopeful", "Skeptical", "Numb"],
+    },
+    aidEstimate: {
+      prompt: "In 2024, how much aid received per person do you think the average person received?",
+      sliderTicks: [0, 25, 50, 100, 200, 300],
+      maxValue: 300,
+      microcopy: "Your guess doesn't need to be right—just honest.",
+    },
+    realityCheck: {
+      actualValue: 50, // Placeholder - will be updated with real data
+      insightLines: [
+        "Aid per person is easy to talk about—but hard to picture.",
+        "Numbers feel different when they touch a single life.",
+      ],
     },
     reveal: {
       chartType: "bar",

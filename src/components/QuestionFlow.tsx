@@ -6,13 +6,17 @@ import { PredictScreen } from "./PredictScreen";
 import { RevealScreen } from "./RevealScreen";
 import { SummaryScreen } from "./SummaryScreen";
 import { IntroScreen } from "./IntroScreen";
+import { MoodCheckScreen } from "./MoodCheckScreen";
+import { AidEstimateScreen } from "./AidEstimateScreen";
+import { RealityCheckScreen } from "./RealityCheckScreen";
 
-type Mode = "intro" | "predict" | "reveal" | "summary";
+type Mode = "intro" | "moodCheck" | "aidEstimate" | "realityCheck" | "predict" | "reveal" | "summary";
 type TransitionDirection = "forward" | "backward";
 
 export interface AnswerRecord {
   stepId: QuestionStep["id"];
   value: number;
+  mood?: string;
 }
 
 export function QuestionFlow() {
@@ -83,10 +87,76 @@ export function QuestionFlow() {
   };
 
   const handleBeginFromIntro = () => {
+    if (!currentStep) return;
     setIsTransitioning(true);
     setTransitionDirection("forward");
     setTimeout(() => {
-      setMode("predict");
+      // Check if question has moodCheck page, otherwise go to predict
+      if (currentStep.moodCheck) {
+        setMode("moodCheck");
+      } else {
+        setMode("predict");
+      }
+      setIsTransitioning(false);
+    }, 50);
+  };
+
+  const handleMoodSelect = (mood: string) => {
+    if (!currentStep) return;
+    setIsTransitioning(true);
+    setTransitionDirection("forward");
+    setAnswers((prev) => {
+      const existingIndex = prev.findIndex((a) => a.stepId === currentStep.id);
+      if (existingIndex >= 0) {
+        const clone = [...prev];
+        clone[existingIndex] = { ...clone[existingIndex], mood };
+        return clone;
+      }
+      return [...prev, { stepId: currentStep.id, value: 0, mood }];
+    });
+    setTimeout(() => {
+      setMode("aidEstimate");
+      setIsTransitioning(false);
+    }, 50);
+  };
+
+  const handleAidEstimateSubmit = (value: number) => {
+    if (!currentStep) return;
+    setIsTransitioning(true);
+    setTransitionDirection("forward");
+    setAnswers((prev) => {
+      const existingIndex = prev.findIndex((a) => a.stepId === currentStep.id);
+      if (existingIndex >= 0) {
+        const clone = [...prev];
+        clone[existingIndex] = { ...clone[existingIndex], value };
+        return clone;
+      }
+      return [...prev, { stepId: currentStep.id, value }];
+    });
+    setTimeout(() => {
+      setMode("realityCheck");
+      setIsTransitioning(false);
+    }, 50);
+  };
+
+  const handleNextFromRealityCheck = () => {
+    if (isLastStep) {
+      setIsTransitioning(true);
+      setTransitionDirection("forward");
+      setTimeout(() => {
+        setMode("summary");
+        setIsTransitioning(false);
+      }, 50);
+      return;
+    }
+    setIsTransitioning(true);
+    setTransitionDirection("forward");
+    setTimeout(() => {
+      const nextIndex = stepIndex + 1;
+      const nextStep = questionSteps[nextIndex];
+      setStepIndex(nextIndex);
+      // Check if next step has an intro
+      setMode(nextStep?.intro ? "intro" : "predict");
       setIsTransitioning(false);
     }, 50);
   };
@@ -128,6 +198,42 @@ export function QuestionFlow() {
         subtitle={currentStep.intro.subtitle}
         ctaText={currentStep.intro.ctaText}
         onBegin={handleBeginFromIntro}
+        animationClass={getAnimationClass()}
+      />
+    );
+  }
+
+  if (mode === "moodCheck" && currentStep.moodCheck) {
+    return (
+      <MoodCheckScreen
+        key={`moodCheck-${stepIndex}`}
+        moodCheck={currentStep.moodCheck}
+        initialMood={currentAnswer?.mood}
+        onMoodSelect={handleMoodSelect}
+        animationClass={getAnimationClass()}
+      />
+    );
+  }
+
+  if (mode === "aidEstimate" && currentStep.aidEstimate) {
+    return (
+      <AidEstimateScreen
+        key={`aidEstimate-${stepIndex}`}
+        aidEstimate={currentStep.aidEstimate}
+        initialValue={currentAnswer?.value}
+        onSubmit={handleAidEstimateSubmit}
+        animationClass={getAnimationClass()}
+      />
+    );
+  }
+
+  if (mode === "realityCheck" && currentStep.realityCheck) {
+    return (
+      <RealityCheckScreen
+        key={`realityCheck-${stepIndex}`}
+        realityCheck={currentStep.realityCheck}
+        guessValue={currentAnswer?.value ?? 0}
+        onNext={handleNextFromRealityCheck}
         animationClass={getAnimationClass()}
       />
     );

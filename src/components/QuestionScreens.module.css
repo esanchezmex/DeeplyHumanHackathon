@@ -606,6 +606,214 @@
   gap: 1.5rem;
 }
 
+/* Statement card styles (for mood check) */
+.statementCard {
+  padding: 24px 28px;
+  border-radius: 18px;
+  background: radial-gradient(circle at top left, var(--color-surface), var(--color-bg));
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+  animation: fadeIn 400ms cubic-bezier(0.4, 0, 0.2, 1) 0.15s both;
+  margin-bottom: 8px;
+}
+
+.statementText {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* Mood check screen styles */
+.screen[data-screen="moodCheck"] .main {
+  gap: 32px;
+  max-width: 720px;
+}
+
+.moodOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.moodButton {
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-surface) 60%, transparent);
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    transform 0.1s ease, box-shadow 0.15s ease;
+  text-align: center;
+  animation: fadeIn 300ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.moodButton:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.moodButton:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.moodButton:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.moodButton:hover {
+  background: color-mix(in srgb, var(--color-surface) 80%, transparent);
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(43, 42, 38, 0.1);
+}
+
+.moodButtonSelected {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  border-color: var(--color-accent);
+  box-shadow: 0 2px 6px rgba(43, 42, 38, 0.15);
+}
+
+.moodButtonSelected:hover {
+  background: color-mix(in srgb, var(--color-accent) 90%, black);
+}
+
+/* Aid estimate screen styles */
+.screen[data-screen="aidEstimate"] .main {
+  gap: 32px;
+  max-width: 800px;
+}
+
+.screen[data-screen="aidEstimate"] .prompt {
+  font-size: clamp(2.8rem, 4.5vw, 3.8rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+
+.sliderContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.sliderWrapper {
+  position: relative;
+  width: 100%;
+  padding: 20px 0 40px;
+}
+
+.sliderTicks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  pointer-events: none;
+}
+
+.sliderTick {
+  position: absolute;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.tickMark {
+  width: 2px;
+  height: 8px;
+  background: var(--color-border);
+  border-radius: 1px;
+}
+
+.tickLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+.microcopy {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  text-align: center;
+  margin: -8px 0 0;
+}
+
+/* Reality check screen styles */
+.screen[data-screen="realityCheck"] .main {
+  gap: 28px;
+  max-width: 900px;
+}
+
+.realityComparison {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 24px;
+  border-radius: 18px;
+  background: radial-gradient(circle at top left, var(--color-surface), var(--color-bg));
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+  animation: fadeIn 400ms cubic-bezier(0.4, 0, 0.2, 1) 0.15s both;
+}
+
+.comparisonRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.comparisonLabel {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.comparisonValue {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.chartPlaceholder {
+  min-height: 300px;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--color-surface-2) 50%, transparent);
+  border: 2px dashed var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 400ms cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+
+.insightSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 0;
+  animation: fadeIn 400ms cubic-bezier(0.4, 0, 0.2, 1) 0.25s both;
+}
+
+.insightText {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0;
+  font-style: italic;
+}
+
 @media (max-width: 768px) {
   .inner {
     padding: 20px 16px;
@@ -648,6 +856,54 @@
 
   .introSubtitle {
     font-size: clamp(1rem, 3vw, 1.2rem);
+  }
+
+  /* Mood check screen mobile */
+  .screen[data-screen="moodCheck"] .main {
+    gap: 24px;
+  }
+
+  .moodOptions {
+    max-width: 100%;
+  }
+
+  .moodButton {
+    padding: 0.9rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  /* Aid estimate screen mobile */
+  .screen[data-screen="aidEstimate"] .prompt {
+    font-size: clamp(2.2rem, 5vw, 2.6rem);
+  }
+
+  .sliderWrapper {
+    padding: 16px 0 36px;
+  }
+
+  .tickLabel {
+    font-size: 0.7rem;
+  }
+
+  /* Reality check screen mobile */
+  .realityComparison {
+    padding: 16px 20px;
+  }
+
+  .comparisonLabel {
+    font-size: 0.9rem;
+  }
+
+  .comparisonValue {
+    font-size: 1.2rem;
+  }
+
+  .chartPlaceholder {
+    min-height: 200px;
+  }
+
+  .insightText {
+    font-size: 1rem;
   }
 }
 
