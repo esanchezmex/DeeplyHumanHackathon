@@ -1,0 +1,43 @@
+{
+  "chart": {
+    "title": "Share of artificial intelligence jobs among all job postings",
+    "subtitle": "A job posting is considered an AI job if it requests one or more AI skills, e.g., \"natural language processing\", \"neural networks\", \"machine learning\", or \"robotics\".",
+    "citation": "Lightcast via AI Index Report (2025)",
+    "originalChartUrl": "https://ourworldindata.org/grapher/share-artificial-intelligence-job-postings?v=1&csvType=full&useColumnShortNames=false&utm_source=chatgpt.com",
+    "selection": [
+      "United States",
+      "United Kingdom",
+      "Austria",
+      "Italy",
+      "Netherlands",
+      "New Zealand",
+      "Spain",
+      "Sweden"
+    ]
+  },
+  "columns": {
+    "Share of artificial intelligence jobs among all job postings": {
+      "titleShort": "Share of artificial intelligence jobs among all job postings",
+      "titleLong": "Share of artificial intelligence jobs among all job postings",
+      "descriptionShort": "A job posting is considered an AI job if it requests one or more AI skills, e.g., \"natural language processing\", \"neural networks\", \"machine learning\", or \"robotics\".",
+      "descriptionKey": [
+        "Lightcast classifies a job as an AI job if it mentions at least one AI-related skill in the posting text.",
+        "AI-related skills are grouped into categories like machine learning and neural networks, natural language processing, generative AI, robotics and autonomous systems, computer vision, and AI ethics and governance.",
+        "This method helps track employer demand for AI skills over time using real-time job posting data."
+      ],
+      "shortUnit": "%",
+      "unit": "%",
+      "timespan": "2014-2024",
+      "type": "Numeric",
+      "owidVariableId": 1025677,
+      "shortName": "ai_job_postings__pct_of_all_job_postings",
+      "lastUpdated": "2025-04-08",
+      "nextUpdate": "2026-04-08",
+      "citationShort": "Lightcast via AI Index Report (2025) – with minor processing by Our World in Data",
+      "citationLong": "Lightcast via AI Index Report (2025) – with minor processing by Our World in Data. “Share of artificial intelligence jobs among all job postings” [dataset]. Lightcast via AI Index Report, “AI Index Report” [original data].",
+      "fullMetadata": "https://api.ourworldindata.org/v1/indicators/1025677.metadata.json"
+    }
+  },
+  "dateDownloaded": "2026-01-23",
+  "activeFilters": {}
+}
