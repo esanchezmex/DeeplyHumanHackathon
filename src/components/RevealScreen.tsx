@@ -9,6 +9,7 @@ interface RevealScreenProps {
   answerValue: number;
   isLastStep: boolean;
   onNext: () => void;
+  animationClass?: string;
 }
 
 export function RevealScreen({
@@ -16,6 +17,7 @@ export function RevealScreen({
   answerValue,
   isLastStep,
   onNext,
+  animationClass = "",
 }: RevealScreenProps) {
   const { reveal } = step;
   const [animate, setAnimate] = useState(false);
@@ -39,8 +41,14 @@ export function RevealScreen({
       ? `${answerValue.toLocaleString()} L`
       : `${answerValue.toFixed(1)}%`;
 
+  const screenClasses = [
+    styles.screen,
+    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight : 
+                      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
+  ].filter(Boolean).join(" ");
+
   return (
-    <div className={styles.screen} data-screen="reveal">
+    <div className={screenClasses} data-screen="reveal">
       <div className={styles.inner}>
         <header className={styles.header}>
           <p className={styles.stepLabel}>Reveal</p>

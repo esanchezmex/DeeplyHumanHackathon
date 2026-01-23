@@ -1,12 +1,13 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { QuestionStep, questionSteps } from "../questions";
 import { PredictScreen } from "./PredictScreen";
 import { RevealScreen } from "./RevealScreen";
 import { SummaryScreen } from "./SummaryScreen";
 
 type Mode = "predict" | "reveal" | "summary";
+type TransitionDirection = "forward" | "backward";
 
 export interface AnswerRecord {
   stepId: QuestionStep["id"];
@@ -17,6 +18,8 @@ export function QuestionFlow() {
   const [mode, setMode] = useState<Mode>("predict");
   const [stepIndex, setStepIndex] = useState(0);
   const [answers, setAnswers] = useState<AnswerRecord[]>([]);
+  const [transitionDirection, setTransitionDirection] = useState<TransitionDirection>("forward");
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const currentStep: QuestionStep | undefined = questionSteps[stepIndex];
 
@@ -33,6 +36,8 @@ export function QuestionFlow() {
 
   const handleAnswerSubmit = (value: number) => {
     if (!currentStep) return;
+    setIsTransitioning(true);
+    setTransitionDirection("forward");
     setAnswers((prev) => {
       const existingIndex = prev.findIndex((a) => a.stepId === currentStep.id);
       if (existingIndex >= 0) {
@@ -42,16 +47,31 @@ export function QuestionFlow() {
       }
       return [...prev, { stepId: currentStep.id, value }];
     });
-    setMode("reveal");
+    
+    // Small delay to allow exit animation
+    setTimeout(() => {
+      setMode("reveal");
+      setIsTransitioning(false);
+    }, 50);
   };
 
   const handleNextFromReveal = () => {
     if (isLastStep) {
-      setMode("summary");
+      setIsTransitioning(true);
+      setTransitionDirection("forward");
+      setTimeout(() => {
+        setMode("summary");
+        setIsTransitioning(false);
+      }, 50);
       return;
     }
-    setStepIndex((prev) => prev + 1);
-    setMode("predict");
+    setIsTransitioning(true);
+    setTransitionDirection("forward");
+    setTimeout(() => {
+      setStepIndex((prev) => prev + 1);
+      setMode("predict");
+      setIsTransitioning(false);
+    }, 50);
   };
 
   const handleRestart = () => {
@@ -74,22 +94,34 @@ export function QuestionFlow() {
     return null;
   }
 
+  // Determine animation class based on transition direction
+  const getAnimationClass = () => {
+    if (transitionDirection === "forward") {
+      return "slideFromRight";
+    }
+    return "slideFromLeft";
+  };
+
   if (mode === "predict") {
     return (
       <PredictScreen
+        key={`predict-${stepIndex}`}
         step={currentStep}
         onSubmit={handleAnswerSubmit}
         initialValue={currentAnswer?.value}
+        animationClass={getAnimationClass()}
       />
     );
   }
 
   return (
     <RevealScreen
+      key={`reveal-${stepIndex}`}
       step={currentStep}
       answerValue={currentAnswer?.value ?? 0}
       onNext={handleNextFromReveal}
       isLastStep={isLastStep}
+      animationClass={getAnimationClass()}
     />
   );
 }

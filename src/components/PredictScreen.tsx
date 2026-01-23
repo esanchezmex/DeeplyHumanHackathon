@@ -8,6 +8,7 @@ interface PredictScreenProps {
   step: QuestionStep;
   initialValue?: number;
   onSubmit: (value: number) => void;
+  animationClass?: string;
 }
 
 const DEFAULTS: Record<QuestionStep["id"], number> = {
@@ -20,6 +21,7 @@ export function PredictScreen({
   step,
   initialValue,
   onSubmit,
+  animationClass = "",
 }: PredictScreenProps) {
   const [value, setValue] = useState<number>(
     initialValue ?? DEFAULTS[step.id] ?? 0
@@ -50,8 +52,14 @@ export function PredictScreen({
   const stepValue = step.id === "showerShare" || step.id === "globalWaterAccess" ? 1 : 10;
   const isValid = value > min && value <= max;
 
+  const screenClasses = [
+    styles.screen,
+    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight : 
+                      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
+  ].filter(Boolean).join(" ");
+
   return (
-    <div className={styles.screen} data-screen="question">
+    <div className={screenClasses} data-screen="question">
       <div className={styles.inner}>
         <header className={styles.header}>
           <p className={styles.stepLabel}>Predict</p>

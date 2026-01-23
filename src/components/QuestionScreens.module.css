@@ -1,3 +1,57 @@
+/* Breathing animation keyframes - very subtle */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.008);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
 .screen {
   min-height: 100vh;
   height: 100vh;
@@ -7,6 +61,36 @@
   justify-content: center;
   background: radial-gradient(circle at top, var(--color-surface), var(--color-bg));
   color: var(--color-text);
+  animation: fadeIn 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Screen transition states */
+.screen.entering {
+  animation: fadeIn 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.screen.exiting {
+  animation: fadeOut 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.screen.slideFromRight {
+  animation: slideInFromRight 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.screen.slideFromLeft {
+  animation: slideInFromLeft 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Breathing effect for inner content - subtle and slow */
+.inner {
+  width: 100%;
+  max-width: 960px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: breathe 6s ease-in-out infinite;
+  animation-delay: 0.8s;
 }
 
 .inner {
@@ -26,6 +110,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-text-muted);
+  animation: fadeIn 300ms cubic-bezier(0.4, 0, 0.2, 1) 0.05s both;
 }
 
 .stepLabel {
@@ -63,12 +148,14 @@
   line-height: 1.1;
   letter-spacing: -0.04em;
   color: var(--color-text);
+  animation: fadeIn 400ms cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  animation: fadeIn 350ms cubic-bezier(0.4, 0, 0.2, 1) 0.15s both;
 }
 
 /* Question screen: reduce visual prominence */
@@ -146,6 +233,11 @@
   display: inline-flex;
   align-items: baseline;
   gap: 6px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.valueBubble:hover {
+  transform: scale(1.05);
 }
 
 /* Question screen: smaller, less prominent value bubble */
@@ -194,6 +286,7 @@
   cursor: pointer;
   transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease,
     transform 0.1s ease;
+  animation: fadeIn 300ms cubic-bezier(0.4, 0, 0.2, 1) 0.25s both;
 }
 
 .primaryButton {
@@ -228,6 +321,7 @@
   background: radial-gradient(circle at top left, var(--color-surface), var(--color-bg));
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-soft);
+  animation: fadeIn 400ms cubic-bezier(0.4, 0, 0.2, 1) 0.15s both;
 }
 
 /* Reveal screen: 60/40 visual-to-text - make chart more prominent */
@@ -335,6 +429,7 @@
   flex-direction: column;
   gap: 10px;
   max-width: 640px;
+  animation: fadeIn 350ms cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
 }
 
 /* Reveal screen: reduce text prominence for 60/40 ratio */
