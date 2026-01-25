@@ -1388,7 +1388,7 @@
 }
 
 .reflectionHeader {
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   font-weight: 600;
   color: var(--color-accent-2);
   margin-bottom: 8px;
@@ -1409,7 +1409,7 @@
 }
 
 .questionsHeader {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 700;
   color: var(--color-accent-2);
   margin-bottom: 24px;
