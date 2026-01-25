@@ -1,28 +1,24 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import type { QuestionStep } from "../questions";
+import { useState, useEffect } from "react";
+import type { PovertyEstimatePage } from "../questions";
 import styles from "./QuestionScreens.module.css";
 
-interface PredictScreenProps {
-  step: QuestionStep;
+interface PovertyEstimateScreenProps {
+  povertyEstimate: PovertyEstimatePage;
   initialValue?: number;
   onSubmit: (value: number) => void;
   animationClass?: string;
 }
 
-const DEFAULTS: Record<QuestionStep["id"], number> = {
-  economicAidPoverty: 30,
-};
-
-export function PredictScreen({
-  step,
+export function PovertyEstimateScreen({
+  povertyEstimate,
   initialValue,
   onSubmit,
   animationClass = "",
-}: PredictScreenProps) {
+}: PovertyEstimateScreenProps) {
   const [value, setValue] = useState<number>(
-    initialValue ?? DEFAULTS[step.id] ?? 0
+    initialValue ?? povertyEstimate.maxValue / 2
   );
   const [touched, setTouched] = useState(false);
 
@@ -41,14 +37,12 @@ export function PredictScreen({
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    if (!isValid) return;
     onSubmit(value);
   };
 
   const min = 0;
-  const max = 100;
-  const stepValue = 1;
-  const isValid = value > min && value <= max;
+  const max = povertyEstimate.maxValue;
+  const isValid = value >= min && value <= max;
 
   const screenClasses = [
     styles.screen,
@@ -57,38 +51,37 @@ export function PredictScreen({
   ].filter(Boolean).join(" ");
 
   return (
-    <div className={screenClasses} data-screen="question">
+    <div className={screenClasses} data-screen="povertyEstimate">
       <div className={styles.inner}>
         <header className={styles.header}>
-          <p className={styles.stepLabel}>Predict</p>
-          <p className={styles.stepCounter}>
-            Question {step.id === "dailyVolume" ? 1 : step.id === "showerShare" ? 2 : step.id === "globalWaterAccess" ? 3 : 4} of 4
-          </p>
+          <p className={styles.stepLabel}>Estimate</p>
+          <p className={styles.stepCounter}>Question 4 of 4</p>
         </header>
         <main className={styles.main}>
-          <h1 className={styles.prompt}>{step.prompt}</h1>
+          <h1 className={styles.prompt}>{povertyEstimate.prompt}</h1>
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.sliderRow}>
               <input
                 type="range"
                 min={min}
                 max={max}
-                step={stepValue}
+                step={0.1}
                 value={value}
                 onChange={handleChange}
                 className={styles.slider}
-                aria-label={step.prompt}
+                aria-label={povertyEstimate.prompt}
               />
               <div className={styles.valueBubble}>
                 <span className={styles.valueNumber}>
-                  {Math.round(value).toLocaleString()}
+                  {value.toFixed(1)}
                 </span>
-                <span className={styles.valueUnits}>{step.unitsLabel}</span>
+                <span className={styles.valueUnits}>%</span>
               </div>
             </div>
+            <p className={styles.microcopy}>{povertyEstimate.microcopy}</p>
             {touched && !isValid && (
               <p className={styles.validation}>
-                Choose a value between {min + 1} and {max.toLocaleString()}.
+                Choose a value between {min} and {max}%.
               </p>
             )}
             <button
@@ -96,7 +89,7 @@ export function PredictScreen({
               className={styles.primaryButton}
               disabled={!isValid}
             >
-              See how that compares
+              Next
             </button>
           </form>
         </main>
@@ -104,5 +97,4 @@ export function PredictScreen({
     </div>
   );
 }
-
 

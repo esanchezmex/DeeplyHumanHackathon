@@ -27,18 +27,14 @@ export function SummaryScreen({
             {steps.map((step) => {
               const answer = answers.find((a) => a.stepId === step.id);
               const actual = step.reveal.actualValue;
-              const labelUnits =
-                step.id === "dailyVolume" ? "L / day" : "%";
+              const labelUnits = "%";
               const userValue = answer?.value ?? 0;
 
               const max = step.reveal.maxValue;
               const actualRatio = Math.min(actual / max, 1);
               const guessRatio = Math.min(userValue / max, 1);
               
-              const formatValue = (val: number) => 
-                step.id === "dailyVolume" 
-                  ? val.toLocaleString() 
-                  : val.toFixed(1);
+              const formatValue = (val: number) => val.toFixed(1);
 
               return (
                 <article key={step.id} className={styles.summaryCard}>
@@ -60,7 +56,7 @@ export function SummaryScreen({
                     </div>
                     <div className={styles.barRow}>
                       <span className={styles.barLabel}>
-                        {step.id === "globalWaterAccess" ? "Global average" : "Typical value"}
+                        Typical value
                       </span>
                       <div className={styles.barTrack}>
                         <div

@@ -9,6 +9,7 @@ interface RevealScreenProps {
   answerValue: number;
   isLastStep: boolean;
   onNext: () => void;
+  animationClass?: string;
 }
 
 export function RevealScreen({
@@ -16,6 +17,7 @@ export function RevealScreen({
   answerValue,
   isLastStep,
   onNext,
+  animationClass = "",
 }: RevealScreenProps) {
   const { reveal } = step;
   const [animate, setAnimate] = useState(false);
@@ -29,23 +31,23 @@ export function RevealScreen({
   const actualRatio = Math.min(reveal.actualValue / maxBar, 1);
   const guessRatio = Math.min(answerValue / maxBar, 1);
 
-  const titleValue =
-    step.id === "dailyVolume"
-      ? `${reveal.actualValue.toLocaleString()} L / day`
-      : `${reveal.actualValue.toFixed(1)}%`;
+  const titleValue = `${reveal.actualValue.toFixed(1)}%`;
 
-  const labelGuess =
-    step.id === "dailyVolume"
-      ? `${answerValue.toLocaleString()} L`
-      : `${answerValue.toFixed(1)}%`;
+  const labelGuess = `${answerValue.toFixed(1)}%`;
+
+  const screenClasses = [
+    styles.screen,
+    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight : 
+                      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
+  ].filter(Boolean).join(" ");
 
   return (
-    <div className={styles.screen}>
+    <div className={screenClasses} data-screen="reveal">
       <div className={styles.inner}>
         <header className={styles.header}>
           <p className={styles.stepLabel}>Reveal</p>
           <p className={styles.stepCounter}>
-            Question {step.id === "dailyVolume" ? 1 : step.id === "showerShare" ? 2 : 3} of 3
+            Question 1 of 1
           </p>
         </header>
         <main className={styles.main}>
@@ -67,7 +69,7 @@ export function RevealScreen({
                 </div>
                 <div className={styles.barRow}>
                   <span className={styles.barLabel}>
-                    {step.id === "globalWaterAccess" ? "Global average" : "Typical value"}
+                    Typical value
                   </span>
                   <div className={styles.barTrack}>
                     <div

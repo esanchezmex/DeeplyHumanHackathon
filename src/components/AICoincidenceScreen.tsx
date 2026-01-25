@@ -1,0 +1,66 @@
+"use client";
+
+import type { AICoincidencePage } from "../questions";
+import styles from "./QuestionScreens.module.css";
+
+interface AICoincidenceScreenProps {
+  aiCoincidence: AICoincidencePage;
+  onNext: () => void;
+  animationClass?: string;
+}
+
+export function AICoincidenceScreen({
+  aiCoincidence,
+  onNext,
+  animationClass = "",
+}: AICoincidenceScreenProps) {
+  const screenClasses = [
+    styles.screen,
+    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight : 
+                      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
+  ].filter(Boolean).join(" ");
+
+  return (
+    <div className={screenClasses} data-screen="aiCoincidence">
+      <div className={styles.inner}>
+        <header className={styles.header}>
+          <p className={styles.stepLabel}>Context</p>
+          <p className={styles.stepCounter}>Question 4 of 4</p>
+        </header>
+        <main className={styles.main}>
+          <div className={styles.powerRisingContent}>
+            <p className={styles.powerRisingText}>
+              {aiCoincidence.bodyText}
+            </p>
+            {aiCoincidence.visualPlaceholder && (
+              <div className={styles.visualPlaceholder}>
+                {aiCoincidence.visualPlaceholder}
+              </div>
+            )}
+            {!aiCoincidence.visualPlaceholder && (
+              <div className={styles.visualPlaceholder}>
+                {/* Placeholder for visual */}
+              </div>
+            )}
+            <p className={styles.microcopy}>
+              {aiCoincidence.microcopy}
+            </p>
+            <p className={styles.powerRisingText}>
+              {aiCoincidence.bodyText2}
+            </p>
+          </div>
+          <footer className={styles.footer}>
+            <button
+              type="button"
+              onClick={onNext}
+              className={styles.primaryButton}
+            >
+              Next
+            </button>
+          </footer>
+        </main>
+      </div>
+    </div>
+  );
+}
+
