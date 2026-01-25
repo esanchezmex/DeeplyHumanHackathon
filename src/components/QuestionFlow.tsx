@@ -19,8 +19,9 @@ import { SynthesisScreen } from "./SynthesisScreen";
 import { FinalActionsScreen } from "./FinalActionsScreen";
 import { ElectricityExpectationScreen } from "./ElectricityExpectationScreen";
 import { PowerRisingScreen } from "./PowerRisingScreen";
+import { PerPersonStableScreen } from "./PerPersonStableScreen";
 
-type Mode = "intro" | "moodCheck" | "powerRising" | "electricityExpectation" | "aidEstimate" | "realityCheck" | "povertyEstimate" | "povertyRealityCheck" | "patternVisual" | "hypothesisCheck" | "aiInvestmentCheck" | "aiInvestmentVisual" | "synthesis" | "finalActions" | "predict" | "reveal" | "summary";
+type Mode = "intro" | "moodCheck" | "powerRising" | "electricityExpectation" | "perPersonStable" | "aidEstimate" | "realityCheck" | "povertyEstimate" | "povertyRealityCheck" | "patternVisual" | "hypothesisCheck" | "aiInvestmentCheck" | "aiInvestmentVisual" | "synthesis" | "finalActions" | "predict" | "reveal" | "summary";
 type TransitionDirection = "forward" | "backward";
 
 export interface AnswerRecord {
@@ -170,6 +171,21 @@ export function QuestionFlow() {
       }
       return [...prev, { stepId: currentStep.id, value: 0, electricityExpectation: selection }];
     });
+    setTimeout(() => {
+      // Check if question has perPersonStable page, otherwise go to aidEstimate
+      if (currentStep.perPersonStable) {
+        setMode("perPersonStable");
+      } else {
+        setMode("aidEstimate");
+      }
+      setIsTransitioning(false);
+    }, 50);
+  };
+
+  const handleNextFromPerPersonStable = () => {
+    if (!currentStep) return;
+    setIsTransitioning(true);
+    setTransitionDirection("forward");
     setTimeout(() => {
       setMode("aidEstimate");
       setIsTransitioning(false);
@@ -475,6 +491,17 @@ export function QuestionFlow() {
         electricityExpectation={currentStep.electricityExpectation}
         initialSelection={currentAnswer?.electricityExpectation}
         onSelection={handleElectricityExpectationSelect}
+        animationClass={getAnimationClass()}
+      />
+    );
+  }
+
+  if (mode === "perPersonStable" && currentStep.perPersonStable) {
+    return (
+      <PerPersonStableScreen
+        key={`perPersonStable-${stepIndex}`}
+        perPersonStable={currentStep.perPersonStable}
+        onNext={handleNextFromPerPersonStable}
         animationClass={getAnimationClass()}
       />
     );

@@ -31,6 +31,14 @@ export interface ElectricityExpectationPage {
   options: string[];
 }
 
+export interface PerPersonStablePage {
+  title: string;
+  bodyText1: string;
+  percentageChange: number;
+  visualPlaceholder?: React.ReactNode;
+  bodyText2: string;
+}
+
 export interface AidEstimatePage {
   prompt: string;
   sliderTicks: number[];
@@ -93,6 +101,7 @@ export interface QuestionStepBase {
   moodCheck?: MoodCheckPage;
   powerRising?: PowerRisingPage;
   electricityExpectation?: ElectricityExpectationPage;
+  perPersonStable?: PerPersonStablePage;
   aidEstimate?: AidEstimatePage;
   realityCheck?: RealityCheckPage;
   povertyEstimate?: PovertyEstimatePage;
@@ -290,6 +299,12 @@ export const questionSteps: QuestionStep[] = [
     electricityExpectation: {
       prompt: "And therefore, before you see the data: do you expect electricity use to be…",
       options: ["Mostly flat", "Gradually rising", "Sharply rising"],
+    },
+    perPersonStable: {
+      title: "For years, the per-person story was… stable.",
+      bodyText1: "Even as our digital lives expanded, electricity use per person didn't explode—it changed by only",
+      percentageChange: 14,
+      bodyText2: "For most of the last decade, we mostly kept per-person electricity use in check.\nThat matters: fewer watts per person can mean less pressure on the planet.\nMaybe something else was happening in parallel: efficiency gains, shifting where energy is used, and a world getting better at doing more with less, at least for a while...",
     },
     aidEstimate: {
       prompt: "In 2024, how much aid received per person do you think the average person received?",
