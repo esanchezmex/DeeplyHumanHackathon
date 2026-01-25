@@ -12,9 +12,6 @@ interface PredictScreenProps {
 }
 
 const DEFAULTS: Record<QuestionStep["id"], number> = {
-  dailyVolume: 200,
-  showerShare: 40,
-  globalWaterAccess: 80,
   economicAidPoverty: 30,
 };
 
@@ -49,8 +46,8 @@ export function PredictScreen({
   };
 
   const min = 0;
-  const max = step.id === "dailyVolume" ? 600 : 100;
-  const stepValue = step.id === "showerShare" || step.id === "globalWaterAccess" || step.id === "economicAidPoverty" ? 1 : 10;
+  const max = 100;
+  const stepValue = 1;
   const isValid = value > min && value <= max;
 
   const screenClasses = [

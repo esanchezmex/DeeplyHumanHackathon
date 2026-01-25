@@ -44,11 +44,15 @@ export function SynthesisScreen({
         <main className={styles.main}>
           <h1 className={styles.synthesisTitle}>{synthesis.title}</h1>
           <section className={styles.synthesisText}>
-            {synthesis.textLines.map((line, index) => (
-              <p key={index} className={styles.synthesisLine}>
-                {line}
-              </p>
-            ))}
+            {synthesis.textLines.map((line, index) => 
+              line === "" ? (
+                <div key={index} style={{ height: '1rem' }} />
+              ) : (
+                <p key={index} className={styles.synthesisLine}>
+                  {line}
+                </p>
+              )
+            )}
           </section>
           <form className={styles.synthesisForm} onSubmit={handleSubmit}>
             <p className={styles.reflectionPrompt}>{synthesis.reflectionPrompt}</p>

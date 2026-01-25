@@ -31,15 +31,9 @@ export function RevealScreen({
   const actualRatio = Math.min(reveal.actualValue / maxBar, 1);
   const guessRatio = Math.min(answerValue / maxBar, 1);
 
-  const titleValue =
-    step.id === "dailyVolume"
-      ? `${reveal.actualValue.toLocaleString()} L / day`
-      : `${reveal.actualValue.toFixed(1)}%`;
+  const titleValue = `${reveal.actualValue.toFixed(1)}%`;
 
-  const labelGuess =
-    step.id === "dailyVolume"
-      ? `${answerValue.toLocaleString()} L`
-      : `${answerValue.toFixed(1)}%`;
+  const labelGuess = `${answerValue.toFixed(1)}%`;
 
   const screenClasses = [
     styles.screen,
@@ -53,7 +47,7 @@ export function RevealScreen({
         <header className={styles.header}>
           <p className={styles.stepLabel}>Reveal</p>
           <p className={styles.stepCounter}>
-            Question {step.id === "dailyVolume" ? 1 : step.id === "showerShare" ? 2 : step.id === "globalWaterAccess" ? 3 : 4} of 4
+            Question 1 of 1
           </p>
         </header>
         <main className={styles.main}>
@@ -75,7 +69,7 @@ export function RevealScreen({
                 </div>
                 <div className={styles.barRow}>
                   <span className={styles.barLabel}>
-                    {step.id === "globalWaterAccess" ? "Global average" : "Typical value"}
+                    Typical value
                   </span>
                   <div className={styles.barTrack}>
                     <div

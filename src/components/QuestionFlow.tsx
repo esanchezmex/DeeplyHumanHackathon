@@ -7,22 +7,15 @@ import { RevealScreen } from "./RevealScreen";
 import { SummaryScreen } from "./SummaryScreen";
 import { IntroScreen } from "./IntroScreen";
 import { MoodCheckScreen } from "./MoodCheckScreen";
-import { AidEstimateScreen } from "./AidEstimateScreen";
-import { RealityCheckScreen } from "./RealityCheckScreen";
-import { PovertyEstimateScreen } from "./PovertyEstimateScreen";
-import { PovertyRealityCheckScreen } from "./PovertyRealityCheckScreen";
-import { PatternVisualScreen } from "./PatternVisualScreen";
-import { HypothesisCheckScreen } from "./HypothesisCheckScreen";
-import { AIInvestmentCheckScreen } from "./AIInvestmentCheckScreen";
-import { AIInvestmentVisualScreen } from "./AIInvestmentVisualScreen";
 import { SynthesisScreen } from "./SynthesisScreen";
 import { FinalActionsScreen } from "./FinalActionsScreen";
 import { ElectricityExpectationScreen } from "./ElectricityExpectationScreen";
 import { PowerRisingScreen } from "./PowerRisingScreen";
 import { PerPersonStableScreen } from "./PerPersonStableScreen";
 import { RecentJumpScreen } from "./RecentJumpScreen";
+import { AICoincidenceScreen } from "./AICoincidenceScreen";
 
-type Mode = "intro" | "moodCheck" | "powerRising" | "electricityExpectation" | "perPersonStable" | "recentJump" | "aidEstimate" | "realityCheck" | "povertyEstimate" | "povertyRealityCheck" | "patternVisual" | "hypothesisCheck" | "aiInvestmentCheck" | "aiInvestmentVisual" | "synthesis" | "finalActions" | "predict" | "reveal" | "summary";
+type Mode = "intro" | "moodCheck" | "powerRising" | "electricityExpectation" | "perPersonStable" | "recentJump" | "aiCoincidence" | "synthesis" | "finalActions" | "predict" | "reveal" | "summary";
 type TransitionDirection = "forward" | "backward";
 
 export interface AnswerRecord {
@@ -203,38 +196,11 @@ export function QuestionFlow() {
     setIsTransitioning(true);
     setTransitionDirection("forward");
     setTimeout(() => {
-      setMode("aidEstimate");
-      setIsTransitioning(false);
-    }, 50);
-  };
-
-  const handleAidEstimateSubmit = (value: number) => {
-    if (!currentStep) return;
-    setIsTransitioning(true);
-    setTransitionDirection("forward");
-    setAnswers((prev) => {
-      const existingIndex = prev.findIndex((a) => a.stepId === currentStep.id);
-      if (existingIndex >= 0) {
-        const clone = [...prev];
-        clone[existingIndex] = { ...clone[existingIndex], value };
-        return clone;
-      }
-      return [...prev, { stepId: currentStep.id, value }];
-    });
-    setTimeout(() => {
-      setMode("realityCheck");
-      setIsTransitioning(false);
-    }, 50);
-  };
-
-  const handleNextFromRealityCheck = () => {
-    if (!currentStep) return;
-    setIsTransitioning(true);
-    setTransitionDirection("forward");
-    setTimeout(() => {
-      // Check if question has povertyEstimate page
-      if (currentStep.povertyEstimate) {
-        setMode("povertyEstimate");
+      // Check if question has aiCoincidence page, otherwise go to synthesis
+      if (currentStep.aiCoincidence) {
+        setMode("aiCoincidence");
+      } else if (currentStep.synthesis) {
+        setMode("synthesis");
       } else if (isLastStep) {
         setMode("summary");
       } else {
@@ -247,124 +213,12 @@ export function QuestionFlow() {
     }, 50);
   };
 
-  const handlePovertyEstimateSubmit = (value: number) => {
-    if (!currentStep) return;
-    setIsTransitioning(true);
-    setTransitionDirection("forward");
-    setAnswers((prev) => {
-      const existingIndex = prev.findIndex((a) => a.stepId === currentStep.id);
-      if (existingIndex >= 0) {
-        const clone = [...prev];
-        clone[existingIndex] = { ...clone[existingIndex], povertyPercent: value };
-        return clone;
-      }
-      return [...prev, { stepId: currentStep.id, value: 0, povertyPercent: value }];
-    });
-    setTimeout(() => {
-      setMode("povertyRealityCheck");
-      setIsTransitioning(false);
-    }, 50);
-  };
-
-  const handleNextFromPovertyRealityCheck = () => {
+  const handleNextFromAICoincidence = () => {
     if (!currentStep) return;
     setIsTransitioning(true);
     setTransitionDirection("forward");
     setTimeout(() => {
-      if (currentStep.patternVisual) {
-        setMode("patternVisual");
-      } else if (isLastStep) {
-        setMode("summary");
-      } else {
-        const nextIndex = stepIndex + 1;
-        const nextStep = questionSteps[nextIndex];
-        setStepIndex(nextIndex);
-        setMode(nextStep?.intro ? "intro" : "predict");
-      }
-      setIsTransitioning(false);
-    }, 50);
-  };
-
-  const handleNextFromPatternVisual = () => {
-    if (!currentStep) return;
-    setIsTransitioning(true);
-    setTransitionDirection("forward");
-    setTimeout(() => {
-      if (currentStep.hypothesisCheck) {
-        setMode("hypothesisCheck");
-      } else if (isLastStep) {
-        setMode("summary");
-      } else {
-        const nextIndex = stepIndex + 1;
-        const nextStep = questionSteps[nextIndex];
-        setStepIndex(nextIndex);
-        setMode(nextStep?.intro ? "intro" : "predict");
-      }
-      setIsTransitioning(false);
-    }, 50);
-  };
-
-  const handleHypothesisSelect = (hypothesis: string) => {
-    if (!currentStep) return;
-    setIsTransitioning(true);
-    setTransitionDirection("forward");
-    setAnswers((prev) => {
-      const existingIndex = prev.findIndex((a) => a.stepId === currentStep.id);
-      if (existingIndex >= 0) {
-        const clone = [...prev];
-        clone[existingIndex] = { ...clone[existingIndex], hypothesis };
-        return clone;
-      }
-      return [...prev, { stepId: currentStep.id, value: 0, hypothesis }];
-    });
-    setTimeout(() => {
-      if (currentStep.aiInvestmentCheck) {
-        setMode("aiInvestmentCheck");
-      } else if (isLastStep) {
-        setMode("summary");
-      } else {
-        const nextIndex = stepIndex + 1;
-        const nextStep = questionSteps[nextIndex];
-        setStepIndex(nextIndex);
-        setMode(nextStep?.intro ? "intro" : "predict");
-      }
-      setIsTransitioning(false);
-    }, 50);
-  };
-
-  const handleAIInvestmentSelect = (selections: string[]) => {
-    if (!currentStep) return;
-    setIsTransitioning(true);
-    setTransitionDirection("forward");
-    setAnswers((prev) => {
-      const existingIndex = prev.findIndex((a) => a.stepId === currentStep.id);
-      if (existingIndex >= 0) {
-        const clone = [...prev];
-        clone[existingIndex] = { ...clone[existingIndex], aiInvestmentSelections: selections };
-        return clone;
-      }
-      return [...prev, { stepId: currentStep.id, value: 0, aiInvestmentSelections: selections }];
-    });
-    setTimeout(() => {
-      if (currentStep.aiInvestmentVisual) {
-        setMode("aiInvestmentVisual");
-      } else if (isLastStep) {
-        setMode("summary");
-      } else {
-        const nextIndex = stepIndex + 1;
-        const nextStep = questionSteps[nextIndex];
-        setStepIndex(nextIndex);
-        setMode(nextStep?.intro ? "intro" : "predict");
-      }
-      setIsTransitioning(false);
-    }, 50);
-  };
-
-  const handleNextFromAIInvestmentVisual = () => {
-    if (!currentStep) return;
-    setIsTransitioning(true);
-    setTransitionDirection("forward");
-    setTimeout(() => {
+      // Check if question has synthesis page, otherwise go to summary
       if (currentStep.synthesis) {
         setMode("synthesis");
       } else if (isLastStep) {
@@ -378,6 +232,7 @@ export function QuestionFlow() {
       setIsTransitioning(false);
     }, 50);
   };
+
 
   const handleSynthesisSubmit = (reflection: string) => {
     if (!currentStep) return;
@@ -534,99 +389,17 @@ export function QuestionFlow() {
     );
   }
 
-  if (mode === "aidEstimate" && currentStep.aidEstimate) {
+  if (mode === "aiCoincidence" && currentStep.aiCoincidence) {
     return (
-      <AidEstimateScreen
-        key={`aidEstimate-${stepIndex}`}
-        aidEstimate={currentStep.aidEstimate}
-        initialValue={currentAnswer?.value}
-        onSubmit={handleAidEstimateSubmit}
+      <AICoincidenceScreen
+        key={`aiCoincidence-${stepIndex}`}
+        aiCoincidence={currentStep.aiCoincidence}
+        onNext={handleNextFromAICoincidence}
         animationClass={getAnimationClass()}
       />
     );
   }
 
-  if (mode === "realityCheck" && currentStep.realityCheck) {
-    return (
-      <RealityCheckScreen
-        key={`realityCheck-${stepIndex}`}
-        realityCheck={currentStep.realityCheck}
-        guessValue={currentAnswer?.value ?? 0}
-        onNext={handleNextFromRealityCheck}
-        animationClass={getAnimationClass()}
-      />
-    );
-  }
-
-  if (mode === "povertyEstimate" && currentStep.povertyEstimate) {
-    return (
-      <PovertyEstimateScreen
-        key={`povertyEstimate-${stepIndex}`}
-        povertyEstimate={currentStep.povertyEstimate}
-        initialValue={currentAnswer?.povertyPercent}
-        onSubmit={handlePovertyEstimateSubmit}
-        animationClass={getAnimationClass()}
-      />
-    );
-  }
-
-  if (mode === "povertyRealityCheck" && currentStep.povertyRealityCheck) {
-    return (
-      <PovertyRealityCheckScreen
-        key={`povertyRealityCheck-${stepIndex}`}
-        povertyRealityCheck={currentStep.povertyRealityCheck}
-        guessValue={currentAnswer?.povertyPercent ?? 0}
-        onNext={handleNextFromPovertyRealityCheck}
-        animationClass={getAnimationClass()}
-      />
-    );
-  }
-
-  if (mode === "patternVisual" && currentStep.patternVisual) {
-    return (
-      <PatternVisualScreen
-        key={`patternVisual-${stepIndex}`}
-        patternVisual={currentStep.patternVisual}
-        onNext={handleNextFromPatternVisual}
-        animationClass={getAnimationClass()}
-      />
-    );
-  }
-
-  if (mode === "hypothesisCheck" && currentStep.hypothesisCheck) {
-    return (
-      <HypothesisCheckScreen
-        key={`hypothesisCheck-${stepIndex}`}
-        hypothesisCheck={currentStep.hypothesisCheck}
-        initialHypothesis={currentAnswer?.hypothesis}
-        onHypothesisSelect={handleHypothesisSelect}
-        animationClass={getAnimationClass()}
-      />
-    );
-  }
-
-  if (mode === "aiInvestmentCheck" && currentStep.aiInvestmentCheck) {
-    return (
-      <AIInvestmentCheckScreen
-        key={`aiInvestmentCheck-${stepIndex}`}
-        aiInvestmentCheck={currentStep.aiInvestmentCheck}
-        initialSelections={currentAnswer?.aiInvestmentSelections}
-        onSelectionsChange={handleAIInvestmentSelect}
-        animationClass={getAnimationClass()}
-      />
-    );
-  }
-
-  if (mode === "aiInvestmentVisual" && currentStep.aiInvestmentVisual) {
-    return (
-      <AIInvestmentVisualScreen
-        key={`aiInvestmentVisual-${stepIndex}`}
-        aiInvestmentVisual={currentStep.aiInvestmentVisual}
-        onNext={handleNextFromAIInvestmentVisual}
-        animationClass={getAnimationClass()}
-      />
-    );
-  }
 
   if (mode === "synthesis" && currentStep.synthesis) {
     return (

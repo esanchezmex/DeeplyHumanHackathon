@@ -4,7 +4,7 @@ export type InputType = "number" | "slider";
 
 export type ChartType = "bar" | "split";
 
-export type QuestionStepId = "dailyVolume" | "showerShare" | "globalWaterAccess" | "economicAidPoverty";
+export type QuestionStepId = "economicAidPoverty";
 
 export interface IntroPage {
   title: string;
@@ -45,6 +45,13 @@ export interface RecentJumpPage {
   visualPlaceholder?: React.ReactNode;
   callout2005to2022: number;
   callout2005to2024: number;
+  bodyText2: string;
+}
+
+export interface AICoincidencePage {
+  bodyText: string;
+  visualPlaceholder?: React.ReactNode;
+  microcopy: string;
   bodyText2: string;
 }
 
@@ -112,6 +119,7 @@ export interface QuestionStepBase {
   electricityExpectation?: ElectricityExpectationPage;
   perPersonStable?: PerPersonStablePage;
   recentJump?: RecentJumpPage;
+  aiCoincidence?: AICoincidencePage;
   aidEstimate?: AidEstimatePage;
   realityCheck?: RealityCheckPage;
   povertyEstimate?: PovertyEstimatePage;
@@ -136,8 +144,6 @@ export interface QuestionStep extends QuestionStepBase {
   reveal: RevealConfig;
 }
 
-// Import water access data utility
-import { getWaterAccessStats } from "./data/waterAccess";
 
 // Simple constants for the story.
 const LITERS_PER_BATHTUB = 150;
@@ -183,95 +189,6 @@ export function differenceFactor(guess: number, actual: number): string {
 }
 
 export const questionSteps: QuestionStep[] = [
-  {
-    id: "dailyVolume",
-    prompt: "How many liters of water do you think you use in a day?",
-    inputType: "slider",
-    unitsLabel: "liters per day",
-    reveal: {
-      chartType: "bar",
-      actualValue: 300,
-      maxValue: 600,
-      context: (userValue: number) => {
-        const actual = 300;
-        const poolsPerYear = litersToOlympicPoolsPerYear(actual);
-        const bathtubsPerDay = litersToBathtubs(actual);
-        const factorText = differenceFactor(userValue, actual);
-        return [
-          `A typical person uses around ${formatNumber(
-            actual
-          )} liters per day – about ${bathtubsPerDay.toFixed(
-            1
-          )} bathtubs every single day.`,
-          `Over a year, that's roughly ${poolsPerYear.toFixed(
-            2
-          )} Olympic pools of water. Your guess was ${factorText}`,
-        ].join(" ");
-      },
-      subtitle: (userValue: number) => {
-        const actual = 300;
-        const diff = Math.abs(actual - userValue);
-        if (!userValue || userValue <= 0) return "";
-        return `You were off by ${formatNumber(
-          diff
-        )} liters compared to this benchmark.`;
-      },
-    },
-  },
-  {
-    id: "showerShare",
-    prompt: "What share of your home water do you think goes into showers?",
-    inputType: "slider",
-    unitsLabel: "% of home water use",
-    reveal: {
-      chartType: "split",
-      actualValue: 30,
-      maxValue: 100,
-      context: (userValue: number) => {
-        const actual = 30;
-        const factorText = differenceFactor(userValue, actual);
-        return `Showers account for about ${actual}% of indoor water use in many homes. Your guess was ${factorText}`;
-      },
-      subtitle: (userValue: number) => {
-        const actual = 30;
-        const diff = Math.abs(actual - userValue);
-        return `You were off by ${diff.toFixed(
-          0
-        )} percentage points from this reference share.`;
-      },
-    },
-  },
-  {
-    id: "globalWaterAccess",
-    prompt: "What percentage of the world's population do you think has access to at least basic water sources?",
-    inputType: "slider",
-    unitsLabel: "% of global population",
-    reveal: (() => {
-      const stats = getWaterAccessStats();
-      return {
-        chartType: "bar" as ChartType,
-        actualValue: stats.globalAverage,
-        maxValue: 100,
-        context: (userValue: number) => {
-          const actual = stats.globalAverage;
-          const factorText = differenceFactor(userValue, actual);
-          const year = stats.year;
-          const below50 = stats.countriesBelow50;
-          const above95 = stats.countriesAbove95;
-          
-          return [
-            `As of ${year}, the global average is ${actual.toFixed(1)}% – meaning about ${(100 - actual).toFixed(1)}% of the world's population still lacks basic water access.`,
-            `This data covers ${stats.totalCountries} countries. ${below50} countries have less than 50% access, while ${above95} countries have achieved 95% or more. Your guess was ${factorText}`,
-          ].join(" ");
-        },
-        subtitle: (userValue: number) => {
-          const actual = stats.globalAverage;
-          const diff = Math.abs(actual - userValue);
-          return `You were off by ${diff.toFixed(1)} percentage points from the ${stats.year} global average.`;
-        },
-      };
-    })(),
-  },
   {
     id: "economicAidPoverty",
     prompt: "What percentage of the world's population do you think lives in extreme poverty (below $3.00/day)?",
@@ -323,67 +240,23 @@ export const questionSteps: QuestionStep[] = [
       callout2005to2024: 20,
       bodyText2: "Something new is being added to the \"always-on\" baseline.\nNot just more devices—more computation behind the scenes.",
     },
-    aidEstimate: {
-      prompt: "In 2024, how much aid received per person do you think the average person received?",
-      sliderTicks: [0, 25, 50, 100, 200, 300],
-      maxValue: 300,
-      microcopy: "Your guess doesn't need to be right—just honest.",
-    },
-    realityCheck: {
-      actualValue: 50, // Placeholder - will be updated with real data
-      insightLines: [
-        "Aid per person is easy to talk about—but hard to picture.",
-        "Numbers feel different when they touch a single life.",
-      ],
-    },
-    povertyEstimate: {
-      prompt: "In the same year, what % of people do you think lived in extreme poverty?",
-      maxValue: 10,
-      microcopy: "A single digit can represent millions.",
-    },
-    povertyRealityCheck: {
-      actualValue: 8.5, // Placeholder - will be updated with real data
-      insightLines: [
-        "Poverty is a percentage, but it lands as a life.",
-        "When you picture it, what do you picture—scarcity, instability, or exclusion?",
-      ],
-    },
-    patternVisual: {
-      microcopyLines: [
-        "Two things can move together—or oppose each other—without one causing the other.",
-        "But patterns still ask questions.",
-      ],
-    },
-    hypothesisCheck: {
-      prompt: "If you had to explain this pattern, which feels closest?",
-      options: [
-        "Aid is helping reduce extreme poverty.",
-        "Aid rises when poverty rises.",
-        "Something else is driving both.",
-        "I'm not sure.",
-      ],
-    },
-    aiInvestmentCheck: {
-      statementCard: "In 2024, private AI investment was about $X billion.",
-      prompt: "What would you expect that kind of investment to change in the world?",
-      options: ["Health", "Jobs", "Poverty", "Education", "Environment", "I don't know"],
-      maxSelections: 2,
-    },
-    aiInvestmentVisual: {
-      insightLines: [
-        "AI investment accelerated fast.",
-        "Acceleration feels like progress—until you ask: progress for whom?",
-      ],
+    aiCoincidence: {
+      bodyText: "This coincides with the mainstreaming of generative AI and expanding data-center demand.",
+      microcopy: "No single chart proves cause. But patterns can still guide better questions.",
+      bodyText2: "ChatGPT was released to the public by OpenAI on November 30, 2022, marking the start of the modern generative AI era for users. As a free research preview, it immediately went viral, reaching 1 million users in five days and 100 million users within two months.",
     },
     synthesis: {
-      title: "A question the chart can't answer for us",
+      title: "The question the next decade will answer",
       textLines: [
-        "Investment can rise while hardship persists.",
-        "Aid can increase without translating into lived security.",
-        "Technology can amplify what a system already rewards.",
-        "The impact isn't only what we build, but who it reaches.",
+        "Electricity use didn't surge for years—until it did.",
+        "The new demand isn't just more devices. It's more computation.",
+        "",
+        "The question isn't whether we'll use AI.",
+        "It's what kind of infrastructure we'll build around it—and who pays the cost.",
+        "",
+        "If AI is becoming a daily utility, should it be required to be a clean one?",
       ],
-      reflectionPrompt: "If you could direct one lever—aid, policy, or technology—what would you change first?",
+      reflectionPrompt: "If you like, share one change you'd make this week—if any?",
     },
     finalActions: {
       buttonLabels: [
