@@ -20,8 +20,9 @@ import { FinalActionsScreen } from "./FinalActionsScreen";
 import { ElectricityExpectationScreen } from "./ElectricityExpectationScreen";
 import { PowerRisingScreen } from "./PowerRisingScreen";
 import { PerPersonStableScreen } from "./PerPersonStableScreen";
+import { RecentJumpScreen } from "./RecentJumpScreen";
 
-type Mode = "intro" | "moodCheck" | "powerRising" | "electricityExpectation" | "perPersonStable" | "aidEstimate" | "realityCheck" | "povertyEstimate" | "povertyRealityCheck" | "patternVisual" | "hypothesisCheck" | "aiInvestmentCheck" | "aiInvestmentVisual" | "synthesis" | "finalActions" | "predict" | "reveal" | "summary";
+type Mode = "intro" | "moodCheck" | "powerRising" | "electricityExpectation" | "perPersonStable" | "recentJump" | "aidEstimate" | "realityCheck" | "povertyEstimate" | "povertyRealityCheck" | "patternVisual" | "hypothesisCheck" | "aiInvestmentCheck" | "aiInvestmentVisual" | "synthesis" | "finalActions" | "predict" | "reveal" | "summary";
 type TransitionDirection = "forward" | "backward";
 
 export interface AnswerRecord {
@@ -183,6 +184,21 @@ export function QuestionFlow() {
   };
 
   const handleNextFromPerPersonStable = () => {
+    if (!currentStep) return;
+    setIsTransitioning(true);
+    setTransitionDirection("forward");
+    setTimeout(() => {
+      // Check if question has recentJump page, otherwise go to aidEstimate
+      if (currentStep.recentJump) {
+        setMode("recentJump");
+      } else {
+        setMode("aidEstimate");
+      }
+      setIsTransitioning(false);
+    }, 50);
+  };
+
+  const handleNextFromRecentJump = () => {
     if (!currentStep) return;
     setIsTransitioning(true);
     setTransitionDirection("forward");
@@ -502,6 +518,17 @@ export function QuestionFlow() {
         key={`perPersonStable-${stepIndex}`}
         perPersonStable={currentStep.perPersonStable}
         onNext={handleNextFromPerPersonStable}
+        animationClass={getAnimationClass()}
+      />
+    );
+  }
+
+  if (mode === "recentJump" && currentStep.recentJump) {
+    return (
+      <RecentJumpScreen
+        key={`recentJump-${stepIndex}`}
+        recentJump={currentStep.recentJump}
+        onNext={handleNextFromRecentJump}
         animationClass={getAnimationClass()}
       />
     );

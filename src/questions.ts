@@ -39,6 +39,15 @@ export interface PerPersonStablePage {
   bodyText2: string;
 }
 
+export interface RecentJumpPage {
+  title: string;
+  bodyText1: string;
+  visualPlaceholder?: React.ReactNode;
+  callout2005to2022: number;
+  callout2005to2024: number;
+  bodyText2: string;
+}
+
 export interface AidEstimatePage {
   prompt: string;
   sliderTicks: number[];
@@ -102,6 +111,7 @@ export interface QuestionStepBase {
   powerRising?: PowerRisingPage;
   electricityExpectation?: ElectricityExpectationPage;
   perPersonStable?: PerPersonStablePage;
+  recentJump?: RecentJumpPage;
   aidEstimate?: AidEstimatePage;
   realityCheck?: RealityCheckPage;
   povertyEstimate?: PovertyEstimatePage;
@@ -305,6 +315,13 @@ export const questionSteps: QuestionStep[] = [
       bodyText1: "Even as our digital lives expanded, electricity use per person didn't explode—it changed by only",
       percentageChange: 14,
       bodyText2: "For most of the last decade, we mostly kept per-person electricity use in check.\nThat matters: fewer watts per person can mean less pressure on the planet.\nMaybe something else was happening in parallel: efficiency gains, shifting where energy is used, and a world getting better at doing more with less, at least for a while...",
+    },
+    recentJump: {
+      title: "Then something changed: A recent jump changes the story",
+      bodyText1: "From 2014 to 2022, the change was modest.\nBut from 2022 to 2024, the increase is sharper—too large to ignore.",
+      callout2005to2022: 14,
+      callout2005to2024: 20,
+      bodyText2: "Something new is being added to the \"always-on\" baseline.\nNot just more devices—more computation behind the scenes.",
     },
     aidEstimate: {
       prompt: "In 2024, how much aid received per person do you think the average person received?",
