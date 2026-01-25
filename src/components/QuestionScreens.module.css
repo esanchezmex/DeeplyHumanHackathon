@@ -1402,9 +1402,16 @@
 
 .questionsSection {
   margin-top: 40px;
-  padding-top: 40px;
-  border-top: 1px solid color-mix(in srgb, var(--color-text-muted) 25%, transparent);
+  padding: 32px;
   max-width: 680px;
+  background: linear-gradient(135deg,
+      color-mix(in srgb, var(--color-accent) 8%, transparent),
+      color-mix(in srgb, var(--color-accent-2) 12%, transparent));
+  border: 1px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
+  border-radius: 20px;
+  box-shadow:
+    0 4px 24px color-mix(in srgb, var(--color-accent) 15%, transparent),
+    inset 0 1px 0 color-mix(in srgb, white 5%, transparent);
   animation: fadeIn 500ms ease-out 0.2s both;
 }
 
@@ -1450,8 +1457,13 @@
 }
 
 @media (max-width: 768px) {
+  .questionsSection {
+    padding: 24px;
+    margin-top: 32px;
+  }
+
   .reflectionHeader {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .reflectionParagraph {
@@ -1459,7 +1471,7 @@
   }
 
   .questionsHeader {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .questionItem {
