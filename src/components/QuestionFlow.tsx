@@ -14,8 +14,9 @@ import { PowerRisingScreen } from "./PowerRisingScreen";
 import { PerPersonStableScreen } from "./PerPersonStableScreen";
 import { RecentJumpScreen } from "./RecentJumpScreen";
 import { AICoincidenceScreen } from "./AICoincidenceScreen";
+import { SpeedIsStoryScreen } from "./SpeedIsStoryScreen";
 
-type Mode = "intro" | "moodCheck" | "powerRising" | "electricityExpectation" | "perPersonStable" | "recentJump" | "aiCoincidence" | "synthesis" | "finalActions" | "predict" | "reveal" | "summary";
+type Mode = "intro" | "moodCheck" | "powerRising" | "electricityExpectation" | "perPersonStable" | "recentJump" | "aiCoincidence" | "synthesis" | "speedIsStory" | "finalActions" | "predict" | "reveal" | "summary";
 type TransitionDirection = "forward" | "backward";
 
 export interface AnswerRecord {
@@ -248,6 +249,28 @@ export function QuestionFlow() {
       return [...prev, { stepId: currentStep.id, value: 0, synthesisReflection: reflection }];
     });
     setTimeout(() => {
+      // Check if question has speedIsStory page, otherwise go to finalActions
+      if (currentStep.speedIsStory) {
+        setMode("speedIsStory");
+      } else if (currentStep.finalActions) {
+        setMode("finalActions");
+      } else if (isLastStep) {
+        setMode("summary");
+      } else {
+        const nextIndex = stepIndex + 1;
+        const nextStep = questionSteps[nextIndex];
+        setStepIndex(nextIndex);
+        setMode(nextStep?.intro ? "intro" : "predict");
+      }
+      setIsTransitioning(false);
+    }, 50);
+  };
+
+  const handleNextFromSpeedIsStory = () => {
+    if (!currentStep) return;
+    setIsTransitioning(true);
+    setTransitionDirection("forward");
+    setTimeout(() => {
       if (currentStep.finalActions) {
         setMode("finalActions");
       } else if (isLastStep) {
@@ -408,6 +431,17 @@ export function QuestionFlow() {
         synthesis={currentStep.synthesis}
         initialReflection={currentAnswer?.synthesisReflection}
         onSubmit={handleSynthesisSubmit}
+        animationClass={getAnimationClass()}
+      />
+    );
+  }
+
+  if (mode === "speedIsStory" && currentStep.speedIsStory) {
+    return (
+      <SpeedIsStoryScreen
+        key={`speedIsStory-${stepIndex}`}
+        speedIsStory={currentStep.speedIsStory}
+        onNext={handleNextFromSpeedIsStory}
         animationClass={getAnimationClass()}
       />
     );

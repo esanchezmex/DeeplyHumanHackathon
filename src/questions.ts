@@ -55,6 +55,15 @@ export interface AICoincidencePage {
   bodyText2: string;
 }
 
+export interface SpeedIsStoryPage {
+  title: string;
+  bodyText1: string;
+  visualPlaceholder1?: React.ReactNode;
+  bodyText2: string;
+  visualPlaceholder2?: React.ReactNode;
+  bodyText3: string;
+}
+
 export interface AidEstimatePage {
   prompt: string;
   sliderTicks: number[];
@@ -120,6 +129,7 @@ export interface QuestionStepBase {
   perPersonStable?: PerPersonStablePage;
   recentJump?: RecentJumpPage;
   aiCoincidence?: AICoincidencePage;
+  speedIsStory?: SpeedIsStoryPage;
   aidEstimate?: AidEstimatePage;
   realityCheck?: RealityCheckPage;
   povertyEstimate?: PovertyEstimatePage;
@@ -257,6 +267,12 @@ export const questionSteps: QuestionStep[] = [
         "If AI is becoming a daily utility, should it be required to be a clean one?",
       ],
       reflectionPrompt: "If you like, share one change you'd make this week—if any?",
+    },
+    speedIsStory: {
+      title: "The Speed Is the Story",
+      bodyText1: "We didn't just adopt technology. We reorganized life around it.\n\nIn a few decades, mobile phones and internet access went from rare to default—especially in dense, urban life.\nThat kind of growth doesn't only change what we can do. It changes what we expect, how we spend time, and how we relate to one another.",
+      bodyText2: "Now we're watching another curve accelerate—generative AI—fast enough to feel like a shift in daily reality.",
+      bodyText3: "Just like phones and the internet, AI is moving from novelty to habit—at record speed.",
     },
     finalActions: {
       buttonLabels: [

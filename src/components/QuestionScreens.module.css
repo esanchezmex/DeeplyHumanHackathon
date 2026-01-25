@@ -663,6 +663,12 @@
   max-width: 800px;
 }
 
+/* Speed is story screen styles */
+.screen[data-screen="speedIsStory"] .main {
+  gap: 32px;
+  max-width: 800px;
+}
+
 .microcopy {
   font-size: 0.95rem;
   line-height: 1.6;
