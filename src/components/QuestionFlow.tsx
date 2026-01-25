@@ -18,8 +18,9 @@ import { AIInvestmentVisualScreen } from "./AIInvestmentVisualScreen";
 import { SynthesisScreen } from "./SynthesisScreen";
 import { FinalActionsScreen } from "./FinalActionsScreen";
 import { ElectricityExpectationScreen } from "./ElectricityExpectationScreen";
+import { PowerRisingScreen } from "./PowerRisingScreen";
 
-type Mode = "intro" | "moodCheck" | "electricityExpectation" | "aidEstimate" | "realityCheck" | "povertyEstimate" | "povertyRealityCheck" | "patternVisual" | "hypothesisCheck" | "aiInvestmentCheck" | "aiInvestmentVisual" | "synthesis" | "finalActions" | "predict" | "reveal" | "summary";
+type Mode = "intro" | "moodCheck" | "powerRising" | "electricityExpectation" | "aidEstimate" | "realityCheck" | "povertyEstimate" | "povertyRealityCheck" | "patternVisual" | "hypothesisCheck" | "aiInvestmentCheck" | "aiInvestmentVisual" | "synthesis" | "finalActions" | "predict" | "reveal" | "summary";
 type TransitionDirection = "forward" | "backward";
 
 export interface AnswerRecord {
@@ -128,6 +129,23 @@ export function QuestionFlow() {
       }
       return [...prev, { stepId: currentStep.id, value: 0, mood }];
     });
+    setTimeout(() => {
+      // Check if question has powerRising page, then electricityExpectation, otherwise go to aidEstimate
+      if (currentStep.powerRising) {
+        setMode("powerRising");
+      } else if (currentStep.electricityExpectation) {
+        setMode("electricityExpectation");
+      } else {
+        setMode("aidEstimate");
+      }
+      setIsTransitioning(false);
+    }, 50);
+  };
+
+  const handleNextFromPowerRising = () => {
+    if (!currentStep) return;
+    setIsTransitioning(true);
+    setTransitionDirection("forward");
     setTimeout(() => {
       // Check if question has electricityExpectation page, otherwise go to aidEstimate
       if (currentStep.electricityExpectation) {
@@ -434,6 +452,17 @@ export function QuestionFlow() {
         moodCheck={currentStep.moodCheck}
         initialMood={currentAnswer?.mood}
         onMoodSelect={handleMoodSelect}
+        animationClass={getAnimationClass()}
+      />
+    );
+  }
+
+  if (mode === "powerRising" && currentStep.powerRising) {
+    return (
+      <PowerRisingScreen
+        key={`powerRising-${stepIndex}`}
+        powerRising={currentStep.powerRising}
+        onNext={handleNextFromPowerRising}
         animationClass={getAnimationClass()}
       />
     );

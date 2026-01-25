@@ -1,0 +1,66 @@
+"use client";
+
+import type { PowerRisingPage } from "../questions";
+import styles from "./QuestionScreens.module.css";
+
+interface PowerRisingScreenProps {
+  powerRising: PowerRisingPage;
+  onNext: () => void;
+  animationClass?: string;
+}
+
+export function PowerRisingScreen({
+  powerRising,
+  onNext,
+  animationClass = "",
+}: PowerRisingScreenProps) {
+  const screenClasses = [
+    styles.screen,
+    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight : 
+                      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
+  ].filter(Boolean).join(" ");
+
+  return (
+    <div className={screenClasses} data-screen="powerRising">
+      <div className={styles.inner}>
+        <header className={styles.header}>
+          <p className={styles.stepLabel}>Context</p>
+          <p className={styles.stepCounter}>Question 4 of 4</p>
+        </header>
+        <main className={styles.main}>
+          <h1 className={styles.prompt}>{powerRising.headline}</h1>
+          <div className={styles.powerRisingContent}>
+            <p className={styles.powerRisingText}>
+              {powerRising.bodyText1}
+              <br />
+              From 2014 to 2022, total generation increased by ~{powerRising.percentageIncrease}%.
+            </p>
+            {powerRising.visualPlaceholder && (
+              <div className={styles.visualPlaceholder}>
+                {powerRising.visualPlaceholder}
+              </div>
+            )}
+            {!powerRising.visualPlaceholder && (
+              <div className={styles.visualPlaceholder}>
+                {/* Placeholder for visual */}
+              </div>
+            )}
+            <p className={styles.powerRisingText}>
+              {powerRising.bodyText2}
+            </p>
+          </div>
+          <footer className={styles.footer}>
+            <button
+              type="button"
+              onClick={onNext}
+              className={styles.primaryButton}
+            >
+              Next
+            </button>
+          </footer>
+        </main>
+      </div>
+    </div>
+  );
+}
+

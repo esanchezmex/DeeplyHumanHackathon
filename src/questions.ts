@@ -18,6 +18,14 @@ export interface MoodCheckPage {
   moodOptions: string[];
 }
 
+export interface PowerRisingPage {
+  headline: string;
+  bodyText1: string;
+  percentageIncrease: number;
+  visualPlaceholder?: React.ReactNode;
+  bodyText2: string;
+}
+
 export interface ElectricityExpectationPage {
   prompt: string;
   options: string[];
@@ -83,6 +91,7 @@ export interface QuestionStepBase {
   unitsLabel: string;
   intro?: IntroPage;
   moodCheck?: MoodCheckPage;
+  powerRising?: PowerRisingPage;
   electricityExpectation?: ElectricityExpectationPage;
   aidEstimate?: AidEstimatePage;
   realityCheck?: RealityCheckPage;
@@ -271,6 +280,12 @@ export const questionSteps: QuestionStep[] = [
       ),
       prompt: "When you think about your everyday digital footprint, what rises first?",
       moodOptions: ["Pride", "Discomfort", "Distance"],
+    },
+    powerRising: {
+      headline: "Power has been quietly rising for years.",
+      bodyText1: "Global electricity generation has climbed steadily—year after year.",
+      percentageIncrease: 16,
+      bodyText2: "A growing share of daily life is \"invisible electricity\": Wi-Fi, servers, data transfer, charging, background syncing.",
     },
     electricityExpectation: {
       prompt: "And therefore, before you see the data: do you expect electricity use to be…",
