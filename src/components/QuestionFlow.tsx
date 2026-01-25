@@ -17,14 +17,16 @@ import { AIInvestmentCheckScreen } from "./AIInvestmentCheckScreen";
 import { AIInvestmentVisualScreen } from "./AIInvestmentVisualScreen";
 import { SynthesisScreen } from "./SynthesisScreen";
 import { FinalActionsScreen } from "./FinalActionsScreen";
+import { ElectricityExpectationScreen } from "./ElectricityExpectationScreen";
 
-type Mode = "intro" | "moodCheck" | "aidEstimate" | "realityCheck" | "povertyEstimate" | "povertyRealityCheck" | "patternVisual" | "hypothesisCheck" | "aiInvestmentCheck" | "aiInvestmentVisual" | "synthesis" | "finalActions" | "predict" | "reveal" | "summary";
+type Mode = "intro" | "moodCheck" | "electricityExpectation" | "aidEstimate" | "realityCheck" | "povertyEstimate" | "povertyRealityCheck" | "patternVisual" | "hypothesisCheck" | "aiInvestmentCheck" | "aiInvestmentVisual" | "synthesis" | "finalActions" | "predict" | "reveal" | "summary";
 type TransitionDirection = "forward" | "backward";
 
 export interface AnswerRecord {
   stepId: QuestionStep["id"];
   value: number;
   mood?: string;
+  electricityExpectation?: string;
   povertyPercent?: number;
   hypothesis?: string;
   aiInvestmentSelections?: string[];
@@ -125,6 +127,30 @@ export function QuestionFlow() {
         return clone;
       }
       return [...prev, { stepId: currentStep.id, value: 0, mood }];
+    });
+    setTimeout(() => {
+      // Check if question has electricityExpectation page, otherwise go to aidEstimate
+      if (currentStep.electricityExpectation) {
+        setMode("electricityExpectation");
+      } else {
+        setMode("aidEstimate");
+      }
+      setIsTransitioning(false);
+    }, 50);
+  };
+
+  const handleElectricityExpectationSelect = (selection: string) => {
+    if (!currentStep) return;
+    setIsTransitioning(true);
+    setTransitionDirection("forward");
+    setAnswers((prev) => {
+      const existingIndex = prev.findIndex((a) => a.stepId === currentStep.id);
+      if (existingIndex >= 0) {
+        const clone = [...prev];
+        clone[existingIndex] = { ...clone[existingIndex], electricityExpectation: selection };
+        return clone;
+      }
+      return [...prev, { stepId: currentStep.id, value: 0, electricityExpectation: selection }];
     });
     setTimeout(() => {
       setMode("aidEstimate");
@@ -408,6 +434,18 @@ export function QuestionFlow() {
         moodCheck={currentStep.moodCheck}
         initialMood={currentAnswer?.mood}
         onMoodSelect={handleMoodSelect}
+        animationClass={getAnimationClass()}
+      />
+    );
+  }
+
+  if (mode === "electricityExpectation" && currentStep.electricityExpectation) {
+    return (
+      <ElectricityExpectationScreen
+        key={`electricityExpectation-${stepIndex}`}
+        electricityExpectation={currentStep.electricityExpectation}
+        initialSelection={currentAnswer?.electricityExpectation}
+        onSelection={handleElectricityExpectationSelect}
         animationClass={getAnimationClass()}
       />
     );

@@ -54,7 +54,11 @@ export function AIInvestmentCheckScreen({
         </header>
         <main className={styles.main}>
           <div className={styles.statementCard}>
-            <p className={styles.statementText}>{aiInvestmentCheck.statementCard}</p>
+            {typeof aiInvestmentCheck.statementCard === "string" ? (
+              <p className={styles.statementText}>{aiInvestmentCheck.statementCard}</p>
+            ) : (
+              <div className={styles.statementText}>{aiInvestmentCheck.statementCard}</div>
+            )}
           </div>
           <h1 className={styles.prompt}>{aiInvestmentCheck.prompt}</h1>
           <div className={styles.multiSelectOptions}>

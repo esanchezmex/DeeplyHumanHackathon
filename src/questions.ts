@@ -1,3 +1,5 @@
+import React from "react";
+
 export type InputType = "number" | "slider";
 
 export type ChartType = "bar" | "split";
@@ -11,9 +13,14 @@ export interface IntroPage {
 }
 
 export interface MoodCheckPage {
-  statementCard: string;
+  statementCard: string | React.ReactNode;
   prompt: string;
   moodOptions: string[];
+}
+
+export interface ElectricityExpectationPage {
+  prompt: string;
+  options: string[];
 }
 
 export interface AidEstimatePage {
@@ -49,7 +56,7 @@ export interface HypothesisCheckPage {
 }
 
 export interface AIInvestmentCheckPage {
-  statementCard: string;
+  statementCard: string | React.ReactNode;
   prompt: string;
   options: string[];
   maxSelections: number;
@@ -76,6 +83,7 @@ export interface QuestionStepBase {
   unitsLabel: string;
   intro?: IntroPage;
   moodCheck?: MoodCheckPage;
+  electricityExpectation?: ElectricityExpectationPage;
   aidEstimate?: AidEstimatePage;
   realityCheck?: RealityCheckPage;
   povertyEstimate?: PovertyEstimatePage;
@@ -247,9 +255,26 @@ export const questionSteps: QuestionStep[] = [
       ctaText: "Begin",
     },
     moodCheck: {
-      statementCard: "Last year (FY 2024), the U.S. government spent about $755 billion on contracts with outside companies and organizations.",
-      prompt: "When you see big numbers, what do you feel—hope, skepticism, numbness?",
-      moodOptions: ["Hopeful", "Skeptical", "Numb"],
+      statementCard: React.createElement(
+        React.Fragment,
+        null,
+        React.createElement(
+          "p",
+          { style: { fontWeight: "bold", marginBottom: "1rem" } },
+          "By 2022, connectivity itself became a mass daily electricity load"
+        ),
+        React.createElement(
+          "p",
+          { style: { fontWeight: "normal" } },
+          "The UN Agency for Digital Technologies estimates ~5.3 billion people were using the internet in 2022 (about 66% of the world). In 2005, global penetration was only ~17%, a shift that implies far more always-on device ecosystems (phones, Wi-Fi, laptops, set-top boxes) per person."
+        )
+      ),
+      prompt: "When you think about your everyday digital footprint, what rises first?",
+      moodOptions: ["Pride", "Discomfort", "Distance"],
+    },
+    electricityExpectation: {
+      prompt: "And therefore, before you see the data: do you expect electricity use to be…",
+      options: ["Mostly flat", "Gradually rising", "Sharply rising"],
     },
     aidEstimate: {
       prompt: "In 2024, how much aid received per person do you think the average person received?",

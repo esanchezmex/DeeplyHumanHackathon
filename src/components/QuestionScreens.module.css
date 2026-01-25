@@ -624,6 +624,15 @@
   margin: 0;
 }
 
+.statementText p {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.statementText p:last-child {
+  margin-bottom: 0;
+}
+
 /* Mood check screen styles */
 .screen[data-screen="moodCheck"] .main {
   gap: 32px;
