@@ -1,8 +1,11 @@
 /* Breathing animation keyframes - very subtle */
 @keyframes breathe {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.008);
   }
@@ -13,6 +16,7 @@
     opacity: 0;
     transform: translateY(8px) scale(0.98);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -24,6 +28,7 @@
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+
   to {
     opacity: 0;
     transform: translateY(-8px) scale(0.98);
@@ -35,6 +40,7 @@
     opacity: 0;
     transform: translateX(20px) scale(0.98);
   }
+
   to {
     opacity: 1;
     transform: translateX(0) scale(1);
@@ -46,6 +52,7 @@
     opacity: 0;
     transform: translateX(-20px) scale(0.98);
   }
+
   to {
     opacity: 1;
     transform: translateX(0) scale(1);
@@ -349,7 +356,7 @@
   max-width: 900px;
 }
 
-.screen[data-screen="reveal"] .main > *:first-child {
+.screen[data-screen="reveal"] .main>*:first-child {
   flex: 0 0 auto;
 }
 
@@ -1324,4 +1331,144 @@
   }
 }
 
+/* =====================================================
+   AI Agent Screen Styles
+   ===================================================== */
 
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 48px 24px;
+}
+
+.loadingSpinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid color-mix(in srgb, var(--color-text-muted) 30%, transparent);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingText {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.errorText {
+  font-size: 1rem;
+  color: var(--color-signal);
+}
+
+.reflectionSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 680px;
+  animation: fadeIn 500ms ease-out;
+}
+
+.reflectionHeader {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-accent-2);
+  margin-bottom: 8px;
+}
+
+.reflectionParagraph {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.questionsSection {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid color-mix(in srgb, var(--color-text-muted) 25%, transparent);
+  max-width: 680px;
+  animation: fadeIn 500ms ease-out 0.2s both;
+}
+
+.questionsHeader {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-accent-2);
+  margin-bottom: 24px;
+}
+
+.questionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.questionItem {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  padding-left: 32px;
+  position: relative;
+  font-weight: 500;
+}
+
+.questionItem::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* AI Agent screen layout */
+.screen[data-screen="aiAgent"] .main {
+  justify-content: flex-start;
+  padding-top: 24px;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .reflectionHeader {
+    font-size: 1.2rem;
+  }
+
+  .reflectionParagraph {
+    font-size: 0.95rem;
+  }
+
+  .questionsHeader {
+    font-size: 1.3rem;
+  }
+
+  .questionItem {
+    font-size: 1.05rem;
+    padding-left: 28px;
+  }
+
+  .loadingSpinner {
+    width: 40px;
+    height: 40px;
+  }
+}

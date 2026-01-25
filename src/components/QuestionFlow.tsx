@@ -4,7 +4,7 @@ import { useMemo, useState, useEffect } from "react";
 import { QuestionStep, questionSteps } from "../questions";
 import { PredictScreen } from "./PredictScreen";
 import { RevealScreen } from "./RevealScreen";
-import { SummaryScreen } from "./SummaryScreen";
+import { AIAgentScreen } from "./AIAgentScreen";
 import { IntroScreen } from "./IntroScreen";
 import { MoodCheckScreen } from "./MoodCheckScreen";
 import { SynthesisScreen } from "./SynthesisScreen";
@@ -16,7 +16,7 @@ import { RecentJumpScreen } from "./RecentJumpScreen";
 import { AICoincidenceScreen } from "./AICoincidenceScreen";
 import { SpeedIsStoryScreen } from "./SpeedIsStoryScreen";
 
-type Mode = "intro" | "moodCheck" | "powerRising" | "electricityExpectation" | "perPersonStable" | "recentJump" | "aiCoincidence" | "synthesis" | "speedIsStory" | "finalActions" | "predict" | "reveal" | "summary";
+type Mode = "intro" | "moodCheck" | "powerRising" | "electricityExpectation" | "perPersonStable" | "recentJump" | "aiCoincidence" | "synthesis" | "speedIsStory" | "finalActions" | "predict" | "reveal" | "aiAgent";
 type TransitionDirection = "forward" | "backward";
 
 export interface AnswerRecord {
@@ -48,7 +48,7 @@ export function QuestionFlow() {
     return answers.find((a) => a.stepId === currentStep.id);
   }, [answers, currentStep]);
 
-  if (!currentStep && mode !== "summary") {
+  if (!currentStep && mode !== "aiAgent") {
     return null;
   }
 
@@ -67,7 +67,7 @@ export function QuestionFlow() {
       }
       return [...prev, { stepId: currentStep.id, value }];
     });
-    
+
     // Small delay to allow exit animation
     setTimeout(() => {
       setMode("reveal");
@@ -80,7 +80,7 @@ export function QuestionFlow() {
       setIsTransitioning(true);
       setTransitionDirection("forward");
       setTimeout(() => {
-        setMode("summary");
+        setMode("aiAgent");
         setIsTransitioning(false);
       }, 50);
       return;
@@ -126,13 +126,13 @@ export function QuestionFlow() {
       return [...prev, { stepId: currentStep.id, value: 0, mood }];
     });
     setTimeout(() => {
-      // Check if question has powerRising page, then electricityExpectation, otherwise go to aidEstimate
+      // Check if question has powerRising page, then electricityExpectation, otherwise go to predict
       if (currentStep.powerRising) {
         setMode("powerRising");
       } else if (currentStep.electricityExpectation) {
         setMode("electricityExpectation");
       } else {
-        setMode("aidEstimate");
+        setMode("predict");
       }
       setIsTransitioning(false);
     }, 50);
@@ -143,11 +143,11 @@ export function QuestionFlow() {
     setIsTransitioning(true);
     setTransitionDirection("forward");
     setTimeout(() => {
-      // Check if question has electricityExpectation page, otherwise go to aidEstimate
+      // Check if question has electricityExpectation page, otherwise go to predict
       if (currentStep.electricityExpectation) {
         setMode("electricityExpectation");
       } else {
-        setMode("aidEstimate");
+        setMode("predict");
       }
       setIsTransitioning(false);
     }, 50);
@@ -167,11 +167,11 @@ export function QuestionFlow() {
       return [...prev, { stepId: currentStep.id, value: 0, electricityExpectation: selection }];
     });
     setTimeout(() => {
-      // Check if question has perPersonStable page, otherwise go to aidEstimate
+      // Check if question has perPersonStable page, otherwise go to predict
       if (currentStep.perPersonStable) {
         setMode("perPersonStable");
       } else {
-        setMode("aidEstimate");
+        setMode("predict");
       }
       setIsTransitioning(false);
     }, 50);
@@ -182,11 +182,11 @@ export function QuestionFlow() {
     setIsTransitioning(true);
     setTransitionDirection("forward");
     setTimeout(() => {
-      // Check if question has recentJump page, otherwise go to aidEstimate
+      // Check if question has recentJump page, otherwise go to predict
       if (currentStep.recentJump) {
         setMode("recentJump");
       } else {
-        setMode("aidEstimate");
+        setMode("predict");
       }
       setIsTransitioning(false);
     }, 50);
@@ -203,7 +203,7 @@ export function QuestionFlow() {
       } else if (currentStep.synthesis) {
         setMode("synthesis");
       } else if (isLastStep) {
-        setMode("summary");
+        setMode("aiAgent");
       } else {
         const nextIndex = stepIndex + 1;
         const nextStep = questionSteps[nextIndex];
@@ -219,11 +219,11 @@ export function QuestionFlow() {
     setIsTransitioning(true);
     setTransitionDirection("forward");
     setTimeout(() => {
-      // Check if question has synthesis page, otherwise go to summary
+      // Check if question has synthesis page, otherwise go to aiAgent
       if (currentStep.synthesis) {
         setMode("synthesis");
       } else if (isLastStep) {
-        setMode("summary");
+        setMode("aiAgent");
       } else {
         const nextIndex = stepIndex + 1;
         const nextStep = questionSteps[nextIndex];
@@ -255,7 +255,7 @@ export function QuestionFlow() {
       } else if (currentStep.finalActions) {
         setMode("finalActions");
       } else if (isLastStep) {
-        setMode("summary");
+        setMode("aiAgent");
       } else {
         const nextIndex = stepIndex + 1;
         const nextStep = questionSteps[nextIndex];
@@ -274,7 +274,7 @@ export function QuestionFlow() {
       if (currentStep.finalActions) {
         setMode("finalActions");
       } else if (isLastStep) {
-        setMode("summary");
+        setMode("aiAgent");
       } else {
         const nextIndex = stepIndex + 1;
         const nextStep = questionSteps[nextIndex];
@@ -293,7 +293,7 @@ export function QuestionFlow() {
         setIsTransitioning(true);
         setTransitionDirection("forward");
         setTimeout(() => {
-          setMode("summary");
+          setMode("aiAgent");
           setIsTransitioning(false);
         }, 50);
       } else {
@@ -320,20 +320,6 @@ export function QuestionFlow() {
     setMode(firstStep?.intro ? "intro" : "predict");
   };
 
-  if (mode === "summary") {
-    return (
-      <SummaryScreen
-        steps={questionSteps}
-        answers={answers}
-        onRestart={handleRestart}
-      />
-    );
-  }
-
-  if (!currentStep) {
-    return null;
-  }
-
   // Determine animation class based on transition direction
   const getAnimationClass = () => {
     if (transitionDirection === "forward") {
@@ -341,6 +327,25 @@ export function QuestionFlow() {
     }
     return "slideFromLeft";
   };
+
+  if (mode === "aiAgent") {
+    // Get the user's answers to pass to the AI agent
+    const userAnswer = answers.find(a => a.stepId === "economicAidPoverty");
+
+    return (
+      <AIAgentScreen
+        mood={userAnswer?.mood}
+        electricityExpectation={userAnswer?.electricityExpectation}
+        synthesisReflection={userAnswer?.synthesisReflection}
+        onRestart={handleRestart}
+        animationClass={getAnimationClass()}
+      />
+    );
+  }
+
+  if (!currentStep) {
+    return null;
+  }
 
   if (mode === "intro" && currentStep.intro) {
     return (

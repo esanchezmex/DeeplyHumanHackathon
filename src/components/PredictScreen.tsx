@@ -52,8 +52,8 @@ export function PredictScreen({
 
   const screenClasses = [
     styles.screen,
-    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight : 
-                      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
+    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight :
+      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
   ].filter(Boolean).join(" ");
 
   return (
@@ -62,7 +62,7 @@ export function PredictScreen({
         <header className={styles.header}>
           <p className={styles.stepLabel}>Predict</p>
           <p className={styles.stepCounter}>
-            Question {step.id === "dailyVolume" ? 1 : step.id === "showerShare" ? 2 : step.id === "globalWaterAccess" ? 3 : 4} of 4
+            Question 1 of 1
           </p>
         </header>
         <main className={styles.main}>
