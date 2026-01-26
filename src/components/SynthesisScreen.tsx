@@ -30,8 +30,8 @@ export function SynthesisScreen({
 
   const screenClasses = [
     styles.screen,
-    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight : 
-                      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
+    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight :
+      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
   ].filter(Boolean).join(" ");
 
   return (
@@ -39,12 +39,11 @@ export function SynthesisScreen({
       <div className={styles.inner}>
         <header className={styles.header}>
           <p className={styles.stepLabel}>Synthesis</p>
-          <p className={styles.stepCounter}>Question 4 of 4</p>
         </header>
         <main className={styles.main}>
           <h1 className={styles.synthesisTitle}>{synthesis.title}</h1>
           <section className={styles.synthesisText}>
-            {synthesis.textLines.map((line, index) => 
+            {synthesis.textLines.map((line, index) =>
               line === "" ? (
                 <div key={index} style={{ height: '1rem' }} />
               ) : (

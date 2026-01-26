@@ -29,7 +29,6 @@ export function PerPersonStableScreen({
       <div className={styles.inner}>
         <header className={styles.header}>
           <p className={styles.stepLabel}>Context</p>
-          <p className={styles.stepCounter}>Question 4 of 4</p>
         </header>
         <main className={styles.main}>
           <h1 className={styles.prompt}>{perPersonStable.title}</h1>

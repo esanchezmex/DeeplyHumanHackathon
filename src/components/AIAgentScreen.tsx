@@ -148,7 +148,7 @@ export function AIAgentScreen({
                 </main>
 
                 {!isLoading && (
-                    <footer className={styles.footer}>
+                    <footer className={styles.footer} style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
                         <div className={styles.aiAgentButtons}>
                             <button
                                 type="button"
@@ -168,6 +168,23 @@ export function AIAgentScreen({
                                 View sources &amp; methodology
                             </button>
                         </div>
+                        <hr style={{
+                            width: '200px',
+                            margin: '24px 0 16px',
+                            border: 'none',
+                            borderTop: '1px solid currentColor',
+                            opacity: 0.2,
+                        }} />
+                        <p style={{
+                            margin: '0',
+                            fontSize: '0.95rem',
+                            color: 'currentColor',
+                            opacity: 0.5,
+                            textAlign: 'left',
+                            fontStyle: 'italic',
+                        }}>
+                            More Well-being dimensions to reflect on coming soon!
+                        </p>
                     </footer>
                 )}
             </div>

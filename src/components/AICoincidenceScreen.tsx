@@ -26,7 +26,6 @@ export function AICoincidenceScreen({
       <div className={styles.inner}>
         <header className={styles.header}>
           <p className={styles.stepLabel}>Context</p>
-          <p className={styles.stepCounter}>Question 4 of 4</p>
         </header>
         <main className={styles.main}>
           <h1 className={styles.prompt}>{aiCoincidence.title}</h1>
@@ -50,7 +49,7 @@ export function AICoincidenceScreen({
               onClick={onNext}
               className={styles.primaryButton}
             >
-              Next
+              <span style={{ marginBottom: '4px', display: 'block' }}>Next</span>
             </button>
           </footer>
         </main>

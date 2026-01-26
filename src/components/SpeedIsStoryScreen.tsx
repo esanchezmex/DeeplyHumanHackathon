@@ -30,7 +30,6 @@ export function SpeedIsStoryScreen({
       <div className={styles.inner}>
         <header className={styles.header}>
           <p className={styles.stepLabel}>Context</p>
-          <p className={styles.stepCounter}>Question 1 of 1</p>
         </header>
         <main className={styles.main}>
           <h1 className={styles.prompt}>{speedIsStory.title}</h1>

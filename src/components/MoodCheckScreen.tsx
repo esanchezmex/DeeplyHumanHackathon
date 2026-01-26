@@ -31,8 +31,8 @@ export function MoodCheckScreen({
 
   const screenClasses = [
     styles.screen,
-    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight : 
-                      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
+    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight :
+      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
   ].filter(Boolean).join(" ");
 
   return (
@@ -40,7 +40,6 @@ export function MoodCheckScreen({
       <div className={styles.inner}>
         <header className={styles.header}>
           <p className={styles.stepLabel}>Reflect</p>
-          <p className={styles.stepCounter}>Question 4 of 4</p>
         </header>
         <main className={styles.main}>
           <div className={styles.statementCard}>
@@ -56,9 +55,8 @@ export function MoodCheckScreen({
               <button
                 key={mood}
                 type="button"
-                className={`${styles.moodButton} ${
-                  selectedMood === mood ? styles.moodButtonSelected : ""
-                }`}
+                className={`${styles.moodButton} ${selectedMood === mood ? styles.moodButtonSelected : ""
+                  }`}
                 onClick={() => handleMoodClick(mood)}
               >
                 {mood}
