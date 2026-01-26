@@ -54,7 +54,7 @@ export function RecentJumpChart({ animate = true }: RecentJumpChartProps) {
             setShowThickLine(false);
 
             const visibleTimer = setTimeout(() => setIsVisible(true), 100);
-            const thickLineTimer = setTimeout(() => setShowThickLine(true), 3000);
+            const thickLineTimer = setTimeout(() => setShowThickLine(true), 5000);
 
             return () => {
                 clearTimeout(visibleTimer);

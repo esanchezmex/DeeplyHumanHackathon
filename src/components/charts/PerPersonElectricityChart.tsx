@@ -49,7 +49,7 @@ export function PerPersonElectricityChart({ animate = true }: PerPersonElectrici
             setShowGreenLine(false);
 
             const visibleTimer = setTimeout(() => setIsVisible(true), 100);
-            const greenLineTimer = setTimeout(() => setShowGreenLine(true), 1500);
+            const greenLineTimer = setTimeout(() => setShowGreenLine(true), 2000);
 
             return () => {
                 clearTimeout(visibleTimer);

@@ -41,6 +41,22 @@ export function QuestionFlow() {
   const [transitionDirection, setTransitionDirection] = useState<TransitionDirection>("forward");
   const [isTransitioning, setIsTransitioning] = useState(false);
 
+  // Scroll to top whenever screen changes
+  useEffect(() => {
+    // Multiple approaches to ensure scroll works
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    // Also try after a small delay for content that renders async
+    const timer = setTimeout(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [mode, stepIndex]);
+
   const currentStep: QuestionStep | undefined = questionSteps[stepIndex];
 
   const currentAnswer = useMemo(() => {
