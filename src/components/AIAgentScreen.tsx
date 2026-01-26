@@ -149,13 +149,25 @@ export function AIAgentScreen({
 
                 {!isLoading && (
                     <footer className={styles.footer}>
-                        <button
-                            type="button"
-                            onClick={onRestart}
-                            className={styles.secondaryButton}
-                        >
-                            Start over
-                        </button>
+                        <div className={styles.aiAgentButtons}>
+                            <button
+                                type="button"
+                                onClick={onRestart}
+                                className={styles.secondaryButton}
+                            >
+                                Start over
+                            </button>
+                            <button
+                                type="button"
+                                className={styles.primaryButton}
+                                onClick={() => {
+                                    // TODO: Implement sources & methodology navigation
+                                    console.log("View sources & methodology");
+                                }}
+                            >
+                                View sources &amp; methodology
+                            </button>
+                        </div>
                     </footer>
                 )}
             </div>

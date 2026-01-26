@@ -2,6 +2,7 @@
 
 import type { AICoincidencePage } from "../questions";
 import styles from "./QuestionScreens.module.css";
+import { AIInvestmentChart } from "./charts/AIInvestmentChart";
 
 interface AICoincidenceScreenProps {
   aiCoincidence: AICoincidencePage;
@@ -16,8 +17,8 @@ export function AICoincidenceScreen({
 }: AICoincidenceScreenProps) {
   const screenClasses = [
     styles.screen,
-    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight : 
-                      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
+    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight :
+      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
   ].filter(Boolean).join(" ");
 
   return (
@@ -28,20 +29,14 @@ export function AICoincidenceScreen({
           <p className={styles.stepCounter}>Question 4 of 4</p>
         </header>
         <main className={styles.main}>
+          <h1 className={styles.prompt}>{aiCoincidence.title}</h1>
           <div className={styles.powerRisingContent}>
             <p className={styles.powerRisingText}>
               {aiCoincidence.bodyText}
             </p>
-            {aiCoincidence.visualPlaceholder && (
-              <div className={styles.visualPlaceholder}>
-                {aiCoincidence.visualPlaceholder}
-              </div>
-            )}
-            {!aiCoincidence.visualPlaceholder && (
-              <div className={styles.visualPlaceholder}>
-                {/* Placeholder for visual */}
-              </div>
-            )}
+            <div className={styles.chartContainer}>
+              <AIInvestmentChart animate={true} />
+            </div>
             <p className={styles.microcopy}>
               {aiCoincidence.microcopy}
             </p>

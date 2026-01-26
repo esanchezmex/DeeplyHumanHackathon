@@ -249,18 +249,12 @@ export function QuestionFlow() {
       return [...prev, { stepId: currentStep.id, value: 0, synthesisReflection: reflection }];
     });
     setTimeout(() => {
-      // Check if question has speedIsStory page, otherwise go to finalActions
+      // Check if question has speedIsStory page, otherwise go directly to AI Agent
       if (currentStep.speedIsStory) {
         setMode("speedIsStory");
-      } else if (currentStep.finalActions) {
-        setMode("finalActions");
-      } else if (isLastStep) {
-        setMode("aiAgent");
       } else {
-        const nextIndex = stepIndex + 1;
-        const nextStep = questionSteps[nextIndex];
-        setStepIndex(nextIndex);
-        setMode(nextStep?.intro ? "intro" : "predict");
+        // Go directly to AI Agent screen
+        setMode("aiAgent");
       }
       setIsTransitioning(false);
     }, 50);
@@ -271,16 +265,8 @@ export function QuestionFlow() {
     setIsTransitioning(true);
     setTransitionDirection("forward");
     setTimeout(() => {
-      if (currentStep.finalActions) {
-        setMode("finalActions");
-      } else if (isLastStep) {
-        setMode("aiAgent");
-      } else {
-        const nextIndex = stepIndex + 1;
-        const nextStep = questionSteps[nextIndex];
-        setStepIndex(nextIndex);
-        setMode(nextStep?.intro ? "intro" : "predict");
-      }
+      // Go directly to AI Agent screen
+      setMode("aiAgent");
       setIsTransitioning(false);
     }, 50);
   };

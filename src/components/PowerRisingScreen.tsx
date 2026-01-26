@@ -2,6 +2,7 @@
 
 import type { PowerRisingPage } from "../questions";
 import styles from "./QuestionScreens.module.css";
+import { GlobalElectricityChart } from "./charts/GlobalElectricityChart";
 
 interface PowerRisingScreenProps {
   powerRising: PowerRisingPage;
@@ -16,8 +17,8 @@ export function PowerRisingScreen({
 }: PowerRisingScreenProps) {
   const screenClasses = [
     styles.screen,
-    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight : 
-                      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
+    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight :
+      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
   ].filter(Boolean).join(" ");
 
   return (
@@ -33,18 +34,11 @@ export function PowerRisingScreen({
             <p className={styles.powerRisingText}>
               {powerRising.bodyText1}
               <br />
-              From 2014 to 2022, total generation increased by ~{powerRising.percentageIncrease}%.
+              From 2005 to 2022, total generation increased by ~{powerRising.percentageIncrease}%.
             </p>
-            {powerRising.visualPlaceholder && (
-              <div className={styles.visualPlaceholder}>
-                {powerRising.visualPlaceholder}
-              </div>
-            )}
-            {!powerRising.visualPlaceholder && (
-              <div className={styles.visualPlaceholder}>
-                {/* Placeholder for visual */}
-              </div>
-            )}
+            <div className={styles.chartContainer}>
+              <GlobalElectricityChart animate={true} />
+            </div>
             <p className={styles.powerRisingText}>
               {powerRising.bodyText2}
             </p>
