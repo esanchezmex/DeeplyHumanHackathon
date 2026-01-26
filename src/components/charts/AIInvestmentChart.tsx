@@ -85,7 +85,7 @@ export function AIInvestmentChart({ animate = true }: AIInvestmentChartProps) {
         if (active && payload && payload.length) {
             return (
                 <div style={{
-                    background: 'rgba(0, 0, 0, 0.9)',
+                    background: 'rgba(0, 0, 0, 0.85)',
                     border: '1px solid rgba(78, 205, 196, 0.3)',
                     borderRadius: '8px',
                     padding: '12px 16px',
@@ -94,7 +94,7 @@ export function AIInvestmentChart({ animate = true }: AIInvestmentChartProps) {
                     <p style={{
                         margin: 0,
                         fontSize: '0.9rem',
-                        color: 'rgba(255, 255, 255, 0.9)',
+                        color: 'rgba(255, 255, 255, 0.7)',
                         marginBottom: '8px',
                         fontWeight: 600,
                     }}>
@@ -140,7 +140,7 @@ export function AIInvestmentChart({ animate = true }: AIInvestmentChartProps) {
             <text
                 x={Number(x) + Number(width) / 2}
                 y={Number(y) - 8}
-                fill="#5e60ce"
+                fill="#8384D8"
                 textAnchor="middle"
                 fontSize={9}
                 fontWeight={600}
@@ -237,7 +237,10 @@ export function AIInvestmentChart({ animate = true }: AIInvestmentChartProps) {
                     <Legend
                         wrapperStyle={{ paddingTop: '10px' }}
                         formatter={(value) => (
-                            <span style={{ color: 'currentColor', fontSize: '0.8rem' }}>
+                            <span style={{
+                                color: value === 'aiInvestment' ? '#8384D8' : 'currentColor',
+                                fontSize: '0.8rem'
+                            }}>
                                 {value === 'totalGeneration' ? 'Total Generation' :
                                     value === 'perPerson' ? 'Per Person' : 'AI Investment'}
                             </span>
@@ -277,16 +280,18 @@ export function AIInvestmentChart({ animate = true }: AIInvestmentChartProps) {
                             yAxisId="bars"
                             dataKey="aiInvestment"
                             name="aiInvestment"
+                            fill="#8384D8"
+                            fillOpacity={0.7}
                             isAnimationActive={true}
                             animationDuration={1000}
                             animationEasing="ease-out"
                             radius={[4, 4, 0, 0]}
                         >
                             <LabelList dataKey="aiInvestment" content={renderBarLabel} />
-                            {currentData.map((entry, index) => (
+                            {currentData.map((entry: any, index: number) => (
                                 <Cell
                                     key={`cell-${index}`}
-                                    fill={entry.aiInvestment ? "#5e60ce" : "transparent"}
+                                    fill={entry.aiInvestment ? "#8384D8" : "transparent"}
                                     fillOpacity={0.7}
                                 />
                             ))}

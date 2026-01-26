@@ -260,12 +260,8 @@ export const questionSteps: QuestionStep[] = [
     synthesis: {
       title: "The question the next decade will answer",
       textLines: [
-        "Electricity use didn't surge for years, until it did.",
-        "The new demand isn't just more devices. It's more computation.",
-        "",
-        "The question isn't whether we'll use AI.",
-        "It's what kind of infrastructure we'll build around it, and who pays the cost.",
-        "",
+        "Electricity use didn't surge for years, until it did. The new demand isn't just more devices. It's more computation.",
+        "The question isn't whether we'll use AI. It's what kind of infrastructure we'll build around it, and who pays the cost.",
         "If AI is becoming a daily utility, should it be required to be a clean one?",
       ],
       reflectionPrompt: "If you like, share one change you'd make this week, if any.",
