@@ -16,8 +16,8 @@ export function RecentJumpScreen({
 }: RecentJumpScreenProps) {
   const screenClasses = [
     styles.screen,
-    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight : 
-                      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
+    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight :
+      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
   ].filter(Boolean).join(" ");
 
   // Split bodyText1 by newlines to create separate paragraphs
@@ -57,7 +57,7 @@ export function RecentJumpScreen({
                 2005 → 2022: ~+{recentJump.callout2005to2022}%
               </div>
               <div className={styles.calloutItem}>
-                2005 → 2024: ~+{recentJump.callout2005to2024}%
+                2022 → 2024: ~+{recentJump.callout2022to2024}%
               </div>
             </div>
             <div className={styles.powerRisingText}>

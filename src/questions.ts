@@ -44,7 +44,7 @@ export interface RecentJumpPage {
   bodyText1: string;
   visualPlaceholder?: React.ReactNode;
   callout2005to2022: number;
-  callout2005to2024: number;
+  callout2022to2024: number;
   bodyText2: string;
 }
 
@@ -245,9 +245,9 @@ export const questionSteps: QuestionStep[] = [
     },
     recentJump: {
       title: "Then something changed: A recent jump changes the story",
-      bodyText1: "From 2014 to 2022, the change was modest.\nBut from 2022 to 2024, the increase is sharper—too large to ignore.",
+      bodyText1: "From 2005 to 2022, the change was modest.\nBut from 2022 to 2024, the increase is sharper—too large to ignore.",
       callout2005to2022: 14,
-      callout2005to2024: 20,
+      callout2022to2024: 20,
       bodyText2: "Something new is being added to the \"always-on\" baseline.\nNot just more devices—more computation behind the scenes.",
     },
     aiCoincidence: {

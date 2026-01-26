@@ -1456,6 +1456,21 @@
   overflow-y: auto;
 }
 
+.aiAgentButtons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.aiAgentButtons .secondaryButton {
+  flex: 0 1 auto;
+}
+
+.aiAgentButtons .primaryButton {
+  flex: 0 1 auto;
+}
+
 @media (max-width: 768px) {
   .questionsSection {
     padding: 24px;
