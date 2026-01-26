@@ -288,6 +288,7 @@ export function AIInvestmentChart({ animate = true }: AIInvestmentChartProps) {
                             radius={[4, 4, 0, 0]}
                         >
                             <LabelList dataKey="aiInvestment" content={renderBarLabel} />
+                            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                             {currentData.map((entry: any, index: number) => (
                                 <Cell
                                     key={`cell-${index}`}

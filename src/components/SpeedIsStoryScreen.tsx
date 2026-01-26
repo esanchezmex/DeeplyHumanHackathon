@@ -2,6 +2,8 @@
 
 import type { SpeedIsStoryPage } from "../questions";
 import styles from "./QuestionScreens.module.css";
+import { TechAdoptionCharts } from "./charts/TechAdoptionCharts";
+import { AIJobPostingsChart } from "./charts/AIJobPostingsChart";
 
 interface SpeedIsStoryScreenProps {
   speedIsStory: SpeedIsStoryPage;
@@ -16,8 +18,8 @@ export function SpeedIsStoryScreen({
 }: SpeedIsStoryScreenProps) {
   const screenClasses = [
     styles.screen,
-    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight : 
-                      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
+    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight :
+      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
   ].filter(Boolean).join(" ");
 
   // Split bodyText1 by newlines to create separate paragraphs
@@ -40,29 +42,15 @@ export function SpeedIsStoryScreen({
                 </p>
               ))}
             </div>
-            {speedIsStory.visualPlaceholder1 && (
-              <div className={styles.visualPlaceholder}>
-                {speedIsStory.visualPlaceholder1}
-              </div>
-            )}
-            {!speedIsStory.visualPlaceholder1 && (
-              <div className={styles.visualPlaceholder}>
-                {/* Placeholder for visual */}
-              </div>
-            )}
+            <div className={styles.chartContainer}>
+              <TechAdoptionCharts animate={true} />
+            </div>
             <p className={styles.powerRisingText}>
               {speedIsStory.bodyText2}
             </p>
-            {speedIsStory.visualPlaceholder2 && (
-              <div className={styles.visualPlaceholder}>
-                {speedIsStory.visualPlaceholder2}
-              </div>
-            )}
-            {!speedIsStory.visualPlaceholder2 && (
-              <div className={styles.visualPlaceholder}>
-                {/* Placeholder for visual */}
-              </div>
-            )}
+            <div className={styles.chartContainer}>
+              <AIJobPostingsChart animate={true} />
+            </div>
             <p className={styles.powerRisingText}>
               {speedIsStory.bodyText3}
             </p>
