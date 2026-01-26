@@ -731,6 +731,16 @@
   margin: 16px 0;
 }
 
+.chartContainer {
+  width: 100%;
+  min-height: 280px;
+  background: color-mix(in srgb, var(--color-surface) 30%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+  border-radius: 16px;
+  padding: 24px 16px;
+  margin: 20px 0;
+}
+
 .moodOptions {
   display: flex;
   flex-direction: column;
