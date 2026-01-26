@@ -118,6 +118,16 @@ export function GlobalElectricityChart({ animate = true }: GlobalElectricityChar
                         axisLine={false}
                         tickFormatter={(value) => `${Math.round(value / 1000)}k`}
                         domain={['dataMin - 1000', 'dataMax + 1000']}
+                        label={{
+                            value: 'Electricity Generation (TWh)',
+                            angle: -90,
+                            position: 'insideLeft',
+                            style: {
+                                textAnchor: 'middle',
+                                fill: 'rgba(255, 255, 255, 0.5)',
+                                fontSize: 11,
+                            }
+                        }}
                     />
                     <Tooltip content={<CustomTooltip />} />
                     <Area
