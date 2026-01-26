@@ -299,78 +299,45 @@ export function MethodologyScreen({
             <h2 className={styles.methodologySectionTitle}>
               What this does – and does not – prove
             </h2>
+            <p className={styles.methodologySectionBody}>
+              This experience is an invitation to think, not a final word on
+              cause and effect.
+            </p>
             <ul className={styles.methodologyList}>
               <li>
-                <strong>Correlation ≠ Causation:</strong> Patterns that move
-                together over time don’t prove that one caused the other. We do
-                not run causal inference, controlled experiments, or
-                statistically powered hypothesis tests in this experience.
+                Correlations in these curves do not prove that one thing caused
+                another. Many forces move together over time.
               </li>
               <li>
-                <strong>Confounders Exist:</strong> Many factors can shape these
-                trends at once—population growth, GDP, policy, energy mix,
-                electrification, cultural shifts, measurement changes, and
-                reporting delays.
+                We mostly show global or large-regional patterns. Local,
+                community-level realities can look very different.
               </li>
               <li>
-                <strong>Country Averages Can Hide Real Lives:</strong> National
-                or global averages can mask inequality, regional differences,
-                and who benefits (or carries the cost).
-              </li>
-              <li>
-                <strong>AI Coverage Is Uneven:</strong> Some AI indicators have
-                partial country coverage or are derived from sources with
-                stronger visibility in certain regions. Aggregated “world”
-                proxies may not represent all countries equally.
-              </li>
-              <li>
-                <strong>Forecasted Values Are Estimates:</strong> When recent
-                years are missing, we may extend the series using ARIMA. These
-                are model-based estimates, not official measurements.
-              </li>
-              <li>
-                <strong>Your Responses Are Not Stored:</strong> Your inputs are
-                used to generate the on-screen experience (and may be sent as
-                part of an API call to produce the next step), but we do not
-                store them, profile you, or retain them as a dataset.
-              </li>
-              <li>
-                <strong>This Is a Reflection Tool, Not a Diagnosis:</strong> The
-                insights are prompts to think about trade-offs, incentives, and
-                lived experience; not definitive claims about individuals or
-                societies.
+                Historical data can be incomplete or biased, especially for
+                countries with weaker statistical systems.
               </li>
             </ul>
+            <p className={styles.methodologyNote}>
+              You should not use this app alone to make funding decisions,
+              allocate aid, or judge specific communities. It is a thinking
+              tool, not a forecasting model.
+            </p>
           </section>
         );
       case "whyTheseIndicators":
         return (
           <section className={styles.methodologySection}>
-            <h2 className={styles.methodologySectionTitle}>
-              Why these curves, not a thousand others
-            </h2>
             <p className={styles.methodologySectionBody}>
-              We chose a small set of indicators that are both empirically
-              grounded and emotionally legible.
+              Domo&apos;s Data Never Sleeps — AI Edition (2025) tries to make scale legible: ChatGPT is prompted ~694K times per minute, and global AI spend is estimated at ~$1.21M per minute. If we translate that activity into something physical, even a conservative estimate of ~0.3 watt-hours per typical ChatGPT query implies ~208 kWh of electricity per minute at that prompt volume. Using an average U.S. electricity price of ~$0.1648/kWh (2024), that&apos;s about $34 per minute in electricity alone. For intuition: that one minute is roughly the same electricity cost as running a typical central A/C (≈3.5 kW) for about 6.6 days at ~9 hours/day.
             </p>
-            <ul className={styles.methodologyList}>
-              <li>
-                They connect directly to lived experience: safe water, income,
-                time use, access to technology.
-              </li>
-              <li>
-                They have reasonably long, comparable time-series across many
-                countries, which lets us tell a story about change.
-              </li>
-              <li>
-                Together, they sketch a multi-dimensional picture of power,
-                precarity and possibility in people&apos;s lives.
-              </li>
-            </ul>
+            <p className={styles.methodologySectionBody}>
+              And then there&apos;s why we chose these indicators: because technology doesn&apos;t just consume energy; it reshapes habits, attention, and connection. For instance, some widely cited &quot;top uses&quot; lists place therapy / companionship at or near the top of how people report using generative AI. If a prompt is becoming a reflex for comfort, reassurance, or loneliness, it&apos;s worth pausing: would it be cheaper for the world (and healthier for you) to talk to the person next to you, or someone you love, before you outsource that moment?
+            </p>
+            <p className={styles.methodologySectionBody}>
+              The same goes for the trivial and the disposable: generating &quot;just for fun&quot; images, or asking an LLM something a search engine answers instantly. The point isn&apos;t guilt, it&apos;s awareness: when a tool becomes frictionless, we use it more, and that &quot;more&quot; adds up.
+            </p>
             <p className={styles.methodologyNote}>
-              Other choices are possible. This set reflects a design decision:
-              enough dimensions to avoid naivety, but few enough to stay
-              human-scale.
+              Sources: Domo DNS AI 2025; Epoch AI energy estimate; U.S. EIA electricity price; Forbes/HBR &quot;top uses&quot; coverage; APA discussion of emotional AI relationships.
             </p>
           </section>
         );
