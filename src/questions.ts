@@ -49,6 +49,7 @@ export interface RecentJumpPage {
 }
 
 export interface AICoincidencePage {
+  title: string;
   bodyText: string;
   visualPlaceholder?: React.ReactNode;
   microcopy: string;
@@ -251,6 +252,7 @@ export const questionSteps: QuestionStep[] = [
       bodyText2: "In just two years, energy use per person has increased more than in the entire decade and change beforehand.\nSomething new is being added to the \"always-on\" baseline.\nNot just more devices—more computation behind the scenes.",
     },
     aiCoincidence: {
+      title: "Generative AI became really big, really fast",
       bodyText: "This coincides with the mainstreaming of generative AI and expanding data-center demand.",
       microcopy: "No single chart proves cause. But patterns can still guide better questions.",
       bodyText2: "ChatGPT was released to the public by OpenAI on November 30, 2022, marking the start of the modern generative AI era for users. As a free research preview, it immediately went viral, reaching 1 million users in five days and 100 million users within two months.",
@@ -258,21 +260,21 @@ export const questionSteps: QuestionStep[] = [
     synthesis: {
       title: "The question the next decade will answer",
       textLines: [
-        "Electricity use didn't surge for years—until it did.",
+        "Electricity use didn't surge for years, until it did.",
         "The new demand isn't just more devices. It's more computation.",
         "",
         "The question isn't whether we'll use AI.",
-        "It's what kind of infrastructure we'll build around it—and who pays the cost.",
+        "It's what kind of infrastructure we'll build around it, and who pays the cost.",
         "",
         "If AI is becoming a daily utility, should it be required to be a clean one?",
       ],
-      reflectionPrompt: "If you like, share one change you'd make this week—if any?",
+      reflectionPrompt: "If you like, share one change you'd make this week, if any.",
     },
     speedIsStory: {
-      title: "The Speed Is the Story",
-      bodyText1: "We didn't just adopt technology. We reorganized life around it.\n\nIn a few decades, mobile phones and internet access went from rare to default—especially in dense, urban life.\nThat kind of growth doesn't only change what we can do. It changes what we expect, how we spend time, and how we relate to one another.",
-      bodyText2: "Now we're watching another curve accelerate—generative AI—fast enough to feel like a shift in daily reality.",
-      bodyText3: "Just like phones and the internet, AI is moving from novelty to habit—at record speed.",
+      title: "Speed is the Story",
+      bodyText1: "We didn't just adopt technology. We reorganized life around it.\n\nIn a few decades, mobile phones and internet access went from rare to default, especially in dense, urban life.\nThat kind of growth doesn't only change what we can do. It changes what we expect, how we spend time, and how we relate to one another.",
+      bodyText2: "Now we're watching another curve accelerate, generative AI, fast enough to feel like a shift in daily reality.",
+      bodyText3: "Just like phones and the internet, AI is moving from novelty to habit, at record speed.",
     },
     finalActions: {
       buttonLabels: [
