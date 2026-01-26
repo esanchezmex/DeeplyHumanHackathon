@@ -15,8 +15,9 @@ import { PerPersonStableScreen } from "./PerPersonStableScreen";
 import { RecentJumpScreen } from "./RecentJumpScreen";
 import { AICoincidenceScreen } from "./AICoincidenceScreen";
 import { SpeedIsStoryScreen } from "./SpeedIsStoryScreen";
+import { MethodologyScreen } from "./MethodologyScreen";
 
-type Mode = "intro" | "moodCheck" | "powerRising" | "electricityExpectation" | "perPersonStable" | "recentJump" | "aiCoincidence" | "synthesis" | "speedIsStory" | "finalActions" | "predict" | "reveal" | "aiAgent";
+type Mode = "intro" | "moodCheck" | "powerRising" | "electricityExpectation" | "perPersonStable" | "recentJump" | "aiCoincidence" | "synthesis" | "speedIsStory" | "finalActions" | "predict" | "reveal" | "aiAgent" | "methodology";
 type TransitionDirection = "forward" | "backward";
 
 export interface AnswerRecord {
@@ -286,7 +287,6 @@ export function QuestionFlow() {
   };
 
   const handleFinalAction = (actionIndex: number) => {
-    // Placeholder handlers for now
     if (actionIndex === 0) {
       // Continue to next dimension
       if (isLastStep) {
@@ -307,10 +307,24 @@ export function QuestionFlow() {
           setIsTransitioning(false);
         }, 50);
       }
-    } else {
-      // Explore sources & methodology - placeholder
-      console.log("Explore sources & methodology");
+    } else if (actionIndex === 1) {
+      // Explore sources & methodology
+      setIsTransitioning(true);
+      setTransitionDirection("forward");
+      setTimeout(() => {
+        setMode("methodology");
+        setIsTransitioning(false);
+      }, 50);
     }
+  };
+
+  const handleBackFromMethodology = () => {
+    setIsTransitioning(true);
+    setTransitionDirection("backward");
+    setTimeout(() => {
+      setMode("finalActions");
+      setIsTransitioning(false);
+    }, 50);
   };
 
   const handleRestart = () => {
@@ -338,6 +352,15 @@ export function QuestionFlow() {
         electricityExpectation={userAnswer?.electricityExpectation}
         synthesisReflection={userAnswer?.synthesisReflection}
         onRestart={handleRestart}
+        animationClass={getAnimationClass()}
+      />
+    );
+  }
+
+  if (mode === "methodology") {
+    return (
+      <MethodologyScreen
+        onBack={handleBackFromMethodology}
         animationClass={getAnimationClass()}
       />
     );

@@ -1332,6 +1332,207 @@
 }
 
 /* =====================================================
+   Methodology Screen Styles
+   ===================================================== */
+
+/* Methodology screen layout */
+.screen[data-screen="methodology"] .main {
+  gap: 32px;
+  max-width: 800px;
+  padding-top: 24px;
+}
+
+.methodologyBackButton {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: color 0.15s ease;
+  animation: fadeIn 300ms cubic-bezier(0.4, 0, 0.2, 1) 0.05s both;
+}
+
+.methodologyBackButton:hover {
+  color: var(--color-text);
+}
+
+.methodologyTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 12px;
+  margin-bottom: 32px;
+  animation: fadeIn 400ms cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
+}
+
+.methodologyTab {
+  padding: 10px 20px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.methodologyTab:hover {
+  color: var(--color-text);
+  background: color-mix(in srgb, var(--color-surface) 50%, transparent);
+}
+
+.methodologyTabActive {
+  color: var(--color-text);
+  background: color-mix(in srgb, var(--color-surface) 60%, transparent);
+}
+
+.methodologyTabActive::after {
+  content: "";
+  position: absolute;
+  bottom: -13px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 1px;
+}
+
+.methodologyContent {
+  animation: fadeIn 400ms cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+
+.methodologySection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px 0;
+}
+
+.methodologySectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.methodologySectionBody {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.methodologyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-left: 0;
+}
+
+.methodologyList li {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  padding-left: 24px;
+  position: relative;
+}
+
+.methodologyList li::before {
+  content: "•";
+  position: absolute;
+  left: 8px;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.methodologyNote {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin: 0;
+  padding: 16px;
+  background: color-mix(in srgb, var(--color-surface) 40%, transparent);
+  border-left: 3px solid var(--color-accent-2);
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+/* Methodology screen mobile */
+@media (max-width: 768px) {
+  .screen[data-screen="methodology"] .main {
+    gap: 24px;
+    padding-top: 16px;
+  }
+
+  .methodologyTabs {
+    gap: 6px;
+    padding-bottom: 10px;
+    margin-bottom: 24px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .methodologyTabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .methodologyTab {
+    padding: 8px 16px;
+    font-size: 0.88rem;
+    flex-shrink: 0;
+  }
+
+  .methodologySection {
+    gap: 16px;
+    padding: 20px 0;
+  }
+
+  .methodologySectionTitle {
+    font-size: 1.3rem;
+  }
+
+  .methodologySectionBody {
+    font-size: 0.95rem;
+  }
+
+  .methodologyList {
+    gap: 12px;
+  }
+
+  .methodologyList li {
+    font-size: 0.92rem;
+    padding-left: 20px;
+  }
+
+  .methodologyList li::before {
+    left: 6px;
+  }
+
+  .methodologyNote {
+    font-size: 0.85rem;
+    padding: 12px;
+  }
+
+  .methodologyBackButton {
+    font-size: 0.85rem;
+  }
+}
+
+/* =====================================================
    AI Agent Screen Styles
    ===================================================== */
 
