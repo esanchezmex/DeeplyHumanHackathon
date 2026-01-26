@@ -39,13 +39,16 @@ interface GlobalElectricityChartProps {
 }
 
 export function GlobalElectricityChart({ animate = true }: GlobalElectricityChartProps) {
-    const [isVisible, setIsVisible] = useState(!animate);
+    const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         if (animate) {
-            // Small delay to ensure component is mounted before animation starts
+            // Reset and then trigger animation
+            setIsVisible(false);
             const timer = setTimeout(() => setIsVisible(true), 100);
             return () => clearTimeout(timer);
+        } else {
+            setIsVisible(true);
         }
     }, [animate]);
 
@@ -134,16 +137,18 @@ export function GlobalElectricityChart({ animate = true }: GlobalElectricityChar
                         }}
                     />
                     <Tooltip content={<CustomTooltip />} />
-                    <Area
-                        type="monotone"
-                        dataKey="generation"
-                        stroke="#4ECDC4"
-                        strokeWidth={3}
-                        fill="url(#electricityGradient)"
-                        isAnimationActive={animate && isVisible}
-                        animationDuration={2000}
-                        animationEasing="ease-out"
-                    />
+                    {isVisible && (
+                        <Area
+                            type="monotone"
+                            dataKey="generation"
+                            stroke="#4ECDC4"
+                            strokeWidth={3}
+                            fill="url(#electricityGradient)"
+                            isAnimationActive={true}
+                            animationDuration={2000}
+                            animationEasing="ease-out"
+                        />
+                    )}
                 </AreaChart>
             </ResponsiveContainer>
         </div>

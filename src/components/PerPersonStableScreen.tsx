@@ -41,11 +41,15 @@ export function PerPersonStableScreen({
               <PerPersonElectricityChart animate={true} />
             </div>
             <div className={styles.powerRisingText}>
-              {bodyText2Paragraphs.map((paragraph, index) => (
-                <p key={index} style={{ marginBottom: index < bodyText2Paragraphs.length - 1 ? '1rem' : '0' }}>
-                  {paragraph}
-                </p>
-              ))}
+              <p style={{ marginBottom: '1rem' }}>
+                For most of the last decade, we mostly kept per-person electricity use in check.
+              </p>
+              <p style={{ marginBottom: '1rem' }}>
+                That matters: fewer watts per person can mean less pressure on the planet.
+              </p>
+              <p>
+                Maybe something else was happening in parallel: <em>efficiency gains</em>, shifting where energy is used, and a world getting better at doing more with less, at least for a while...
+              </p>
             </div>
           </div>
           <footer className={styles.footer}>

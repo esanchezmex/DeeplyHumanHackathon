@@ -230,25 +230,25 @@ export const questionSteps: QuestionStep[] = [
     powerRising: {
       headline: "Power has been quietly rising for years.",
       bodyText1: "Global electricity generation has climbed steadily—year after year.",
-      percentageIncrease: 16,
+      percentageIncrease: 58,
       bodyText2: "A growing share of daily life is \"invisible electricity\": Wi-Fi, servers, data transfer, charging, background syncing.",
     },
     electricityExpectation: {
-      prompt: "And therefore, before you see the data: do you expect electricity use to be…",
+      prompt: "And therefore, before you see the data: do you expect electricity use per person to be…",
       options: ["Mostly flat", "Gradually rising", "Sharply rising"],
     },
     perPersonStable: {
       title: "For years, the per-person story was… stable.",
       bodyText1: "Even as our digital lives expanded, electricity use per person didn't explode—it changed by only",
-      percentageChange: 14,
+      percentageChange: 12,
       bodyText2: "For most of the last decade, we mostly kept per-person electricity use in check.\nThat matters: fewer watts per person can mean less pressure on the planet.\nMaybe something else was happening in parallel: efficiency gains, shifting where energy is used, and a world getting better at doing more with less, at least for a while...",
     },
     recentJump: {
       title: "Then something changed: A recent jump changes the story",
       bodyText1: "From 2005 to 2022, the change was modest.\nBut from 2022 to 2024, the increase is sharper—too large to ignore.",
-      callout2005to2022: 14,
-      callout2022to2024: 20,
-      bodyText2: "Something new is being added to the \"always-on\" baseline.\nNot just more devices—more computation behind the scenes.",
+      callout2005to2022: 12,
+      callout2022to2024: 15,
+      bodyText2: "In just two years, energy use per person has increased more than in the entire decade and change beforehand.\nSomething new is being added to the \"always-on\" baseline.\nNot just more devices—more computation behind the scenes.",
     },
     aiCoincidence: {
       bodyText: "This coincides with the mainstreaming of generative AI and expanding data-center demand.",
