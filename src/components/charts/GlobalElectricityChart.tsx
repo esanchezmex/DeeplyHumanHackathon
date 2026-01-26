@@ -100,31 +100,35 @@ export function GlobalElectricityChart({ animate = true }: GlobalElectricityChar
                     </defs>
                     <CartesianGrid
                         strokeDasharray="3 3"
-                        stroke="rgba(255, 255, 255, 0.1)"
+                        stroke="currentColor"
+                        strokeOpacity={0.15}
                         vertical={false}
                     />
                     <XAxis
                         dataKey="year"
-                        stroke="rgba(255, 255, 255, 0.5)"
+                        stroke="currentColor"
+                        strokeOpacity={0.7}
                         fontSize={12}
                         tickLine={false}
-                        axisLine={{ stroke: 'rgba(255, 255, 255, 0.2)' }}
+                        axisLine={{ stroke: 'currentColor', strokeOpacity: 0.3 }}
                         interval="preserveStartEnd"
                     />
                     <YAxis
-                        stroke="rgba(255, 255, 255, 0.5)"
+                        stroke="currentColor"
+                        strokeOpacity={0.7}
                         fontSize={12}
                         tickLine={false}
                         axisLine={false}
-                        tickFormatter={(value) => `${Math.round(value / 1000)}k`}
-                        domain={['dataMin - 1000', 'dataMax + 1000']}
+                        tickFormatter={(value) => `${Math.round(value / 1000)}`}
+                        domain={[16500, 'dataMax + 500']}
                         label={{
-                            value: 'Electricity Generation (TWh)',
+                            value: 'Electricity Generation TWh (in thousands)',
                             angle: -90,
                             position: 'insideLeft',
                             style: {
                                 textAnchor: 'middle',
-                                fill: 'rgba(255, 255, 255, 0.5)',
+                                fill: 'currentColor',
+                                opacity: 0.7,
                                 fontSize: 11,
                             }
                         }}

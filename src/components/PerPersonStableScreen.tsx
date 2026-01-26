@@ -2,6 +2,7 @@
 
 import type { PerPersonStablePage } from "../questions";
 import styles from "./QuestionScreens.module.css";
+import { PerPersonElectricityChart } from "./charts/PerPersonElectricityChart";
 
 interface PerPersonStableScreenProps {
   perPersonStable: PerPersonStablePage;
@@ -16,8 +17,8 @@ export function PerPersonStableScreen({
 }: PerPersonStableScreenProps) {
   const screenClasses = [
     styles.screen,
-    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight : 
-                      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
+    animationClass && (animationClass === "slideFromRight" ? styles.slideFromRight :
+      animationClass === "slideFromLeft" ? styles.slideFromLeft : ""),
   ].filter(Boolean).join(" ");
 
   // Split bodyText2 by newlines to create separate paragraphs
@@ -34,18 +35,11 @@ export function PerPersonStableScreen({
           <h1 className={styles.prompt}>{perPersonStable.title}</h1>
           <div className={styles.powerRisingContent}>
             <p className={styles.powerRisingText}>
-              {perPersonStable.bodyText1} ~{perPersonStable.percentageChange}% from 2014 to 2022.
+              Even as our digital lives expanded, electricity use <em>per person</em> didn&apos;t explode, it changed by only ~{perPersonStable.percentageChange}% from 2005 to 2022.
             </p>
-            {perPersonStable.visualPlaceholder && (
-              <div className={styles.visualPlaceholder}>
-                {perPersonStable.visualPlaceholder}
-              </div>
-            )}
-            {!perPersonStable.visualPlaceholder && (
-              <div className={styles.visualPlaceholder}>
-                {/* Placeholder for visual */}
-              </div>
-            )}
+            <div className={styles.chartContainer}>
+              <PerPersonElectricityChart animate={true} />
+            </div>
             <div className={styles.powerRisingText}>
               {bodyText2Paragraphs.map((paragraph, index) => (
                 <p key={index} style={{ marginBottom: index < bodyText2Paragraphs.length - 1 ? '1rem' : '0' }}>
