@@ -110,11 +110,79 @@ Used to ground long-run shifts in global connectivity:
 
 ## Technology Stack & Key Libraries
 
-- Frontend: [TBD]
-- Visualization: [TBD]
-- Data Processing: [TBD]
-- Backend/API: [TBD]
-- AI: OpenAI API (reflection generation)
+### Frontend
+- **Next.js 15.1.4** - React framework with App Router for server-side rendering and routing
+- **React 19.0.0** - UI library for building interactive components
+- **TypeScript 5.9.3** - Type safety and enhanced developer experience
+
+### Visualization
+- **Recharts 3.7.0** - Chart library for creating responsive data visualizations (AreaChart, LineChart, etc.)
+
+### Data Processing
+- **Python 3.13** (with virtual environment)
+- **pandas** (>=2.0.0) - Data manipulation and analysis for processing Gapminder datasets
+- **numpy** - Numerical computing (used in Jupyter notebooks for data analysis)
+- **statsmodels** - ARIMA forecasting for estimating missing recent years in time series data
+- **requests** (>=2.28.0) - HTTP library for fetching data from external sources
+
+### Backend/API
+- **Next.js API Routes** - Serverless API endpoints for handling reflection generation requests
+
+### AI
+- **OpenAI API** (via `openai` package v6.16.0) - GPT-4o model for generating personalized end-of-flow reflections
+
+### Styling
+- **CSS Modules** - Component-scoped styling for maintainable UI components
+- **CSS Custom Properties** - Theme variables supporting light/dark mode preferences
+
+### Development Tools
+- **ESLint** - Code linting with Next.js configuration
+- **TypeScript** - Static type checking and improved IDE support
+
+---
+
+## Setup Instructions
+
+### Prerequisites
+- **Node.js** 18.x or later
+- **Python** 3.13 (or 3.9+)
+- **npm** or **yarn** package manager
+- **OpenAI API key** (for AI reflection generation)
+
+### Installation Steps
+
+1. **Clone the repository** (if applicable) or navigate to the project directory.
+
+2. **Install Node.js dependencies:**
+   ```bash
+   npm install
+   ```
+   This will install all frontend dependencies including Next.js, React, TypeScript, Recharts, and OpenAI SDK.
+
+3. **Set up Python environment** (optional, for data processing scripts):
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
+
+4. **Configure environment variables:**
+   Create a `.env.local` file in the root directory:
+   ```bash
+   OPENAI_API_KEY=your_openai_api_key_here
+   ```
+
+5. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+   The application will be available at `http://localhost:3000`.
+
+
+### Notes
+- The Python environment is only needed if you plan to run data processing scripts or Jupyter notebooks.
+- The OpenAI API key is required for the reflection generation feature to work. Without it, the app will run but the AI reflection endpoint will return an error.
+- Data files are already included in the `data/` directory, so no additional data download is required to run the web application.
 
 ---
 
