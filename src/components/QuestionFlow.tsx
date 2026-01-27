@@ -41,6 +41,7 @@ export function QuestionFlow() {
   const [answers, setAnswers] = useState<AnswerRecord[]>([]);
   const [transitionDirection, setTransitionDirection] = useState<TransitionDirection>("forward");
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [savedReflection, setSavedReflection] = useState<string | null>(null);
 
   // Scroll to top whenever screen changes
   useEffect(() => {
@@ -324,7 +325,16 @@ export function QuestionFlow() {
     setIsTransitioning(true);
     setTransitionDirection("backward");
     setTimeout(() => {
-      setMode("finalActions");
+      setMode("aiAgent");
+      setIsTransitioning(false);
+    }, 50);
+  };
+
+  const handleViewMethodology = () => {
+    setIsTransitioning(true);
+    setTransitionDirection("forward");
+    setTimeout(() => {
+      setMode("methodology");
       setIsTransitioning(false);
     }, 50);
   };
@@ -332,6 +342,7 @@ export function QuestionFlow() {
   const handleRestart = () => {
     setAnswers([]);
     setStepIndex(0);
+    setSavedReflection(null);
     const firstStep = questionSteps[0];
     setMode(firstStep?.intro ? "intro" : "predict");
   };
@@ -353,7 +364,10 @@ export function QuestionFlow() {
         mood={userAnswer?.mood}
         electricityExpectation={userAnswer?.electricityExpectation}
         synthesisReflection={userAnswer?.synthesisReflection}
+        initialReflection={savedReflection}
+        onReflectionGenerated={setSavedReflection}
         onRestart={handleRestart}
+        onViewMethodology={handleViewMethodology}
         animationClass={getAnimationClass()}
       />
     );
