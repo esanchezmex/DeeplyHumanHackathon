@@ -7,7 +7,10 @@ interface AIAgentScreenProps {
     mood?: string;
     electricityExpectation?: string;
     synthesisReflection?: string;
+    initialReflection?: string | null;
+    onReflectionGenerated?: (reflection: string) => void;
     onRestart: () => void;
+    onViewMethodology: () => void;
     animationClass?: string;
 }
 
@@ -15,14 +18,22 @@ export function AIAgentScreen({
     mood,
     electricityExpectation,
     synthesisReflection,
+    initialReflection,
+    onReflectionGenerated,
     onRestart,
+    onViewMethodology,
     animationClass = "",
 }: AIAgentScreenProps) {
-    const [reflection, setReflection] = useState<string>("");
-    const [isLoading, setIsLoading] = useState(true);
+    const [reflection, setReflection] = useState<string>(initialReflection || "");
+    const [isLoading, setIsLoading] = useState(!initialReflection);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
+        // Skip fetching if we already have a reflection
+        if (initialReflection) {
+            return;
+        }
+
         async function fetchReflection() {
             try {
                 setIsLoading(true);
@@ -46,6 +57,10 @@ export function AIAgentScreen({
 
                 const data = await response.json();
                 setReflection(data.reflection);
+                // Save the reflection to parent state
+                if (onReflectionGenerated) {
+                    onReflectionGenerated(data.reflection);
+                }
             } catch (err) {
                 console.error("Error fetching reflection:", err);
                 setError("We couldn't generate your reflection right now. Please try again.");
@@ -55,7 +70,7 @@ export function AIAgentScreen({
         }
 
         fetchReflection();
-    }, [mood, electricityExpectation, synthesisReflection]);
+    }, [mood, electricityExpectation, synthesisReflection, initialReflection, onReflectionGenerated]);
 
     const screenClasses = [
         styles.screen,
@@ -160,10 +175,7 @@ export function AIAgentScreen({
                             <button
                                 type="button"
                                 className={styles.primaryButton}
-                                onClick={() => {
-                                    // TODO: Implement sources & methodology navigation
-                                    console.log("View sources & methodology");
-                                }}
+                                onClick={onViewMethodology}
                             >
                                 View sources &amp; methodology
                             </button>
